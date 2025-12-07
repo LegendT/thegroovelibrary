@@ -168,9 +168,15 @@ Reusable layout components:
   - Scrollable tracklists (400px max-height) with custom scrollbar styling
   - Visual scroll indicators (gradient fade effect)
   - Flexbox structure with `.mix-player__content` (top) and `.mix-player__bottom` (player + tracklist)
+- `.button` - Accessible button components
+  - `.button--primary` - White background with dark orange text (WCAG AA compliant)
+  - `.button--secondary` - Semi-transparent background with white text
+  - Supports `.text-inverse` modifier for gradient backgrounds
+  - Includes hover states, focus indicators, and transitions
 - `.hero-logo` - White inverted logo for gradient backgrounds
 - `.badge` - Metadata badges (primary and neutral variants)
 - `.site-header` / `.site-footer` - Layout blocks with vintage styling
+- `.error-*` - 404 page components (vinyl animation, suggestions, navigation cards)
 
 ## Accessibility
 

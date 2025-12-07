@@ -239,6 +239,17 @@ description: >
 - Error/empty states matching homepage pattern
 - Follows consistent template pattern with semantic sections
 
+**404 Error Page** (404.njk):
+- Music-themed error page with humor and personality
+- Animated spinning vinyl record icon (respects `prefers-reduced-motion`)
+- Witty error message: "404: Lost in the Crates"
+- Helpful suggestions list with Web Awesome icons
+- Navigation buttons with WCAG 2.2 AA compliant contrast
+- Alternative navigation section showing all site pages
+- Fun fact about the origin of 404 errors
+- Fully accessible with proper ARIA labels and semantic structure
+- Uses `.text-inverse` class for proper contrast on gradient backgrounds
+
 ## Accessibility Architecture
 
 ### WCAG 2.2 AA Compliance
