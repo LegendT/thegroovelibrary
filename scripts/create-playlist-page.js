@@ -80,14 +80,17 @@ function slugToCamelCase(slug) {
 }
 
 /**
- * Create page file
+ * Create page file with modern template pattern
  */
-function createPageFile(pageSlug, playlistName, dataVarName, pageDescription) {
+function createPageFile(pageSlug, playlistName, dataVarName, pageDescription, heroSubtitle = '') {
   // Indent description content properly for YAML block scalar
   const indentedDescription = pageDescription
     .split('\n')
     .map(line => line.trim() ? `  ${line}` : '')
     .join('\n');
+
+  // Generate hero subtitle if not provided
+  const subtitle = heroSubtitle || 'A curated collection of global sounds.';
 
   const pageContent = `---
 layout: base.njk
@@ -97,31 +100,94 @@ ${indentedDescription}
 playlist: "${pageSlug}"
 ---
 
-<div class="hero">
+{# Hero Section #}
+<section class="region region--lg bg-brand" aria-labelledby="hero-heading">
   <div class="container">
-    <h1 class="hero__title">${playlistName}</h1>
-  </div>
-</div>
+    <div class="center center--intrinsic flow flow--lg text-center">
+      <div class="flow flow--md">
+        <h1 id="hero-heading" class="text-4xl text-inverse">
+          ${playlistName}
+        </h1>
+        <p class="text-xl text-inverse mx-auto">
+          ${subtitle}
+        </p>
+      </div>
 
-<main class="container flow">
-  {# Description #}
-  {% if description %}
+      <div class="cluster cluster--md justify-center">
+        <fa-icon icon="record-vinyl" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
+        <fa-icon icon="music" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
+        <fa-icon icon="headphones" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Description Section #}
+{% if description %}
+<section class="region region--lg" aria-labelledby="about-heading">
+  <div class="container">
     <div class="wrapper wrapper--narrow flow">
       {{ description | safe }}
     </div>
-  {% endif %}
+  </div>
+</section>
+{% endif %}
 
-  {# Mix Grid #}
-  {% if ${dataVarName}.cloudcasts.length > 0 %}
-    <div class="mix-grid">
-      {% for mix in ${dataVarName}.cloudcasts %}
-        {% include "mix-player.njk" %}
-      {% endfor %}
+{# Mix Collection Section #}
+<section class="region region--xl" aria-labelledby="mixes-heading">
+  <div class="container">
+    <div class="flow flow--xl">
+      {# Section Header #}
+      <div class="flow flow--sm text-center">
+        <h2 id="mixes-heading" class="text-3xl">
+          The Collection
+        </h2>
+
+        {% if ${dataVarName}.count > 0 %}
+          <div class="cluster cluster--sm justify-center">
+            <span class="badge">
+              <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
+              {{ ${dataVarName}.count }} mixes in this collection
+            </span>
+          </div>
+        {% endif %}
+      </div>
+
+      {# Mix Grid #}
+      {% if ${dataVarName}.cloudcasts.length > 0 %}
+        <div class="grid grid--2" role="list" aria-label="${playlistName} mixes">
+          {% for mix in ${dataVarName}.cloudcasts %}
+            <div role="listitem">
+              {% include "mix-player.njk" %}
+            </div>
+          {% endfor %}
+        </div>
+      {% elif ${dataVarName}.error %}
+        {# Error State #}
+        <div class="error" role="alert">
+          <h3 class="error__title">
+            <fa-icon icon="triangle-exclamation" aria-hidden="true"></fa-icon>
+            Unable to load mixes
+          </h3>
+          <p>We encountered an error while fetching the music collection. Please try again later.</p>
+          <details class="my-md">
+            <summary class="cursor-pointer text-semibold">Technical details</summary>
+            <p class="text-sm my-sm"><code>{{ ${dataVarName}.error }}</code></p>
+          </details>
+        </div>
+      {% else %}
+        {# Empty State #}
+        <div class="center center--intrinsic flow flow--lg text-center py-3xl">
+          <fa-icon icon="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></fa-icon>
+          <div class="flow flow--sm">
+            <h3 class="text-xl">No mixes available</h3>
+            <p class="text-secondary">Check back soon for new content!</p>
+          </div>
+        </div>
+      {% endif %}
     </div>
-  {% else %}
-    <p class="text-center">No mixes found in this playlist.</p>
-  {% endif %}
-</main>
+  </div>
+</section>
 `;
 
   const pagePath = resolve(projectRoot, `src/${pageSlug}.njk`);
@@ -294,16 +360,21 @@ async function main() {
 
     // 5. Get page description
     const defaultDescription = playlistData.description || 'A curated collection of mixes';
-    const pageDescription = await question(`\nEnter page description (default: ${defaultDescription}): `) || defaultDescription;
+    console.log(`\nEnter page description (supports HTML via YAML block scalar):`);
+    const pageDescription = await question(`(default: ${defaultDescription}): `) || defaultDescription;
+
+    // 6. Get hero subtitle
+    const defaultSubtitle = 'A curated collection of global sounds.';
+    const heroSubtitle = await question(`\nEnter hero subtitle (default: ${defaultSubtitle}): `) || defaultSubtitle;
 
     console.log(`\n✓ Creating page with slug: ${pageSlug}`);
 
-    // 6. Convert page slug to camelCase for data variable name
+    // 7. Convert page slug to camelCase for data variable name
     const dataVarName = slugToCamelCase(pageSlug);
     console.log(`✓ Data variable name: ${dataVarName}`);
 
-    // 7. Create files
-    createPageFile(pageSlug, playlistData.name, dataVarName, pageDescription);
+    // 8. Create files
+    createPageFile(pageSlug, playlistData.name, dataVarName, pageDescription, heroSubtitle);
     createDataFile(dataVarName, username, mixcloudPlaylistSlug);
     updateNavigation(pageSlug, playlistData.name);
 
