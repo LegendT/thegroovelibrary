@@ -73,27 +73,34 @@ async function fetchPlaylistData(username, playlistSlug) {
 }
 
 /**
+ * Convert slug to camelCase for use as Nunjucks variable
+ */
+function slugToCamelCase(slug) {
+  return slug.replace(/-([a-z])/g, (match, letter) => letter.toUpperCase());
+}
+
+/**
  * Create page file
  */
-function createPageFile(pageSlug, playlistName, playlistSlug, username) {
+function createPageFile(pageSlug, playlistName, dataVarName, pageDescription) {
   const pageContent = `---
 layout: base.njk
 title: "${playlistName} | The Groove Library"
-description: "Listen to ${playlistName} - a curated collection of mixes on The Groove Library"
-playlist: "${playlistSlug}"
+description: "${pageDescription}"
+playlist: "${pageSlug}"
 ---
 
 <div class="hero">
   <div class="container">
     <h1 class="hero__title">${playlistName}</h1>
-    <p class="hero__subtitle">A curated collection of mixes</p>
+    <p class="hero__subtitle">${pageDescription}</p>
   </div>
 </div>
 
 <main class="container flow">
-  {% if ${playlistSlug}.cloudcasts.length > 0 %}
+  {% if ${dataVarName}.cloudcasts.length > 0 %}
     <div class="mix-grid">
-      {% for mix in ${playlistSlug}.cloudcasts %}
+      {% for mix in ${dataVarName}.cloudcasts %}
         {% include "mix-player.njk" %}
       {% endfor %}
     </div>
@@ -112,11 +119,11 @@ playlist: "${playlistSlug}"
 /**
  * Create data file for playlist
  */
-function createDataFile(playlistSlug, username, mixcloudPlaylistSlug) {
+function createDataFile(dataVarName, username, mixcloudPlaylistSlug) {
   const dataContent = `/**
- * Mixcloud Playlist Data: ${playlistSlug}
+ * Mixcloud Playlist Data: ${dataVarName}
  *
- * Fetches cloudcasts from the "${playlistSlug}" playlist
+ * Fetches cloudcasts from the "${mixcloudPlaylistSlug}" playlist
  * at build time via Mixcloud API
  */
 
@@ -208,9 +215,9 @@ export default async function() {
 }
 `;
 
-  const dataPath = resolve(projectRoot, `src/_data/${playlistSlug}.js`);
+  const dataPath = resolve(projectRoot, `src/_data/${dataVarName}.js`);
   writeFileSync(dataPath, dataContent);
-  console.log(`✓ Created data file: src/_data/${playlistSlug}.js`);
+  console.log(`✓ Created data file: src/_data/${dataVarName}.js`);
   return dataPath;
 }
 
@@ -271,11 +278,19 @@ async function main() {
     const defaultSlug = mixcloudPlaylistSlug;
     const pageSlug = await question(`\nEnter page slug/name (default: ${defaultSlug}): `) || defaultSlug;
 
+    // 5. Get page description
+    const defaultDescription = playlistData.description || 'A curated collection of mixes';
+    const pageDescription = await question(`\nEnter page description (default: ${defaultDescription}): `) || defaultDescription;
+
     console.log(`\n✓ Creating page with slug: ${pageSlug}`);
 
-    // 5. Create files
-    createPageFile(pageSlug, playlistData.name, pageSlug, username);
-    createDataFile(pageSlug, username, mixcloudPlaylistSlug);
+    // 6. Convert page slug to camelCase for data variable name
+    const dataVarName = slugToCamelCase(pageSlug);
+    console.log(`✓ Data variable name: ${dataVarName}`);
+
+    // 7. Create files
+    createPageFile(pageSlug, playlistData.name, dataVarName, pageDescription);
+    createDataFile(dataVarName, username, mixcloudPlaylistSlug);
     updateNavigation(pageSlug, playlistData.name);
 
     console.log(`\n✅ Success! New playlist page created.`);
