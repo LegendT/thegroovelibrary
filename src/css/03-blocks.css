@@ -342,6 +342,7 @@ li + li {
     padding: 0.25rem 0.75rem;
     font-size: var(--font-size-base);
     border-radius: var(--radius-md);
+    vertical-align: middle;
   }
 }
 
