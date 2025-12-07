@@ -561,6 +561,101 @@ li + li {
   border-radius: var(--radius-md);
 }
 
+/* Tracklist Styles */
+.mix-player__tracklist {
+  margin-block-start: var(--space-md);
+  border-block-start: var(--border-width-thin) solid var(--border-color-light);
+  padding-block-start: var(--space-md);
+}
+
+.mix-player__tracklist-summary {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-secondary);
+  cursor: pointer;
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-sm);
+  transition: all var(--duration-fast) var(--ease-out);
+  list-style: none;
+}
+
+.mix-player__tracklist-summary::-webkit-details-marker {
+  display: none;
+}
+
+.mix-player__tracklist-summary::marker {
+  content: '';
+}
+
+.mix-player__tracklist-summary:hover {
+  background-color: var(--color-primary-50);
+  color: var(--color-text-primary);
+}
+
+.mix-player__tracklist-items {
+  list-style: none;
+  padding: 0;
+  margin: var(--space-md) 0 0 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.mix-player__tracklist-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-sm);
+  align-items: baseline;
+  padding: var(--space-sm);
+  font-size: var(--font-size-sm);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--duration-fast) var(--ease-out);
+}
+
+.mix-player__tracklist-item:hover {
+  background-color: var(--color-neutral-50);
+}
+
+.mix-player__tracklist-position {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-tertiary);
+  min-width: 1.5rem;
+  text-align: right;
+}
+
+.mix-player__tracklist-info {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2xs);
+  align-items: baseline;
+}
+
+.mix-player__tracklist-artist {
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.mix-player__tracklist-separator {
+  color: var(--color-text-tertiary);
+  padding-inline: var(--space-2xs);
+}
+
+.mix-player__tracklist-track {
+  color: var(--color-text-secondary);
+}
+
+.mix-player__tracklist-time {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-text-tertiary);
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
 /* ==========================================
  * BADGE COMPONENT
  * ========================================== */

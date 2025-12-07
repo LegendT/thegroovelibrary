@@ -96,5 +96,34 @@
         aria-label="Audio player for {{ mix.name }}">
       </iframe>
     </div>
+
+    {# Tracklist #}
+    {% if mix.sections and mix.sections.length > 0 %}
+      <details class="mix-player__tracklist">
+        <summary class="mix-player__tracklist-summary">
+          <wa-icon name="list-music" size="sm" aria-hidden="true"></wa-icon>
+          <span>Tracklist ({{ mix.sections.length }} tracks)</span>
+        </summary>
+        <ol class="mix-player__tracklist-items" aria-label="Track listing">
+          {% for section in mix.sections %}
+            {% if section.section_type == 'track' and section.track %}
+              <li class="mix-player__tracklist-item">
+                <span class="mix-player__tracklist-position">{{ section.position }}</span>
+                <div class="mix-player__tracklist-info">
+                  <span class="mix-player__tracklist-artist">{{ section.track.artist or 'Unknown Artist' }}</span>
+                  <span class="mix-player__tracklist-separator">—</span>
+                  <span class="mix-player__tracklist-track">{{ section.track.name or 'Unknown Track' }}</span>
+                </div>
+                {% if section.start_time %}
+                  <time class="mix-player__tracklist-time" datetime="PT{{ section.start_time }}S">
+                    {{ helpers.formatDuration(section.start_time) }}
+                  </time>
+                {% endif %}
+              </li>
+            {% endif %}
+          {% endfor %}
+        </ol>
+      </details>
+    {% endif %}
   </div>
 </article>
