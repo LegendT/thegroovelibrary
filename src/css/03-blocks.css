@@ -339,7 +339,7 @@ li + li {
 @media (min-width: 960px) {
   .nav__link {
     display: inline-block;
-    padding: var(--space-xs) var(--space-md);
+    padding: 0.25rem 0.75rem;
     font-size: var(--font-size-base);
     border-radius: var(--radius-md);
   }
@@ -356,8 +356,8 @@ li + li {
     content: '';
     position: absolute;
     bottom: 0;
-    left: var(--space-md);
-    right: var(--space-md);
+    left: 0.75rem;
+    right: 0.75rem;
     height: 2px;
     background-color: var(--color-primary-500);
     transform: scaleX(0);
