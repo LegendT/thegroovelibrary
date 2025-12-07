@@ -1,0 +1,334 @@
+/**
+ * CUBE CSS Composition Layer
+ *
+ * Layout primitives that handle macro layouts and spacing.
+ * These are skeleton compositions that create flexible, reusable layouts.
+ *
+ * @see https://cube.fyi/composition.html
+ */
+
+/* ==========================================
+ * BASE LAYOUT RESET
+ * ========================================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* ==========================================
+ * CONTAINER
+ * Centered content with max-width and padding
+ * ========================================== */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin-inline: auto;
+  padding-inline: var(--container-padding);
+}
+
+/* ==========================================
+ * FLOW
+ * Consistent vertical spacing between elements
+ * ========================================== */
+
+.flow > * + * {
+  margin-block-start: var(--flow-space, 1em);
+}
+
+.flow--sm {
+  --flow-space: var(--space-sm);
+}
+
+.flow--md {
+  --flow-space: var(--space-md);
+}
+
+.flow--lg {
+  --flow-space: var(--space-lg);
+}
+
+.flow--xl {
+  --flow-space: var(--space-xl);
+}
+
+/* ==========================================
+ * REGION
+ * Vertical spacing sections with consistent padding
+ * ========================================== */
+
+.region {
+  padding-block: var(--region-space, var(--space-2xl));
+}
+
+.region--sm {
+  --region-space: var(--space-xl);
+}
+
+.region--md {
+  --region-space: var(--space-2xl);
+}
+
+.region--lg {
+  --region-space: var(--space-3xl);
+}
+
+.region--xl {
+  --region-space: var(--space-4xl);
+}
+
+/* ==========================================
+ * STACK
+ * Vertical stacking with consistent spacing
+ * ========================================== */
+
+.stack {
+  display: flex;
+  flex-direction: column;
+  gap: var(--stack-space, var(--space-md));
+}
+
+.stack--sm {
+  --stack-space: var(--space-sm);
+}
+
+.stack--md {
+  --stack-space: var(--space-md);
+}
+
+.stack--lg {
+  --stack-space: var(--space-lg);
+}
+
+.stack--xl {
+  --stack-space: var(--space-xl);
+}
+
+/* ==========================================
+ * CLUSTER
+ * Horizontal grouping with wrapping
+ * ========================================== */
+
+.cluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--cluster-space, var(--space-md));
+  align-items: var(--cluster-align, center);
+  justify-content: var(--cluster-justify, flex-start);
+}
+
+.cluster--sm {
+  --cluster-space: var(--space-sm);
+}
+
+.cluster--md {
+  --cluster-space: var(--space-md);
+}
+
+.cluster--lg {
+  --cluster-space: var(--space-lg);
+}
+
+/* ==========================================
+ * GRID
+ * Auto-fit responsive grid
+ * ========================================== */
+
+.grid {
+  display: grid;
+  gap: var(--grid-gap, var(--space-lg));
+}
+
+/* Auto-fit grid with minimum column width */
+.grid--auto {
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(min(var(--grid-min, 250px), 100%), 1fr)
+  );
+}
+
+/* Fixed column grids */
+.grid--2 {
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+}
+
+.grid--3 {
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+}
+
+.grid--4 {
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+}
+
+/* ==========================================
+ * SIDEBAR
+ * Sidebar layout with flexible content area
+ * ========================================== */
+
+.sidebar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--sidebar-gap, var(--space-lg));
+}
+
+.sidebar > :first-child {
+  flex-basis: var(--sidebar-width, 250px);
+  flex-grow: 1;
+}
+
+.sidebar > :last-child {
+  flex-basis: 0;
+  flex-grow: 999;
+  min-inline-size: var(--sidebar-content-min, 50%);
+}
+
+/* ==========================================
+ * SWITCHER
+ * Switch from horizontal to vertical layout
+ * based on available space
+ * ========================================== */
+
+.switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--switcher-gap, var(--space-lg));
+}
+
+.switcher > * {
+  flex-grow: 1;
+  flex-basis: calc((var(--switcher-threshold, 30rem) - 100%) * 999);
+}
+
+/* ==========================================
+ * CENTER
+ * Horizontally center an element
+ * ========================================== */
+
+.center {
+  box-sizing: content-box;
+  margin-inline: auto;
+  max-inline-size: var(--center-max-width, var(--max-width-lg));
+  padding-inline: var(--center-padding, var(--space-lg));
+}
+
+/* Center intrinsic elements (like images) */
+.center--intrinsic {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==========================================
+ * COVER
+ * Vertically center content with header/footer
+ * ========================================== */
+
+.cover {
+  display: flex;
+  flex-direction: column;
+  min-block-size: var(--cover-min-height, 100vh);
+  padding: var(--cover-padding, var(--space-lg));
+}
+
+.cover > * {
+  margin-block: var(--cover-space, var(--space-md));
+}
+
+.cover > :first-child:not(.cover__centered) {
+  margin-block-start: 0;
+}
+
+.cover > :last-child:not(.cover__centered) {
+  margin-block-end: 0;
+}
+
+.cover > .cover__centered {
+  margin-block: auto;
+}
+
+/* ==========================================
+ * WRAPPER
+ * Contain content to specific widths
+ * ========================================== */
+
+.wrapper {
+  max-inline-size: var(--wrapper-max-width, var(--max-width-xl));
+  margin-inline: auto;
+  padding-inline: var(--wrapper-padding, var(--space-lg));
+}
+
+.wrapper--narrow {
+  --wrapper-max-width: var(--max-width-md);
+}
+
+.wrapper--wide {
+  --wrapper-max-width: var(--max-width-2xl);
+}
+
+/* ==========================================
+ * REEL
+ * Horizontal scrolling container
+ * ========================================== */
+
+.reel {
+  display: flex;
+  gap: var(--reel-gap, var(--space-md));
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-color: var(--color-primary-500) var(--color-neutral-200);
+}
+
+.reel::-webkit-scrollbar {
+  block-size: var(--space-sm);
+}
+
+.reel::-webkit-scrollbar-track {
+  background-color: var(--color-neutral-200);
+}
+
+.reel::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+}
+
+.reel > * {
+  flex: 0 0 var(--reel-item-width, auto);
+}
+
+/* ==========================================
+ * FRAME
+ * Aspect ratio container
+ * ========================================== */
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: var(--frame-ratio, 16 / 9);
+}
+
+.frame > * {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.frame--square {
+  --frame-ratio: 1 / 1;
+}
+
+.frame--portrait {
+  --frame-ratio: 3 / 4;
+}
+
+.frame--landscape {
+  --frame-ratio: 16 / 9;
+}

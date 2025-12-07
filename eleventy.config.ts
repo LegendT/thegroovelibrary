@@ -1,0 +1,26 @@
+import { UserConfig } from "@11ty/eleventy";
+
+export default function (eleventyConfig: UserConfig) {
+  // Copy static assets
+  eleventyConfig.addPassthroughCopy("src/assets");
+  eleventyConfig.addPassthroughCopy("src/css");
+  eleventyConfig.addPassthroughCopy("src/js");
+
+  // Watch for changes in CSS and JS
+  eleventyConfig.addWatchTarget("src/css/");
+  eleventyConfig.addWatchTarget("src/js/");
+
+  // Set custom directories
+  return {
+    dir: {
+      input: "src",
+      output: "_site",
+      includes: "_includes",
+      data: "_data",
+      layouts: "_layouts"
+    },
+    templateFormats: ["html", "njk", "md", "11ty.js"],
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk"
+  };
+}

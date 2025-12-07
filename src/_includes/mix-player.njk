@@ -1,0 +1,83 @@
+{#
+  Accessible Mixcloud Player Component
+
+  Renders an individual Mixcloud cloudcast with proper accessibility attributes
+  and WCAG 2.2 compliance.
+
+  Parameters:
+  - mix: Mixcloud cloudcast object from API
+
+  Usage:
+  {% include "mix-player.njk", mix: cloudcast %}
+#}
+
+<article class="mix-player" aria-labelledby="mix-{{ mix.slug }}">
+  <div class="mix-player__info">
+    {# Mix Title #}
+    <h3 id="mix-{{ mix.slug }}" class="mix-player__title">
+      <a href="{{ mix.url }}"
+         target="_blank"
+         rel="noopener noreferrer"
+         aria-label="{{ mix.name }} - Open on Mixcloud in new window">
+        {{ mix.name }}
+        <fa-icon icon="external-link" size="sm" aria-hidden="true"></fa-icon>
+      </a>
+    </h3>
+
+    {# Mix Metadata #}
+    <div class="mix-player__meta">
+      {% if mix.created_time %}
+        <div class="cluster cluster--sm">
+          <fa-icon icon="calendar" size="sm" aria-hidden="true"></fa-icon>
+          <time datetime="{{ mix.created_time }}" aria-label="Published date">
+            {{ helpers.formatDate(mix.created_time) }}
+          </time>
+        </div>
+      {% endif %}
+
+      {% if mix.audio_length %}
+        <div class="cluster cluster--sm">
+          <fa-icon icon="clock" size="sm" aria-hidden="true"></fa-icon>
+          <span aria-label="Duration">
+            {{ helpers.formatDuration(mix.audio_length) }}
+          </span>
+        </div>
+      {% endif %}
+
+      {% if mix.play_count %}
+        <div class="cluster cluster--sm">
+          <fa-icon icon="headphones" size="sm" aria-hidden="true"></fa-icon>
+          <span aria-label="Play count">
+            {{ mix.play_count | toLocaleString }} plays
+          </span>
+        </div>
+      {% endif %}
+    </div>
+
+    {# Tags #}
+    {% if mix.tags and mix.tags.length > 0 %}
+      <div class="cluster cluster--sm" role="list" aria-label="Tags">
+        {% for tag in mix.tags | slice(0, 5) %}
+          <span class="badge badge--secondary" role="listitem">
+            {{ tag.name }}
+          </span>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+
+  {# Mixcloud Embedded Player #}
+  <div class="mix-player__embed">
+    <iframe
+      class="mix-player__iframe"
+      width="100%"
+      height="120"
+      src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
+      frameborder="0"
+      loading="lazy"
+      allow="autoplay"
+      title="Mixcloud player for {{ mix.name }}"
+      aria-label="Audio player for {{ mix.name }}">
+    </iframe>
+  </div>
+</article>

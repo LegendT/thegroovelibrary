@@ -1,0 +1,330 @@
+/**
+ * CUBE CSS Utility Layer
+ *
+ * Single-purpose utility classes for common styling needs.
+ * These follow a functional CSS approach for quick adjustments.
+ *
+ * @see https://cube.fyi/utility.html
+ */
+
+/* ==========================================
+ * ACCESSIBILITY UTILITIES
+ * ========================================== */
+
+/* Visually hidden but accessible to screen readers */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  top: var(--space-sm);
+  left: var(--space-sm);
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-primary-500);
+  color: var(--color-text-inverse);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  z-index: var(--z-index-tooltip);
+  transform: translateY(-200%);
+  transition: transform var(--duration-fast) var(--ease-out);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+/* ==========================================
+ * TEXT UTILITIES
+ * ========================================== */
+
+/* Text Alignment */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+/* Text Transform */
+.text-uppercase { text-transform: uppercase; }
+.text-lowercase { text-transform: lowercase; }
+.text-capitalize { text-transform: capitalize; }
+
+/* Text Decoration */
+.text-underline { text-decoration: underline; }
+.text-no-underline { text-decoration: none; }
+
+/* Text Weight */
+.text-light { font-weight: var(--font-weight-light); }
+.text-normal { font-weight: var(--font-weight-normal); }
+.text-medium { font-weight: var(--font-weight-medium); }
+.text-semibold { font-weight: var(--font-weight-semibold); }
+.text-bold { font-weight: var(--font-weight-bold); }
+
+/* Text Size */
+.text-xs { font-size: var(--font-size-xs); }
+.text-sm { font-size: var(--font-size-sm); }
+.text-base { font-size: var(--font-size-base); }
+.text-md { font-size: var(--font-size-md); }
+.text-lg { font-size: var(--font-size-lg); }
+.text-xl { font-size: var(--font-size-xl); }
+.text-2xl { font-size: var(--font-size-2xl); }
+.text-3xl { font-size: var(--font-size-3xl); }
+.text-4xl { font-size: var(--font-size-4xl); }
+
+/* Text Colors */
+.text-primary { color: var(--color-text-primary); }
+.text-secondary { color: var(--color-text-secondary); }
+.text-tertiary { color: var(--color-text-tertiary); }
+.text-inverse { color: var(--color-text-inverse); }
+.text-brand { color: var(--color-primary-500); }
+.text-accent { color: var(--color-secondary-500); }
+
+/* ==========================================
+ * BACKGROUND UTILITIES
+ * ========================================== */
+
+.bg-primary { background-color: var(--color-surface-primary); }
+.bg-secondary { background-color: var(--color-surface-secondary); }
+.bg-tertiary { background-color: var(--color-surface-tertiary); }
+.bg-inverse { background-color: var(--color-surface-inverse); }
+.bg-brand { background-color: var(--color-primary-500); }
+.bg-accent { background-color: var(--color-secondary-500); }
+.bg-transparent { background-color: transparent; }
+
+/* ==========================================
+ * SPACING UTILITIES
+ * ========================================== */
+
+/* Padding */
+.p-0 { padding: 0; }
+.p-xs { padding: var(--space-xs); }
+.p-sm { padding: var(--space-sm); }
+.p-md { padding: var(--space-md); }
+.p-lg { padding: var(--space-lg); }
+.p-xl { padding: var(--space-xl); }
+.p-2xl { padding: var(--space-2xl); }
+
+/* Padding Inline (horizontal) */
+.px-0 { padding-inline: 0; }
+.px-xs { padding-inline: var(--space-xs); }
+.px-sm { padding-inline: var(--space-sm); }
+.px-md { padding-inline: var(--space-md); }
+.px-lg { padding-inline: var(--space-lg); }
+.px-xl { padding-inline: var(--space-xl); }
+.px-2xl { padding-inline: var(--space-2xl); }
+
+/* Padding Block (vertical) */
+.py-0 { padding-block: 0; }
+.py-xs { padding-block: var(--space-xs); }
+.py-sm { padding-block: var(--space-sm); }
+.py-md { padding-block: var(--space-md); }
+.py-lg { padding-block: var(--space-lg); }
+.py-xl { padding-block: var(--space-xl); }
+.py-2xl { padding-block: var(--space-2xl); }
+
+/* Margin */
+.m-0 { margin: 0; }
+.m-auto { margin: auto; }
+.m-xs { margin: var(--space-xs); }
+.m-sm { margin: var(--space-sm); }
+.m-md { margin: var(--space-md); }
+.m-lg { margin: var(--space-lg); }
+.m-xl { margin: var(--space-xl); }
+.m-2xl { margin: var(--space-2xl); }
+
+/* Margin Inline (horizontal) */
+.mx-auto { margin-inline: auto; }
+.mx-0 { margin-inline: 0; }
+.mx-xs { margin-inline: var(--space-xs); }
+.mx-sm { margin-inline: var(--space-sm); }
+.mx-md { margin-inline: var(--space-md); }
+.mx-lg { margin-inline: var(--space-lg); }
+.mx-xl { margin-inline: var(--space-xl); }
+
+/* Margin Block (vertical) */
+.my-0 { margin-block: 0; }
+.my-xs { margin-block: var(--space-xs); }
+.my-sm { margin-block: var(--space-sm); }
+.my-md { margin-block: var(--space-md); }
+.my-lg { margin-block: var(--space-lg); }
+.my-xl { margin-block: var(--space-xl); }
+
+/* Gap */
+.gap-xs { gap: var(--space-xs); }
+.gap-sm { gap: var(--space-sm); }
+.gap-md { gap: var(--space-md); }
+.gap-lg { gap: var(--space-lg); }
+.gap-xl { gap: var(--space-xl); }
+
+/* ==========================================
+ * DISPLAY UTILITIES
+ * ========================================== */
+
+.block { display: block; }
+.inline-block { display: inline-block; }
+.inline { display: inline; }
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.grid { display: grid; }
+.hidden { display: none; }
+
+/* ==========================================
+ * FLEXBOX UTILITIES
+ * ========================================== */
+
+.flex-row { flex-direction: row; }
+.flex-col { flex-direction: column; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+.justify-around { justify-content: space-around; }
+
+/* ==========================================
+ * BORDER UTILITIES
+ * ========================================== */
+
+.border { border: var(--border-width-thin) solid var(--border-color-default); }
+.border-light { border-color: var(--border-color-light); }
+.border-dark { border-color: var(--border-color-dark); }
+
+.rounded-none { border-radius: var(--radius-none); }
+.rounded-sm { border-radius: var(--radius-sm); }
+.rounded-md { border-radius: var(--radius-md); }
+.rounded-lg { border-radius: var(--radius-lg); }
+.rounded-xl { border-radius: var(--radius-xl); }
+.rounded-full { border-radius: var(--radius-full); }
+
+/* ==========================================
+ * SHADOW UTILITIES
+ * ========================================== */
+
+.shadow-xs { box-shadow: var(--shadow-xs); }
+.shadow-sm { box-shadow: var(--shadow-sm); }
+.shadow-md { box-shadow: var(--shadow-md); }
+.shadow-lg { box-shadow: var(--shadow-lg); }
+.shadow-xl { box-shadow: var(--shadow-xl); }
+.shadow-2xl { box-shadow: var(--shadow-2xl); }
+.shadow-none { box-shadow: none; }
+
+/* ==========================================
+ * WIDTH UTILITIES
+ * ========================================== */
+
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+.w-fit { width: fit-content; }
+
+/* ==========================================
+ * HEIGHT UTILITIES
+ * ========================================== */
+
+.h-full { height: 100%; }
+.h-auto { height: auto; }
+.h-screen { height: 100vh; }
+
+/* ==========================================
+ * POSITION UTILITIES
+ * ========================================== */
+
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+
+/* ==========================================
+ * OVERFLOW UTILITIES
+ * ========================================== */
+
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-visible { overflow: visible; }
+
+/* ==========================================
+ * FOCUS UTILITIES
+ * WCAG 2.2 compliant focus indicators
+ * ========================================== */
+
+.focus-visible:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* Remove default outline when using custom focus */
+.focus-ring:focus {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* ==========================================
+ * INTERACTION UTILITIES
+ * ========================================== */
+
+.pointer-events-none { pointer-events: none; }
+.pointer-events-auto { pointer-events: auto; }
+
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+
+/* ==========================================
+ * ANIMATION UTILITIES
+ * ========================================== */
+
+.transition {
+  transition-property: all;
+  transition-duration: var(--duration-normal);
+  transition-timing-function: var(--ease-in-out);
+}
+
+.transition-fast {
+  transition-duration: var(--duration-fast);
+}
+
+.transition-slow {
+  transition-duration: var(--duration-slow);
+}
+
+/* ==========================================
+ * RESPONSIVE UTILITIES
+ * Show/hide at different breakpoints
+ * ========================================== */
+
+@media (max-width: 767px) {
+  .hide-mobile { display: none; }
+}
+
+@media (min-width: 768px) {
+  .hide-tablet { display: none; }
+  .show-mobile { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .hide-desktop { display: none; }
+}
+
+/* ==========================================
+ * PRINT UTILITIES
+ * ========================================== */
+
+@media print {
+  .print-hidden { display: none; }
+  .print-block { display: block; }
+}

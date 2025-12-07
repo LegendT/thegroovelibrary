@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  {# SEO Meta Tags #}
+  <title>{{ title }} | The Groove Library</title>
+  <meta name="description" content="{{ description or 'A vibrant showcase of global music from Mixcloud - featuring legendary mixes from around the world.' }}">
+
+  {# Open Graph / Social Media #}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }} | The Groove Library">
+  <meta property="og:description" content="{{ description or 'A vibrant showcase of global music from Mixcloud' }}">
+  <meta property="og:site_name" content="The Groove Library">
+
+  {# Twitter Card #}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ title }} | The Groove Library">
+  <meta name="twitter:description" content="{{ description or 'A vibrant showcase of global music from Mixcloud' }}">
+
+  {# Theme Color #}
+  <meta name="theme-color" content="#f9a837">
+
+  {# Favicon - placeholder for now #}
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
+
+  {# Main Stylesheet - CUBE CSS Architecture #}
+  <link rel="stylesheet" href="/css/main.css">
+
+  {# Web Awesome Components - Modern Web Components Library #}
+  <script type="module" src="/js/web-awesome.js"></script>
+</head>
+<body>
+  {# Skip to main content link for keyboard navigation (WCAG 2.2) #}
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  {# Site Header #}
+  <header class="site-header" role="banner">
+    <div class="container">
+      <div class="site-header__inner">
+        <a href="/" class="site-logo" aria-label="The Groove Library - Home">
+          <fa-icon icon="record-vinyl" size="2x" aria-hidden="true"></fa-icon>
+          <span>The Groove Library</span>
+        </a>
+
+        <nav class="nav" role="navigation" aria-label="Main navigation">
+          <ul class="nav__list">
+            <li>
+              <a href="/" class="nav__link {{ 'nav__link--active' if page.url == '/' }}" {{ 'aria-current="page"' if page.url == '/' }}>
+                Home
+              </a>
+            </li>
+            <li>
+              <a href="/about/" class="nav__link {{ 'nav__link--active' if page.url == '/about/' }}">
+                About
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  {# Main Content Area #}
+  <main id="main-content" role="main" tabindex="-1">
+    {{ content | safe }}
+  </main>
+
+  {# Site Footer #}
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="flow flow--lg">
+        <div class="cluster cluster--lg">
+          <div class="stack stack--md">
+            <h2 class="text-xl">The Groove Library</h2>
+            <p>Celebrating global music, one mix at a time.</p>
+          </div>
+        </div>
+
+        <div class="flow flow--sm">
+          <p class="text-sm">
+            <small>
+              Music sourced from
+              <a href="https://www.mixcloud.com/legendarymusic/"
+                 target="_blank"
+                 rel="noopener noreferrer"
+                 aria-label="Legendary Music on Mixcloud (opens in new window)">
+                Legendary Music on Mixcloud
+                <fa-icon icon="arrow-up-right-from-square" size="xs" aria-hidden="true"></fa-icon>
+              </a>
+            </small>
+          </p>
+          <p class="text-sm">
+            <small>
+              &copy; {{ helpers.currentYear() }} The Groove Library.
+              Built with <a href="https://www.11ty.dev/" target="_blank" rel="noopener noreferrer">Eleventy</a>,
+              <a href="https://webawesome.com/" target="_blank" rel="noopener noreferrer">Web Awesome</a>,
+              and <a href="https://cube.fyi/" target="_blank" rel="noopener noreferrer">CUBE CSS</a>.
+            </small>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  {# Accessibility: Announce page changes to screen readers #}
+  <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+</body>
+</html>
