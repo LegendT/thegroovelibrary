@@ -106,13 +106,6 @@ p {
   margin-block-start: var(--space-sm);
 }
 
-/* First paragraph gets larger, bolder treatment */
-.wrapper > p:first-of-type {
-  font-size: var(--font-size-2xl);
-  font-weight: var(--font-weight-semibold);
-  line-height: var(--line-height-snug);
-}
-
 a {
   color: var(--color-text-link);
   text-decoration: underline;
