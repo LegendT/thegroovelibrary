@@ -16,8 +16,7 @@
   },
   "include": [
     "src/**/*",
-    "_data/**/*",
-    "eleventy.config.ts"
+    "_data/**/*"
   ],
   "exclude": [
     "node_modules",
