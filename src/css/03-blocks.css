@@ -312,10 +312,12 @@ li + li {
     align-items: center;
     gap: var(--space-md);
     padding: 0;
+    margin: 0;
   }
 
   .nav__item {
     border: none;
+    margin: 0;
   }
 
   .site-logo__text {
