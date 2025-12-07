@@ -3,11 +3,14 @@
  * @see https://www.11ty.dev/docs/config/
  */
 
+import sitemap from "@quasibit/eleventy-plugin-sitemap";
+
 export default function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
 
   // Watch for changes in CSS and JS
   eleventyConfig.addWatchTarget("src/css/");
@@ -19,6 +22,26 @@ export default function (eleventyConfig) {
       return value.toLocaleString('en-US');
     }
     return value;
+  });
+
+  // Add filter to convert structured data to JSON-LD
+  eleventyConfig.addFilter("toJSONLD", function(schemas) {
+    if (!Array.isArray(schemas)) {
+      schemas = [schemas];
+    }
+    return schemas
+      .map(schema => {
+        const jsonString = JSON.stringify(schema, null, 0);
+        return `<script type="application/ld+json">${jsonString}</script>`;
+      })
+      .join('\n  ');
+  });
+
+  // Add sitemap plugin
+  eleventyConfig.addPlugin(sitemap, {
+    sitemap: {
+      hostname: "https://thegroovelibrary.net",
+    },
   });
 
   // Set custom directories

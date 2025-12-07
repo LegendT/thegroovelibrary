@@ -15,6 +15,51 @@ description: >
   </ul>
 
   <p>Only the groove — shared, studied, celebrated and passed forward.</p>
+structuredData:
+  - "@context": "https://schema.org"
+    "@type": "WebSite"
+    "@id": "https://thegroovelibrary.net/#website"
+    url: "https://thegroovelibrary.net/"
+    name: "The Groove Library"
+    description: "A vibrant showcase of global music from Mixcloud - featuring legendary mixes from around the world."
+    inLanguage: "en-US"
+    publisher:
+      "@type": "Organization"
+      "@id": "https://thegroovelibrary.net/#organization"
+    potentialAction:
+      "@type": "SearchAction"
+      target:
+        "@type": "EntryPoint"
+        urlTemplate: "https://thegroovelibrary.net/?s={search_term_string}"
+      query-input: "required name=search_term_string"
+  - "@context": "https://schema.org"
+    "@type": "Organization"
+    "@id": "https://thegroovelibrary.net/#organization"
+    name: "The Groove Library"
+    url: "https://thegroovelibrary.net/"
+    logo:
+      "@type": "ImageObject"
+      url: "https://thegroovelibrary.net/assets/logo.svg"
+      width: "512"
+      height: "512"
+    image:
+      "@type": "ImageObject"
+      url: "https://thegroovelibrary.net/assets/og-default.jpg"
+      width: "1200"
+      height: "630"
+    description: "The Groove Library exists to explore rhythm as a global language. Curating music from around the world through DJ mixes, live streams, and communal listening parties."
+    email: "legendarytone@gmail.com"
+    sameAs:
+      - "https://www.mixcloud.com/legendarymusic/"
+    founder:
+      "@type": "Person"
+      name: "Anthony George"
+  - "@context": "https://schema.org"
+    "@type": "CollectionPage"
+    "@id": "https://thegroovelibrary.net/"
+    name: "The Groove Library - Home"
+    description: "The Groove Library exists to explore rhythm as a global language."
+    url: "https://thegroovelibrary.net/"
 ---
 
 {# Hero Section #}

@@ -1,0 +1,42 @@
+# Robots.txt for The Groove Library
+# Updated: December 2024
+
+# Allow all major search engines
+User-agent: *
+Allow: /
+
+# Explicitly allow LLM/AI crawlers for content discovery
+# OpenAI GPT
+User-agent: GPTBot
+Allow: /
+
+# Anthropic Claude
+User-agent: ClaudeBot
+Allow: /
+
+# Google Extended (for AI training)
+User-agent: Google-Extended
+Allow: /
+
+# ChatGPT User Agent
+User-agent: ChatGPT-User
+Allow: /
+
+# Common Crawl (used by many AI systems)
+User-agent: CCBot
+Allow: /
+
+# Perplexity AI
+User-agent: PerplexityBot
+Allow: /
+
+# Cohere
+User-agent: cohere-ai
+Allow: /
+
+# Sitemap location
+Sitemap: https://thegroovelibrary.net/sitemap.xml
+
+# Contact
+# Website: https://thegroovelibrary.net
+# Email: legendarytone@gmail.com
