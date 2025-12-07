@@ -372,11 +372,12 @@ li + li {
 .nav__link--active {
   color: var(--color-primary-700);
   background-color: var(--color-primary-100);
-  font-weight: var(--font-weight-semibold);
 }
 
-.nav__link--active::after {
-  transform: scaleX(1);
+@media (min-width: 960px) {
+  .nav__link--active::after {
+    transform: scaleX(1);
+  }
 }
 
 /* ==========================================
