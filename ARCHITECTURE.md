@@ -188,12 +188,15 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 ### Includes ([src/_includes/](src/_includes/))
 
 **mix-player.njk**: Reusable Mixcloud player component
-- Accessible article structure
+- Accessible article structure with proper BEM naming
 - ARIA labels for screen readers
 - Lazy-loaded iframe (performance)
+- Cover image with hover effects
 - Metadata display (date, duration, plays)
-- Tag badges
+- Tag badges with vintage styling
 - External link indicators
+- Grid-optimized card layout with flexbox structure
+- Responsive image handling with fallback states
 
 ### Pages
 
@@ -211,19 +214,22 @@ description: >
 ```
 
 **index.njk**: Homepage
-- Hero section with branding
+- Hero section with gradient background, white logo, and icon decorations
 - Description section (HTML from front matter)
-- Mix grid (responsive auto-fit)
-- Error/empty states
-- About section
+- Mix collection section with count badge
+- Mix grid using `grid--2` class (responsive 2-column layout with 48px gaps)
+- Error/empty states with icons and helpful messaging
+- About section with brand-colored icons
 - Uses `theGrooveLibrary` data
 
 **Playlist Pages** (e.g., easton-chop-up.njk):
 - Generated via `npm run create-playlist` script
-- Hero with playlist title
-- HTML description section
-- Mix grid using playlist-specific data
-- Follows consistent template pattern
+- Hero section with gradient background and icon decorations
+- HTML description section in dedicated region
+- Mix collection section with heading and metadata badge
+- Mix grid using `grid--2` class (consistent with homepage)
+- Error/empty states matching homepage pattern
+- Follows consistent template pattern with semantic sections
 
 ## Accessibility Architecture
 
@@ -317,15 +323,25 @@ description: >
 ## Design System
 
 ### Color System
-- Primary: Orange (#f9a837) - Vibrant, musical
-- Secondary: Blue (#3facca) - Global, rhythmic
-- Neutral: Gray scale
-- Semantic: Success, warning, error, info
+
+**Vintage Warm Aesthetic**:
+- Primary: Warm Orange/Gold (#f27916) - Main brand color inspired by album artwork
+- Secondary: Deep Brown/Rust (#a8723f) - Vintage texture
+- Accent: Teal/Turquoise (#3aa49b) - Vintage poster feel
+- Neutral: Warm grays with vintage feel
+
+**Design Philosophy**:
+- Inspired by vintage album artwork and music posters
+- Warm, inviting palette that evokes analog music culture
+- Grid-focused layout with generous spacing
+- Hero sections use gradient backgrounds (orange to brown)
+- White logo on gradient backgrounds for strong contrast
 
 **Accessibility**:
-- All combinations tested for WCAG AA
+- All combinations tested for WCAG AA compliance (4.5:1 for normal text, 3:1 for large)
 - Automatic dark mode with `prefers-color-scheme`
 - High contrast mode support
+- Logo inverted to white on colored backgrounds for optimal visibility
 
 ### Typography
 - System font stack (no web fonts for performance)

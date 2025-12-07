@@ -254,9 +254,9 @@ li + li {
 }
 
 .hero-logo__image {
-  width: 8rem;
-  height: 8rem;
-  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+  width: 10rem;
+  height: 10rem;
+  filter: brightness(0) invert(1) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.3));
 }
 
 /* ==========================================
@@ -416,6 +416,12 @@ li + li {
   background-color: var(--color-neutral-200);
   color: var(--color-neutral-800);
   border-color: var(--color-neutral-400);
+}
+
+.badge--secondary {
+  background-color: var(--color-secondary-100);
+  color: var(--color-secondary-800);
+  border-color: var(--color-secondary-300);
 }
 
 /* ==========================================

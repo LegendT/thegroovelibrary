@@ -4,7 +4,7 @@ title: Home
 description: >
   <p>The Groove Library exists to explore rhythm as a global language.</p>
 
-  <p>Born from a decade of Afro-centric digging under the name <a href="/easton-chop-up">Easton Chop Up</a>, The Groove Library expands the lens — reaching across borders, eras and genres to document music built for movement, meaning and connection.</p>
+  <p>Born from a decade of Afro-centric digging under the name <a href="https://www.mixcloud.com/legendarymusic/playlists/easton-chop-up/" target="_blank">Easton Chop Up</a>, The Groove Library expands the lens — reaching across borders, eras and genres to document music built for movement, meaning and connection.</p>
 
   <p>Through DJ mixes, live streams, guest selectors, album deep-dives and communal listening parties, The Groove Library curates sound as both archive and experience. It is a space for dancers, listeners, collectors and the curious — equally at home in ritual, roots, club systems and future experiments.</p>
 
@@ -70,6 +70,12 @@ description: >
               <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
               {{ theGrooveLibrary.count }} mixes in this playlist
             </span>
+            {% if theGrooveLibrary.fetchedAt %}
+              <span class="badge badge--neutral">
+                <fa-icon icon="clock" size="sm" aria-hidden="true"></fa-icon>
+                Updated {{ helpers.formatDate(theGrooveLibrary.fetchedAt) }}
+              </span>
+            {% endif %}
           </div>
         {% endif %}
       </div>

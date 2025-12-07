@@ -175,6 +175,12 @@ Add the script to `src/_layouts/base.njk` before `</body>`.
 - [x] CamelCase data file naming convention
 - [x] Separate playlist data files for better organization
 - [x] Image fallback handler for broken images
+- [x] Vintage warm aesthetic design system
+- [x] Grid-optimized layout with proper spacing (grid--2 class)
+- [x] Logo contrast optimization (white inverted on gradient backgrounds)
+- [x] Consistent hero sections with gradient backgrounds
+- [x] Mix player component with proper BEM naming
+- [x] Responsive 2-column grid layout for mix cards
 
 ## Future Enhancements
 

@@ -5,9 +5,11 @@ A vibrant, accessible music showcase featuring global mixes from Mixcloud. Built
 ## Features
 
 - **Global Music Discovery**: Curated mixes from Mixcloud featuring music from around the world
+- **Vintage Warm Aesthetic**: Design inspired by album artwork with warm color palette and grid-focused layout
 - **WCAG 2.2 AA Compliant**: Fully accessible with proper semantic HTML, ARIA labels, and keyboard navigation
 - **Modern Development Stack**: Built with Eleventy, TypeScript, and Web Awesome components
-- **Design System**: CUBE CSS architecture with documented design tokens
+- **Design System**: CUBE CSS architecture with vintage warm aesthetic and documented design tokens
+- **Responsive Grid Layout**: 2-column mix player cards with generous spacing (48px gaps)
 - **Performance Optimized**: Static site generation with build-time API calls
 - **Auto-updating**: Scheduled Netlify builds to keep content fresh
 
@@ -127,28 +129,44 @@ The Groove Library uses **CUBE CSS** (Composition, Utility, Block, Exception) me
 
 ### Design Tokens ([src/css/00-config.css](src/css/00-config.css))
 
-- **Colors**: WCAG AA compliant color palette with automatic dark mode support
-- **Typography**: Modular scale (1.25 ratio) with accessible font sizes
-- **Spacing**: 8px grid system
-- **Shadows**: Elevation system for depth
-- **Transitions**: Consistent animation timings
+- **Colors**: Vintage warm palette inspired by album artwork
+  - Primary: Warm Orange/Gold (#f27916)
+  - Secondary: Deep Brown/Rust (#a8723f)
+  - Accent: Teal/Turquoise (#3aa49b)
+  - All colors WCAG AA compliant with automatic dark mode support
+- **Typography**: Modular scale (1.2 - Minor Third) with accessible font sizes
+  - Display: Playfair Display (serif)
+  - Body: Inter (sans-serif)
+- **Spacing**: 8px grid system with generous gaps
+- **Shadows**: Warm-toned elevation system for depth
+- **Transitions**: Consistent animation timings with easing
+- **Vintage Effects**: Texture overlays and gradient backgrounds
 
 ### Layout Primitives ([src/css/01-composition.css](src/css/01-composition.css))
 
 Reusable layout components:
-- `.container` - Centered content with max-width
+- `.container` - Centered content with max-width (1536px)
 - `.flow` - Consistent vertical rhythm
-- `.grid` - Responsive auto-fit grid
+- `.grid` - Responsive grid system
+  - `.grid--2` - 2-column layout (420px min, 48px gaps)
+  - `.grid--3` - 3-column layout (320px min, 32px gaps)
+  - `.grid--4` - 4-column layout (280px min, 24px gaps)
 - `.stack` - Vertical stacking
 - `.cluster` - Horizontal grouping with wrapping
+- `.region` - Vertical section spacing
+- `.wrapper` - Content width constraints
 - More layout primitives available
 
 ### Component Styles ([src/css/03-blocks.css](src/css/03-blocks.css))
 
-- `.mix-player` - Accessible Mixcloud embed
-- `.button` - Interactive buttons
-- `.card` - Content cards
-- `.site-header` / `.site-footer` - Layout blocks
+- `.mix-player` - Grid-optimized Mixcloud player cards
+  - Cover image with hover effects
+  - Metadata display with icons
+  - Tag badges with vintage styling
+  - Embedded player with proper spacing
+- `.hero-logo` - White inverted logo for gradient backgrounds
+- `.badge` - Metadata badges (primary and neutral variants)
+- `.site-header` / `.site-footer` - Layout blocks with vintage styling
 
 ## Accessibility
 
@@ -256,6 +274,10 @@ This is currently a personal project, but suggestions and feedback are welcome v
 - [x] HTML description support in front matter
 - [x] PNG logo versions for PWA/favicons
 - [x] Content Security Policy configured for Web Awesome and Mixcloud
+- [x] Vintage warm aesthetic with grid-focused layout
+- [x] Responsive 2-column mix player grid
+- [x] Logo contrast optimization (white on gradient backgrounds)
+- [x] Consistent hero sections across all pages
 - [ ] Set up Storybook for design system documentation
 - [ ] Add more page templates (About, individual mix pages)
 - [ ] Implement search and filtering

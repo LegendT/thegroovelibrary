@@ -70,6 +70,12 @@ description: >
               <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
               {{ theGrooveLibrary.count }} mixes in this playlist
             </span>
+            {% if theGrooveLibrary.fetchedAt %}
+              <span class="badge badge--neutral">
+                <fa-icon icon="clock" size="sm" aria-hidden="true"></fa-icon>
+                Updated {{ helpers.formatDate(theGrooveLibrary.fetchedAt) }}
+              </span>
+            {% endif %}
           </div>
         {% endif %}
       </div>

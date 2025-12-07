@@ -156,15 +156,18 @@
 
 /* Responsive column grids - optimized for mix cards */
 .grid--2 {
-  grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+  gap: var(--space-2xl);
 }
 
 .grid--3 {
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+  gap: var(--space-xl);
 }
 
 .grid--4 {
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+  gap: var(--space-lg);
 }
 
 /* Masonry-style grid for varied content heights */
