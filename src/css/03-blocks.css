@@ -86,10 +86,29 @@ p {
   max-inline-size: 65ch;
 }
 
-/* Description sections - larger, more readable text */
+/* Description sections - cascading typography scale */
+.wrapper {
+  font-size: var(--font-size-md);
+  line-height: var(--line-height-relaxed);
+}
+
+.wrapper > p:first-of-type {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-medium);
+  line-height: var(--line-height-snug);
+}
+
 .wrapper p {
   font-size: var(--font-size-lg);
-  line-height: var(--line-height-relaxed);
+}
+
+.wrapper ul,
+.wrapper ol {
+  font-size: var(--font-size-md);
+}
+
+.wrapper li {
+  line-height: var(--line-height-normal);
 }
 
 a {
