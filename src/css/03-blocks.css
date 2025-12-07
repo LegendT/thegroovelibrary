@@ -852,6 +852,7 @@ li + li {
 .text-2xl { font-size: var(--font-size-2xl); }
 .text-3xl { font-size: var(--font-size-3xl); }
 .text-4xl { font-size: var(--font-size-4xl); }
+.text-5xl { font-size: var(--font-size-5xl); }
 
 /* Spacing utilities */
 .my-sm { margin-block: var(--space-sm); }
@@ -869,4 +870,211 @@ li + li {
 
 .cursor-pointer {
   cursor: pointer;
+}
+
+.opacity-75 {
+  opacity: 0.75;
+}
+
+.opacity-90 {
+  opacity: 0.9;
+}
+
+/* ==========================================
+ * 404 ERROR PAGE
+ * Funny, accessible 404 page with music theme
+ * ========================================== */
+
+/* Spinning vinyl record animation */
+.error-vinyl {
+  animation: spin-vinyl 8s linear infinite;
+}
+
+@keyframes spin-vinyl {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .error-vinyl {
+    animation: none;
+  }
+}
+
+/* Suggestions box */
+.error-suggestions {
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  backdrop-filter: blur(10px);
+}
+
+/* Error list with icons */
+.error-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: left;
+  max-width: 600px;
+  margin-inline: auto;
+}
+
+.error-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-sm) 0;
+}
+
+.error-list li wa-icon {
+  flex-shrink: 0;
+  margin-top: 0.2em;
+}
+
+/* Fun fact box */
+.error-funfact {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: var(--radius-md);
+  padding: var(--space-md);
+  max-width: 700px;
+  margin-inline: auto;
+}
+
+.error-funfact p {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  align-items: center;
+}
+
+/* Navigation cards */
+.error-nav-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-md);
+  padding: var(--space-xl);
+  background: var(--color-surface);
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition-base);
+  position: relative;
+  overflow: hidden;
+}
+
+.error-nav-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-hero);
+  opacity: 0;
+  transition: opacity var(--transition-base);
+  z-index: 0;
+}
+
+.error-nav-card:hover,
+.error-nav-card:focus {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: var(--color-primary-500);
+}
+
+.error-nav-card:hover::before,
+.error-nav-card:focus::before {
+  opacity: 0.1;
+}
+
+.error-nav-card__icon,
+.error-nav-card__title,
+.error-nav-card__arrow {
+  position: relative;
+  z-index: 1;
+}
+
+.error-nav-card__icon {
+  color: var(--color-primary-500);
+  transition: transform var(--transition-base);
+}
+
+.error-nav-card:hover .error-nav-card__icon,
+.error-nav-card:focus .error-nav-card__icon {
+  transform: scale(1.1) rotate(15deg);
+}
+
+.error-nav-card__title {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+  margin: 0;
+  color: var(--color-text);
+}
+
+.error-nav-card__arrow {
+  color: var(--color-primary-500);
+  transition: transform var(--transition-base);
+}
+
+.error-nav-card:hover .error-nav-card__arrow,
+.error-nav-card:focus .error-nav-card__arrow {
+  transform: translateX(4px);
+}
+
+/* ==========================================
+ * BUTTONS
+ * Primary and secondary button styles
+ * ========================================== */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-lg);
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  text-decoration: none;
+  border-radius: var(--radius-md);
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all var(--transition-base);
+  line-height: 1.5;
+}
+
+.button:focus {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 2px;
+}
+
+.button--primary {
+  background: var(--color-surface);
+  color: var(--color-primary-500);
+  border-color: var(--color-surface);
+}
+
+.button--primary:hover,
+.button--primary:focus {
+  background: var(--color-primary-50);
+  border-color: var(--color-primary-500);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.button--secondary {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--color-text-inverse);
+  border-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(10px);
+}
+
+.button--secondary:hover,
+.button--secondary:focus {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }

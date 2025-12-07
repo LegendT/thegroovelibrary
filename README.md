@@ -288,7 +288,7 @@ This is currently a personal project, but suggestions and feedback are welcome v
 - [ ] Implement search and filtering
 - [ ] Add animations and micro-interactions
 - [ ] Add social sharing features
-- [ ] Create custom 404 page
+- [x] Create custom 404 page
 - [ ] Add site analytics (privacy-focused)
 
 ---

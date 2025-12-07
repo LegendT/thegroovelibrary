@@ -1,0 +1,99 @@
+---
+layout: base.njk
+title: "404: Lost in the Crates | The Groove Library"
+description: "Looks like this record skipped off the turntable. The page you're looking for can't be found."
+permalink: /404.html
+---
+
+{# Hero Section #}
+<section class="region region--xl bg-brand" aria-labelledby="error-heading">
+  <div class="container">
+    <div class="center center--intrinsic flow flow--xl text-center">
+      {# Animated vinyl record icon #}
+      <div class="error-vinyl" aria-hidden="true">
+        <wa-icon name="record-vinyl" size="6x" class="text-inverse"></wa-icon>
+      </div>
+
+      <div class="flow flow--lg">
+        <div class="flow flow--sm">
+          <h1 id="error-heading" class="text-5xl text-inverse">
+            404: Lost in the Crates
+          </h1>
+          <p class="text-2xl text-inverse">
+            Looks like this record skipped off the turntable
+          </p>
+        </div>
+
+        <p class="text-lg text-inverse opacity-90">
+          We've been digging through the entire collection, but this page is nowhere to be found. <br>
+          It might have been sampled, scratched out, or never pressed in the first place.
+        </p>
+
+        {# Funny music-themed suggestions #}
+        <div class="error-suggestions flow flow--md">
+          <p class="text-semibold text-inverse">While you're here, why not:</p>
+          <ul class="error-list text-inverse">
+            <li>
+              <wa-icon name="vinyl" size="sm" aria-hidden="true"></wa-icon>
+              Check if you spelled the URL correctly (no auto-tune for typos)
+            </li>
+            <li>
+              <wa-icon name="compact-disc" size="sm" aria-hidden="true"></wa-icon>
+              Head back to the homepage and start fresh
+            </li>
+            <li>
+              <wa-icon name="cassette-tape" size="sm" aria-hidden="true"></wa-icon>
+              Browse our collection instead of searching for lost grooves
+            </li>
+          </ul>
+        </div>
+
+        {# Navigation buttons #}
+        <div class="cluster cluster--lg justify-center">
+          <a href="/" class="button button--primary">
+            <wa-icon name="house" size="sm" aria-hidden="true"></wa-icon>
+            Back to Homepage
+          </a>
+          <a href="/easton-chop-up/" class="button button--secondary">
+            <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
+            Browse Easton Chop Up
+          </a>
+        </div>
+
+        {# Fun fact #}
+        <div class="error-funfact">
+          <p class="text-sm text-inverse opacity-75">
+            <wa-icon name="lightbulb" size="sm" aria-hidden="true"></wa-icon>
+            <em>Fun fact: 404 errors are named after room 404 at CERN, where the web was born. <br>
+            No one knows what happened to room 404. It's probably on a 404 page too.</em>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Alternative navigation section #}
+<section class="region region--lg" aria-labelledby="nav-heading">
+  <div class="container">
+    <div class="wrapper wrapper--narrow flow flow--xl text-center">
+      <h2 id="nav-heading" class="text-3xl">
+        Or explore these sections
+      </h2>
+
+      <div class="grid grid--2">
+        {% for page in navigation.pages %}
+          <a href="{{ page.url }}" class="error-nav-card">
+            <div class="error-nav-card__icon">
+              <wa-icon name="record-vinyl" size="2x" aria-hidden="true"></wa-icon>
+            </div>
+            <h3 class="error-nav-card__title">{{ page.title }}</h3>
+            <p class="error-nav-card__arrow">
+              <wa-icon name="arrow-right" size="sm" aria-hidden="true"></wa-icon>
+            </p>
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
