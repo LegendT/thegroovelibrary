@@ -86,18 +86,26 @@ function createPageFile(pageSlug, playlistName, dataVarName, pageDescription) {
   const pageContent = `---
 layout: base.njk
 title: "${playlistName} | The Groove Library"
-description: "${pageDescription}"
+description: >
+  ${pageDescription}
 playlist: "${pageSlug}"
 ---
 
 <div class="hero">
   <div class="container">
     <h1 class="hero__title">${playlistName}</h1>
-    <p class="hero__subtitle">${pageDescription}</p>
   </div>
 </div>
 
 <main class="container flow">
+  {# Description #}
+  {% if description %}
+    <div class="wrapper wrapper--narrow flow">
+      {{ description | safe }}
+    </div>
+  {% endif %}
+
+  {# Mix Grid #}
   {% if ${dataVarName}.cloudcasts.length > 0 %}
     <div class="mix-grid">
       {% for mix in ${dataVarName}.cloudcasts %}
