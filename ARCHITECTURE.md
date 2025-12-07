@@ -197,7 +197,14 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 - Tag badges with vintage styling
 - External link indicators
 - Grid-optimized card layout with flexbox structure
+  - `.mix-player__content` - Top section (title, metadata, tags)
+  - `.mix-player__bottom` - Bottom section pushed via `margin-block-start: auto` (player + tracklist)
 - Responsive image handling with fallback states
+- Scrollable tracklists with UX optimizations:
+  - Max-height: 400px with smooth scrolling
+  - Custom scrollbar styling (6px thin scrollbar)
+  - Visual scroll indicator (gradient fade at bottom)
+  - Independent card heights (opening one tracklist doesn't affect other cards in grid)
 
 ### Pages
 

@@ -215,5 +215,2003 @@
       "artist": "Heerlens Percussie Ensemble",
       "track": "Spektakel"
     }
+  ],
+  "legendarymusic/easton-chop-up-volume-1": [
+    {
+      "position": 1,
+      "artist": "Afro Cult Foundation",
+      "track": "Quest"
+    },
+    {
+      "position": 2,
+      "artist": "Serenje Kalindula",
+      "track": "Nemwine Nkafwa Bwangu"
+    },
+    {
+      "position": 3,
+      "artist": "Taffetus",
+      "track": "Fano Keita"
+    },
+    {
+      "position": 4,
+      "artist": "Rhthmo De Cotonou",
+      "track": "Dis Mois La Verite _ Orchestre Poly"
+    },
+    {
+      "position": 5,
+      "artist": "William Onyeabor",
+      "track": "Body and Soul"
+    },
+    {
+      "position": 6,
+      "artist": "Rocket Juice & The Moon",
+      "track": "Leave Taking"
+    },
+    {
+      "position": 7,
+      "artist": "Tunji Oyelana",
+      "track": "Oloti"
+    },
+    {
+      "position": 8,
+      "artist": "KonKoma",
+      "track": "Accra Jump"
+    },
+    {
+      "position": 9,
+      "artist": "Keleta and Akoya Afrobeat",
+      "track": "The Spirit of Fela (Guynamukat)"
+    },
+    {
+      "position": 10,
+      "artist": "Ebo Taylor & The Sweet Beans",
+      "track": "Odofo Nyi Akyiri Biara"
+    },
+    {
+      "position": 11,
+      "artist": "Lijadu Sisters",
+      "track": "Bayi L'ense"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-2": [
+    {
+      "position": 1,
+      "artist": "Ayub Ogada",
+      "track": "Obiero"
+    },
+    {
+      "position": 2,
+      "artist": "Rob",
+      "track": "Your Kiss Stole Me Away"
+    },
+    {
+      "position": 3,
+      "artist": "Harari",
+      "track": "Musikana"
+    },
+    {
+      "position": 4,
+      "artist": "Soothsayers",
+      "track": "Follow Your Path"
+    },
+    {
+      "position": 5,
+      "artist": "The Rift Valley Brothers",
+      "track": "Mu Africa"
+    },
+    {
+      "position": 6,
+      "artist": "The Funkees",
+      "track": "Mimbo"
+    },
+    {
+      "position": 7,
+      "artist": "The Comrades",
+      "track": "Bulwark"
+    },
+    {
+      "position": 8,
+      "artist": "King Ayisoba",
+      "track": "Baaba Poore"
+    },
+    {
+      "position": 9,
+      "artist": "Rocket Juice & The Moon",
+      "track": "Lolo (feat. Fatoumata Diawara & M.anifest)"
+    },
+    {
+      "position": 10,
+      "artist": "Bantu & Ayuba",
+      "track": "Where Di Water, Where Di Light"
+    },
+    {
+      "position": 11,
+      "artist": "Francis Bebey",
+      "track": "Coffee Cola (Young Marco mix)"
+    },
+    {
+      "position": 12,
+      "artist": "Afro 70",
+      "track": "Week End"
+    },
+    {
+      "position": 13,
+      "artist": "Bamalngabas",
+      "track": "Wilburforce"
+    },
+    {
+      "position": 14,
+      "artist": "Outernational Meltdown",
+      "track": "Mamaye"
+    },
+    {
+      "position": 15,
+      "artist": "Lijadu Sisters",
+      "track": "Orere Elejigbo"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-3": [
+    {
+      "position": 1,
+      "artist": "Bassekou Kouyate & Ngoni ba",
+      "track": "Jonkoloni"
+    },
+    {
+      "position": 2,
+      "artist": "Stella Chiweshe",
+      "track": "Mapere"
+    },
+    {
+      "position": 3,
+      "artist": "Charlotte Mbango",
+      "track": "Dikom Lam La Moto"
+    },
+    {
+      "position": 4,
+      "artist": "Black Styl",
+      "track": "O Sambo"
+    },
+    {
+      "position": 5,
+      "artist": "San Palenque De Columbia",
+      "track": "Samba"
+    },
+    {
+      "position": 6,
+      "artist": "Harry Mosco",
+      "track": "It Ain't Easy"
+    },
+    {
+      "position": 7,
+      "artist": "Derobe Dance Band",
+      "track": "Gogoplata"
+    },
+    {
+      "position": 8,
+      "artist": "Femi Kuti",
+      "track": "Can't Buy Me"
+    },
+    {
+      "position": 9,
+      "artist": "Segun Damisa, The Afro Beat Crusaders",
+      "track": "Gari Good"
+    },
+    {
+      "position": 10,
+      "artist": "Sweet Talks",
+      "track": "Kye Kye Pe Aware"
+    },
+    {
+      "position": 11,
+      "artist": "Oneness of Juju",
+      "track": "Sabi [Black Fire Mix]"
+    },
+    {
+      "position": 12,
+      "artist": "Manu Dibango",
+      "track": "Senga"
+    },
+    {
+      "position": 13,
+      "artist": "Colomach",
+      "track": "Pipan"
+    },
+    {
+      "position": 14,
+      "artist": "Ngozi Family",
+      "track": "Sunka Mulamu"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-4": [
+    {
+      "position": 1,
+      "artist": "Ben Zabo",
+      "track": "Danna (Healing Remix)"
+    },
+    {
+      "position": 2,
+      "artist": "Ebo Taylor & Pat Thomas",
+      "track": "Ene Nyame 'A' Mensuro (Henrik Schwarz Blend)"
+    },
+    {
+      "position": 3,
+      "artist": "Issa Bagayogo",
+      "track": "Filaw (Soft Rocks Remix)"
+    },
+    {
+      "position": 4,
+      "artist": "Luisito Quintero feat. Francis Mbappe",
+      "track": "Gbagada, Gbagada, Gbogodo, Gbogodo"
+    },
+    {
+      "position": 5,
+      "artist": "Black Coffee",
+      "track": "Wozala (Afrikaspirit Remix)"
+    },
+    {
+      "position": 6,
+      "artist": "Amadou et Mariam",
+      "track": "Ce N'est Pas Bon (JD Twitch Edit)"
+    },
+    {
+      "position": 7,
+      "artist": "Francis Bebey",
+      "track": "Bissao (Pilooski edit)"
+    },
+    {
+      "position": 8,
+      "artist": "Owiny Sigoma Band",
+      "track": "Nyiduonge Drums"
+    },
+    {
+      "position": 9,
+      "artist": "Hannah Mac",
+      "track": "DLYO"
+    },
+    {
+      "position": 10,
+      "artist": "Dva, Big Space",
+      "track": "Long Street"
+    },
+    {
+      "position": 11,
+      "artist": "Ata Kak",
+      "track": "Daa Nyinaa"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-5": [
+    {
+      "position": 1,
+      "artist": "Toumani Diabate and Ballake Sissoko",
+      "track": "Salaman"
+    },
+    {
+      "position": 2,
+      "artist": "Tamikrest",
+      "track": "Adagh"
+    },
+    {
+      "position": 3,
+      "artist": "Manu Dibango",
+      "track": "Camp Yabassi Echoes"
+    },
+    {
+      "position": 4,
+      "artist": "The Psychedelic Aliens",
+      "track": "We're Laughing"
+    },
+    {
+      "position": 5,
+      "artist": "Afro-Funk",
+      "track": "Farewell to Ibusa"
+    },
+    {
+      "position": 6,
+      "artist": "Issa Bagayogo",
+      "track": "Ciew Mawele (Adham Shaikh's Dusty Foot Remix)"
+    },
+    {
+      "position": 7,
+      "artist": "Kabelo",
+      "track": "Pantsula 4 Life"
+    },
+    {
+      "position": 8,
+      "artist": "Akalé Wubé",
+      "track": "Dodo"
+    },
+    {
+      "position": 9,
+      "artist": "Sir Shina Peters & His International Stars",
+      "track": "Yabis"
+    },
+    {
+      "position": 10,
+      "artist": "Bombino",
+      "track": "Niamey Jam"
+    },
+    {
+      "position": 11,
+      "artist": "Justin Adams & Juldeh Camara",
+      "track": "Ya Ta Kaaya"
+    },
+    {
+      "position": 12,
+      "artist": "Chuck Barrister & The Voices Of Darkness",
+      "track": "Be Kind, Be Foolish, Be Happy"
+    },
+    {
+      "position": 13,
+      "artist": "Bozambo",
+      "track": "Get It On The Music"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-6": [
+    {
+      "position": 1,
+      "artist": "OY",
+      "track": "No, I Don't Snore"
+    },
+    {
+      "position": 2,
+      "artist": "Noura Mint Seymali",
+      "track": "Eguetmar"
+    },
+    {
+      "position": 3,
+      "artist": "King Ayisoba",
+      "track": "1000 Can Die"
+    },
+    {
+      "position": 4,
+      "artist": "DRC Music",
+      "track": "Customs (feat. Bokatola System)"
+    },
+    {
+      "position": 5,
+      "artist": "Penya",
+      "track": "Karachi (what could have been)"
+    },
+    {
+      "position": 6,
+      "artist": "Lechuga Zafiro",
+      "track": "Tombores Escondidos feat. Cuareim 1080"
+    },
+    {
+      "position": 7,
+      "artist": "Young Paris",
+      "track": "NEW BLACK"
+    },
+    {
+      "position": 8,
+      "artist": "DJ Lag",
+      "track": "Umlilo"
+    },
+    {
+      "position": 9,
+      "artist": "Lechuga Zafiro",
+      "track": "Tambor Espada (سكين) feat. C1080"
+    },
+    {
+      "position": 10,
+      "artist": "Riddlore",
+      "track": "That Drum"
+    },
+    {
+      "position": 11,
+      "artist": "OY",
+      "track": "Tortoise And Hunter"
+    },
+    {
+      "position": 12,
+      "artist": "MVROE",
+      "track": "UBER ROUND YOUR CITY ( PROD. BY UKWELI & HIRIBAE )"
+    },
+    {
+      "position": 13,
+      "artist": "Doctor L",
+      "track": "Choking"
+    },
+    {
+      "position": 14,
+      "artist": "Hard Proof",
+      "track": "Trickle Down"
+    },
+    {
+      "position": 15,
+      "artist": "Akalé Wubé",
+      "track": "Mèmona (Etienne de la Sayette Remix)"
+    },
+    {
+      "position": 16,
+      "artist": "Umoja",
+      "track": "Mo Fiya !"
+    },
+    {
+      "position": 17,
+      "artist": "Ukweli Ft Ibeyi",
+      "track": "Bejila"
+    },
+    {
+      "position": 18,
+      "artist": "Nu Fvnk",
+      "track": "Young Sinatra feat. DJ Rachael & Trizah (prod. by Jinku and Nu Fvnk)"
+    },
+    {
+      "position": 19,
+      "artist": "Sufyvn",
+      "track": "Ascension"
+    },
+    {
+      "position": 20,
+      "artist": "Bargou 08",
+      "track": "Roddih"
+    },
+    {
+      "position": 21,
+      "artist": "Ifriqiyya Electrique",
+      "track": "Arrah arrah abbaina - Bahari - Tenouiba"
+    },
+    {
+      "position": 22,
+      "artist": "GROUP DOUEH & CHEVEU",
+      "track": "TOUT DROIT"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-7": [
+    {
+      "position": 1,
+      "artist": "Débruit & Alsarah",
+      "track": "Jamilla"
+    },
+    {
+      "position": 2,
+      "artist": "Dexter Story",
+      "track": "Xamar"
+    },
+    {
+      "position": 3,
+      "artist": "Alemayehu Eshete",
+      "track": "Alteleyeshegnem"
+    },
+    {
+      "position": 4,
+      "artist": "Akalé Wubé",
+      "track": "Mèmona (Etienne de la Sayette Remix)"
+    },
+    {
+      "position": 5,
+      "artist": "Slim Ali & The Famous Hodi Boys",
+      "track": "Watoto Nyara"
+    },
+    {
+      "position": 6,
+      "artist": "Bro. Valentino",
+      "track": "Stay Up Zimbabwe"
+    },
+    {
+      "position": 7,
+      "artist": "Aleke Kanonu",
+      "track": "Keep New York Clean"
+    },
+    {
+      "position": 8,
+      "artist": "Lexy Mella",
+      "track": "On The Air"
+    },
+    {
+      "position": 9,
+      "artist": "Susso",
+      "track": "Son Kunda"
+    },
+    {
+      "position": 10,
+      "artist": "Cruel Boyz",
+      "track": "Umeqo Emagqomini (dub mix)"
+    },
+    {
+      "position": 11,
+      "artist": "KOKOKO!",
+      "track": "L.O.V.E."
+    },
+    {
+      "position": 12,
+      "artist": "The Apostles",
+      "track": "Banko Woman"
+    },
+    {
+      "position": 13,
+      "artist": "Jupiter Okwess",
+      "track": "Ngandjo"
+    }
+  ],
+  "legendarymusic/ea-wave": [
+    {
+      "position": 1,
+      "artist": "JINKU",
+      "track": "Ameana"
+    },
+    {
+      "position": 2,
+      "artist": "Loa Mys x Nu Fvnk",
+      "track": "Looks Like Love"
+    },
+    {
+      "position": 3,
+      "artist": "JINKU",
+      "track": "The Way I Can't ft Prisca Ojwang'"
+    },
+    {
+      "position": 4,
+      "artist": "Nu Fvnk",
+      "track": "GOING ON"
+    },
+    {
+      "position": 5,
+      "artist": "JINKU",
+      "track": "Hindewhu"
+    },
+    {
+      "position": 6,
+      "artist": "Jinku & Wanja Wohoro",
+      "track": "Poison"
+    },
+    {
+      "position": 7,
+      "artist": "EA WAVE",
+      "track": "Hi ft Janice Iche"
+    },
+    {
+      "position": 8,
+      "artist": "Wams ft Kiwango",
+      "track": "Let Me In (Prod. by HIRIBΔE & Jinku)"
+    },
+    {
+      "position": 9,
+      "artist": "Mabiisi",
+      "track": "Poka (Hiribae Remix)"
+    },
+    {
+      "position": 10,
+      "artist": "Ukweli Ft Ibeyi",
+      "track": "Bejila"
+    },
+    {
+      "position": 11,
+      "artist": "Mabiisi",
+      "track": "Poka (Hiribae Remix)"
+    },
+    {
+      "position": 12,
+      "artist": "EAWAVE",
+      "track": "Alango ft. Makadem"
+    },
+    {
+      "position": 13,
+      "artist": "Makadem",
+      "track": "Nyako (Jinku Remix)"
+    },
+    {
+      "position": 14,
+      "artist": "Nu Fvnk",
+      "track": "Young Sinatra feat. DJ Rachael & Trizah (prod. by Jinku and Nu Fvnk)"
+    },
+    {
+      "position": 15,
+      "artist": "MVROE",
+      "track": "UBER ROUND YOUR CITY ( PROD. BY UKWELI & HIRIBAE )"
+    },
+    {
+      "position": 16,
+      "artist": "Ukweli & Sichangi",
+      "track": "10,000 hours ft Blinky Bill & Kerby"
+    },
+    {
+      "position": 17,
+      "artist": "Kijo ft. Mo",
+      "track": "Spiral"
+    }
+  ],
+  "legendarymusic/easton-chop-up-mixcloud-live-july-2020": [
+    {
+      "position": 1,
+      "artist": "Ayub Ogada",
+      "track": "Obiero"
+    },
+    {
+      "position": 2,
+      "artist": "Stella Chiweshe",
+      "track": "Chigamba"
+    },
+    {
+      "position": 3,
+      "artist": "Chiwoniso",
+      "track": "Zvichapera"
+    },
+    {
+      "position": 4,
+      "artist": "Alek Lee",
+      "track": "Sfarot"
+    },
+    {
+      "position": 5,
+      "artist": "Jinku",
+      "track": "A2 ft Loa Myst & Nu Fvnk (El Buho Remix)"
+    },
+    {
+      "position": 6,
+      "artist": "Rocket Juice and the Moon",
+      "track": "Chop Up (feat. M.anifest & M3nsa)"
+    },
+    {
+      "position": 7,
+      "artist": "Abdullah Ibrahim",
+      "track": "Liberation Danse"
+    },
+    {
+      "position": 8,
+      "artist": "Weather Report",
+      "track": "Elegant People"
+    },
+    {
+      "position": 9,
+      "artist": "District Six",
+      "track": "Woza Wena"
+    },
+    {
+      "position": 10,
+      "artist": "Cannonball Adderley",
+      "track": "Gunjah"
+    },
+    {
+      "position": 11,
+      "artist": "Asher Gamedze",
+      "track": "Interregnum"
+    },
+    {
+      "position": 12,
+      "artist": "The KutiMangoes",
+      "track": "Bamako By Bus"
+    },
+    {
+      "position": 13,
+      "artist": "Alemayehu Eshete",
+      "track": "Alteleyeshegnem"
+    },
+    {
+      "position": 14,
+      "artist": "Funkees",
+      "track": "Slipping Into Darkness"
+    },
+    {
+      "position": 15,
+      "artist": "Christy Essien",
+      "track": "Take Life Easy"
+    },
+    {
+      "position": 16,
+      "artist": "African Vibration",
+      "track": "Hinde"
+    },
+    {
+      "position": 17,
+      "artist": "P.R.O.",
+      "track": "Tell Me"
+    },
+    {
+      "position": 18,
+      "artist": "Eskorzo Afrobeat Experience",
+      "track": "El Muro"
+    },
+    {
+      "position": 19,
+      "artist": "Ebo Taylor",
+      "track": "Heaven"
+    },
+    {
+      "position": 20,
+      "artist": "Emamanual Jal with Abdel Gadir Salim",
+      "track": "Baal"
+    },
+    {
+      "position": 21,
+      "artist": "Professor Jay",
+      "track": "Machozi Jasho na Damu"
+    },
+    {
+      "position": 22,
+      "artist": "Alif",
+      "track": "Douta Mbaye"
+    },
+    {
+      "position": 23,
+      "artist": "K'naan",
+      "track": "15 Minutes Away"
+    },
+    {
+      "position": 24,
+      "artist": "Francis The Great",
+      "track": "Look Up in the Sky (Négro Nature)"
+    },
+    {
+      "position": 25,
+      "artist": "Issa Bagayogo",
+      "track": "Filaw (Soft Rocks Remix)"
+    },
+    {
+      "position": 26,
+      "artist": "Rikki Llionga",
+      "track": "Sunshine Love"
+    },
+    {
+      "position": 27,
+      "artist": "Ebo Taylor",
+      "track": "Mizin"
+    },
+    {
+      "position": 28,
+      "artist": "Maajo",
+      "track": "Sèmbè (Dub)"
+    },
+    {
+      "position": 29,
+      "artist": "Jungle By Night",
+      "track": "Ethiopino"
+    },
+    {
+      "position": 30,
+      "artist": "Imperial Tiger Orchestra",
+      "track": "Shered"
+    },
+    {
+      "position": 31,
+      "artist": "Lijadu Sisters",
+      "track": "Bayi L'ense"
+    },
+    {
+      "position": 32,
+      "artist": "Kaleta & Zozo Afrobeat",
+      "track": "Get Up"
+    },
+    {
+      "position": 33,
+      "artist": "Bantu & Ayuba",
+      "track": "Where Di Water, Where Di Light"
+    },
+    {
+      "position": 34,
+      "artist": "Bantou Mentale",
+      "track": "Château Rouge"
+    },
+    {
+      "position": 35,
+      "artist": "The Rift Valley Brothers",
+      "track": "Mu Africa"
+    },
+    {
+      "position": 36,
+      "artist": "Ndalani 77 Brothers",
+      "track": "Nzaumi"
+    },
+    {
+      "position": 37,
+      "artist": "Babatunde Olatunji",
+      "track": "Jin-Go-Lo-Ba"
+    },
+    {
+      "position": 38,
+      "artist": "West Nkosi Nabashokobezi",
+      "track": "Twelve Mabone"
+    },
+    {
+      "position": 39,
+      "artist": "Potch Birds",
+      "track": "Kiss Me Baby"
+    },
+    {
+      "position": 40,
+      "artist": "Amadou et Mariam",
+      "track": "Ce N'est Pas Bon (JD Twitch Edit)"
+    },
+    {
+      "position": 41,
+      "artist": "Burkina Electric",
+      "track": "La Voix Du Boulgou"
+    },
+    {
+      "position": 42,
+      "artist": "Tala AM",
+      "track": "Arabica (JD Twitch Edit)"
+    },
+    {
+      "position": 43,
+      "artist": "Rim Kwaku Obeng",
+      "track": "Gas Line (Nik Weston Edit)"
+    },
+    {
+      "position": 44,
+      "artist": "Livy Ekemezie",
+      "track": "Holiday Actions"
+    },
+    {
+      "position": 45,
+      "artist": "Mukat Edits",
+      "track": "Bassline Frenzy"
+    },
+    {
+      "position": 46,
+      "artist": "Asiko Rock Group",
+      "track": "Everybody get down"
+    },
+    {
+      "position": 47,
+      "artist": "African Souls Band",
+      "track": "Nande"
+    },
+    {
+      "position": 48,
+      "artist": "Jungle By Night",
+      "track": "E.T"
+    },
+    {
+      "position": 49,
+      "artist": "Kaleta & Zozo Afrobeat",
+      "track": "Country Of Guns"
+    },
+    {
+      "position": 50,
+      "artist": "Black Market Brass",
+      "track": "Big Muffler"
+    },
+    {
+      "position": 51,
+      "artist": "Bando",
+      "track": "Oruro"
+    },
+    {
+      "position": 52,
+      "artist": "QUALITONS, The",
+      "track": "Mellbimbo"
+    },
+    {
+      "position": 53,
+      "artist": "Derobe Dance Band",
+      "track": "Gogoplata"
+    },
+    {
+      "position": 54,
+      "artist": "Paster Lappe",
+      "track": "Real Sekele Fo Ya (Shan Version)"
+    },
+    {
+      "position": 55,
+      "artist": "Tabuley Rochereau",
+      "track": "Hafi Deo (Nick The Record & Dan Tyler Re-Edit Dub)"
+    },
+    {
+      "position": 56,
+      "artist": "Harry Mosco",
+      "track": "It Ain't Easy"
+    },
+    {
+      "position": 57,
+      "artist": "Pazy And The Black Hippies",
+      "track": "Lahila"
+    },
+    {
+      "position": 58,
+      "artist": "Stanislas Tohon",
+      "track": "Paix Lo"
+    },
+    {
+      "position": 59,
+      "artist": "Hugh Masekela",
+      "track": "Getting Fat In Africa"
+    }
+  ],
+  "legendarymusic/easton-chop-up-live-from-the-queens-head": [
+    {
+      "position": 1,
+      "artist": "Haiku Mergia",
+      "track": "Sewnetuwa"
+    },
+    {
+      "position": 2,
+      "artist": "Siti Muharam",
+      "track": "Alaminadura"
+    },
+    {
+      "position": 3,
+      "artist": "Asher Gamedze",
+      "track": "Interregnum"
+    },
+    {
+      "position": 4,
+      "artist": "JISR",
+      "track": "Ready for Rafia"
+    },
+    {
+      "position": 5,
+      "artist": "Lea Myst & NuFunk",
+      "track": "A2 (El Buha remix)"
+    },
+    {
+      "position": 6,
+      "artist": "Onom Agemo and the Disco Jumpers",
+      "track": "2 feet"
+    },
+    {
+      "position": 7,
+      "artist": "Dexter Story",
+      "track": "Mowa"
+    },
+    {
+      "position": 8,
+      "artist": "Noura Mint Seymali",
+      "track": "Tzenni"
+    },
+    {
+      "position": 9,
+      "artist": "Aziza Brahim",
+      "track": "Gdeim Izik"
+    },
+    {
+      "position": 10,
+      "artist": "Samba Toure",
+      "track": "Su Wilile"
+    },
+    {
+      "position": 11,
+      "artist": "Attarazat Addahabia",
+      "track": "Unknown"
+    },
+    {
+      "position": 12,
+      "artist": "PRO",
+      "track": "Tell Me"
+    },
+    {
+      "position": 13,
+      "artist": "National Wake",
+      "track": "Walk In Africa"
+    },
+    {
+      "position": 14,
+      "artist": "Mubashira Mataali Group",
+      "track": "Kulika Hiija"
+    },
+    {
+      "position": 15,
+      "artist": "Electric Jalaba",
+      "track": "Daimla"
+    },
+    {
+      "position": 16,
+      "artist": "Francis Babey",
+      "track": "Savanah Georgia"
+    },
+    {
+      "position": 17,
+      "artist": "Bulawayo Kwela",
+      "track": "Mysterious Africa"
+    },
+    {
+      "position": 18,
+      "artist": "Margaret Singana",
+      "track": "Why did you do it"
+    },
+    {
+      "position": 19,
+      "artist": "Gun Morgan",
+      "track": "Atanny"
+    },
+    {
+      "position": 20,
+      "artist": "Yassou N'Dour",
+      "track": "The Rubberband Man"
+    },
+    {
+      "position": 21,
+      "artist": "Orchestra Abass",
+      "track": "Haka Dunia"
+    },
+    {
+      "position": 22,
+      "artist": "Ekambi Brilliant",
+      "track": "Aboki"
+    },
+    {
+      "position": 23,
+      "artist": "Joe Mensah",
+      "track": "Africa Is Home (Natural Self re-edit)"
+    },
+    {
+      "position": 24,
+      "artist": "Stanislas Tohon",
+      "track": "Yallow 2"
+    },
+    {
+      "position": 25,
+      "artist": "Falou Seck & The Melting Beats",
+      "track": "Ndongo Dara"
+    },
+    {
+      "position": 26,
+      "artist": "The Apostles",
+      "track": "Banko Woman"
+    },
+    {
+      "position": 27,
+      "artist": "West Nkosi Nabashokobezi",
+      "track": "Twelve Mabone"
+    },
+    {
+      "position": 28,
+      "artist": "The Brother Moves On",
+      "track": "Good times [A million things remix]"
+    },
+    {
+      "position": 29,
+      "artist": "DJ Khalab",
+      "track": "Zaire (Medlar remix)"
+    },
+    {
+      "position": 30,
+      "artist": "Jika Jika",
+      "track": "The Boogie Man"
+    },
+    {
+      "position": 31,
+      "artist": "Lexy Mella",
+      "track": "On the Air"
+    },
+    {
+      "position": 32,
+      "artist": "Rey Sapiens & the Congo Techno Ensemble",
+      "track": "96"
+    },
+    {
+      "position": 33,
+      "artist": "Nozinja / Tessela",
+      "track": "Wa Chacha"
+    },
+    {
+      "position": 34,
+      "artist": "Msafiri Zawose",
+      "track": "Chibitenyi"
+    },
+    {
+      "position": 35,
+      "artist": "Don Zilla",
+      "track": "Buziba"
+    },
+    {
+      "position": 36,
+      "artist": "Bantou Mentale",
+      "track": "Suabala"
+    },
+    {
+      "position": 37,
+      "artist": "Aby Ngana Diop",
+      "track": "Dieuleul- Dieuleul"
+    },
+    {
+      "position": 38,
+      "artist": "Owiny Sigoma Band",
+      "track": "Luo Land"
+    },
+    {
+      "position": 39,
+      "artist": "Penny Penny",
+      "track": "Shilungu"
+    },
+    {
+      "position": 40,
+      "artist": "Sha Sha",
+      "track": "Feat Kabza De Small - Sing It Back"
+    },
+    {
+      "position": 41,
+      "artist": "Kay Invictus",
+      "track": "Mduva"
+    },
+    {
+      "position": 42,
+      "artist": "Amadou & Miriam",
+      "track": "Ce N'est Pas Bon (JD Twitch Edit)"
+    },
+    {
+      "position": 43,
+      "artist": "Letta Mbulu",
+      "track": "Kilimandjaro"
+    },
+    {
+      "position": 44,
+      "artist": "Momo Joseph",
+      "track": "Oh Momo"
+    },
+    {
+      "position": 45,
+      "artist": "Diane Solo",
+      "track": "N'Ziketio"
+    },
+    {
+      "position": 46,
+      "artist": "Mpharanyana and the Peddlers",
+      "track": "Disco (edit)"
+    },
+    {
+      "position": 47,
+      "artist": "Adaye",
+      "track": "Turn it up (3am edit)"
+    },
+    {
+      "position": 48,
+      "artist": "Livy Ekemezie",
+      "track": "Holiday Actions"
+    },
+    {
+      "position": 49,
+      "artist": "Jo Bisso",
+      "track": "The Mystery with me (edit)"
+    },
+    {
+      "position": 50,
+      "artist": "Tala A.M.",
+      "track": "Aracica (edit)"
+    },
+    {
+      "position": 51,
+      "artist": "Hard Proof",
+      "track": "Incendiary"
+    },
+    {
+      "position": 52,
+      "artist": "Tamikrest",
+      "track": "Anha Achal Wad Namda"
+    },
+    {
+      "position": 53,
+      "artist": "Terakaft",
+      "track": "Karanbani"
+    },
+    {
+      "position": 54,
+      "artist": "Gyedu-Blay Ambolley",
+      "track": "The Message"
+    },
+    {
+      "position": 55,
+      "artist": "Akoya Afrobeat Ensemble",
+      "track": "P.D.P."
+    }
+  ],
+  "legendarymusic/african-hip-hop": [
+    {
+      "position": 1,
+      "artist": "Mvroe",
+      "track": "Uber Round Your City"
+    },
+    {
+      "position": 2,
+      "artist": "Die Antwoord",
+      "track": "Rat Trap 666"
+    },
+    {
+      "position": 3,
+      "artist": "Stogie T (feat. Nasty C)",
+      "track": "DUNNO"
+    },
+    {
+      "position": 4,
+      "artist": "Nah Eeto",
+      "track": "Bila You"
+    },
+    {
+      "position": 5,
+      "artist": "Max Normal",
+      "track": "Total F**kup"
+    },
+    {
+      "position": 6,
+      "artist": "U-Cef",
+      "track": "Boolandrix"
+    },
+    {
+      "position": 7,
+      "artist": "Bob Da Rage Sense (feat. Sir Scratch & Capicua)",
+      "track": "Sem Salário Fixo"
+    },
+    {
+      "position": 8,
+      "artist": "Outspoken and The Essence",
+      "track": "Tumira Chimwe"
+    },
+    {
+      "position": 9,
+      "artist": "Shumba Maasai",
+      "track": "Dopamine II Erykah"
+    },
+    {
+      "position": 10,
+      "artist": "Marte",
+      "track": "War & Love"
+    },
+    {
+      "position": 11,
+      "artist": "Nu Fvnk (feat. Kagwe Mungai & Shappaman)",
+      "track": "AWTB (Aint With Tha Business)"
+    },
+    {
+      "position": 12,
+      "artist": "Nu Fvnk (feat. DJ Rachael & Trizah)",
+      "track": "Young Sinatra"
+    },
+    {
+      "position": 13,
+      "artist": "L.U.A.L.",
+      "track": "Confirm"
+    },
+    {
+      "position": 14,
+      "artist": "Outspoken and The Essence",
+      "track": "Sounds Like What I Heard Before"
+    },
+    {
+      "position": 15,
+      "artist": "Black Josh feat. Nah Eeto",
+      "track": "Judge Judy"
+    },
+    {
+      "position": 16,
+      "artist": "Lorenzo BITW (feat. MC Yallah & Swordman Kitala)",
+      "track": "Basta"
+    },
+    {
+      "position": 17,
+      "artist": "King Ayisoba (feat. Wanlov the Kubolor & Big Gad)",
+      "track": "Africa Needs Africa"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-9": [
+    {
+      "position": 1,
+      "artist": "Thandi",
+      "track": "Dumela (Hallo Hallo)"
+    },
+    {
+      "position": 2,
+      "artist": "Blick Bassy",
+      "track": "Kiki"
+    },
+    {
+      "position": 3,
+      "artist": "Siti Muharam",
+      "track": "Ashikibaya"
+    },
+    {
+      "position": 4,
+      "artist": "Osemako",
+      "track": "Petit à Petit"
+    },
+    {
+      "position": 5,
+      "artist": "Sudan Archives",
+      "track": "Come Meh Way"
+    },
+    {
+      "position": 6,
+      "artist": "Aziza Brahim",
+      "track": "Mujayam"
+    },
+    {
+      "position": 7,
+      "artist": "Foreign Key",
+      "track": "Showdown Inna Addis"
+    },
+    {
+      "position": 8,
+      "artist": "UKANDANZ",
+      "track": "Beyet New Mengedu"
+    },
+    {
+      "position": 9,
+      "artist": "Noura Mint Seymali",
+      "track": "Ghizlane"
+    },
+    {
+      "position": 10,
+      "artist": "L.U.A.L.",
+      "track": "Confirm"
+    },
+    {
+      "position": 11,
+      "artist": "Y-Bayani & The Band of Enlightenment, Reason And Love",
+      "track": "We Are The Band of Enlightenment, Reason And Love"
+    },
+    {
+      "position": 12,
+      "artist": "Major League Djz & Abidoza",
+      "track": "You Let Me Down (feat. Shana)"
+    },
+    {
+      "position": 13,
+      "artist": "Kabza De Small",
+      "track": "Izolo (feat. Nia Pearl)"
+    },
+    {
+      "position": 14,
+      "artist": "Ntokzin",
+      "track": "Man Power"
+    },
+    {
+      "position": 15,
+      "artist": "Jumping Back Slash",
+      "track": "Enjoy The Silence (JBS Dramapiano Rework)"
+    },
+    {
+      "position": 16,
+      "artist": "Owiny Sigoma Band",
+      "track": "Norbat Okelo"
+    },
+    {
+      "position": 17,
+      "artist": "Electric Jalaba",
+      "track": "Cubaili Ba"
+    },
+    {
+      "position": 18,
+      "artist": "KOKOKO!",
+      "track": "Azo Toke"
+    },
+    {
+      "position": 19,
+      "artist": "Don Zilla",
+      "track": "Entambula"
+    },
+    {
+      "position": 20,
+      "artist": "Rey Sapienz & The Congo Techno Ensemble",
+      "track": "Zuwa Ba Risk"
+    },
+    {
+      "position": 21,
+      "artist": "Nah Eeto",
+      "track": "Tick Tock"
+    },
+    {
+      "position": 22,
+      "artist": "Ngalle Jojo",
+      "track": "Ngigna Loko"
+    },
+    {
+      "position": 23,
+      "artist": "Vaudou Game",
+      "track": "La vie c'est bon"
+    }
+  ],
+  "legendarymusic/easton-chop-up-volume-10": [
+    {
+      "position": 1,
+      "artist": "Monoswezi",
+      "track": "Dande"
+    },
+    {
+      "position": 2,
+      "artist": "George Mukabi",
+      "track": "Festo Amahaya"
+    },
+    {
+      "position": 3,
+      "artist": "Y Bayani & The Band of Enlightenment, Reason And Love",
+      "track": "Asembi Ara Amba"
+    },
+    {
+      "position": 4,
+      "artist": "Ikebe Shakedown",
+      "track": "The Prisoner"
+    },
+    {
+      "position": 5,
+      "artist": "José Carlos Schwarz & Le Cobiana Djazz",
+      "track": "Dispus Ke E Lebal"
+    },
+    {
+      "position": 6,
+      "artist": "Ayuune Sule",
+      "track": "Don't Be Lazy"
+    },
+    {
+      "position": 7,
+      "artist": "Roger Damawuzan",
+      "track": "What Time Is It"
+    },
+    {
+      "position": 8,
+      "artist": "The Black Cat Bones",
+      "track": "Lungs"
+    },
+    {
+      "position": 9,
+      "artist": "Seether",
+      "track": "Dangerous"
+    },
+    {
+      "position": 10,
+      "artist": "Runaway Nuns",
+      "track": "Getting Old"
+    },
+    {
+      "position": 11,
+      "artist": "The Medicine Dolls",
+      "track": "Covered In Filth"
+    },
+    {
+      "position": 12,
+      "artist": "Abdhullah Ibrahim",
+      "track": "Liberation Dance"
+    },
+    {
+      "position": 13,
+      "artist": "Bokani Dyer",
+      "track": "Vuvuzela"
+    },
+    {
+      "position": 14,
+      "artist": "BKO",
+      "track": "Ngon"
+    },
+    {
+      "position": 15,
+      "artist": "Falou Seck & The Melting Beats",
+      "track": "Ndongo Dara"
+    },
+    {
+      "position": 16,
+      "artist": "Jungle Fire",
+      "track": "Let's Start"
+    },
+    {
+      "position": 17,
+      "artist": "Shaluza Max",
+      "track": "Mangase"
+    },
+    {
+      "position": 18,
+      "artist": "Maajo",
+      "track": "Sèmbè ft. Ismaili Sané - Sèmbè (Dub)"
+    },
+    {
+      "position": 19,
+      "artist": "ANGEL",
+      "track": "Pose"
+    },
+    {
+      "position": 20,
+      "artist": "Muthoni Drummer Queen",
+      "track": "Squad Up"
+    },
+    {
+      "position": 21,
+      "artist": "Bibbi",
+      "track": "Guns On Fire (Flame Mix)"
+    },
+    {
+      "position": 22,
+      "artist": "Les Abranis",
+      "track": "Akoudar"
+    },
+    {
+      "position": 23,
+      "artist": "Free Youth",
+      "track": "We Can Move"
+    },
+    {
+      "position": 24,
+      "artist": "Jally Kebba Susso",
+      "track": "Justice"
+    },
+    {
+      "position": 25,
+      "artist": "Mafumu",
+      "track": "Vina"
+    },
+    {
+      "position": 26,
+      "artist": "The Free Music",
+      "track": "Mathasebnish"
+    },
+    {
+      "position": 27,
+      "artist": "Majid Soula",
+      "track": "Win Terram"
+    },
+    {
+      "position": 28,
+      "artist": "Yalla Miku",
+      "track": "Asmazate"
+    }
+  ],
+  "legendarymusic/easton-chop-up-7-inch-vinyl-special": [
+    {
+      "position": 1,
+      "artist": "African Vibration",
+      "track": "Hinde"
+    },
+    {
+      "position": 2,
+      "artist": "Y-Bayani & The Band of Enlightenment, Reason And Love",
+      "track": "Asembi Ara Amba"
+    },
+    {
+      "position": 3,
+      "artist": "Ikebe Shakedown",
+      "track": "The Prisoner"
+    },
+    {
+      "position": 4,
+      "artist": "The Original Brothers",
+      "track": "Blackout"
+    },
+    {
+      "position": 5,
+      "artist": "Whoareyoupeople",
+      "track": "Teitoh Hotel"
+    },
+    {
+      "position": 6,
+      "artist": "The Black Devils Makali",
+      "track": "You and Me"
+    },
+    {
+      "position": 7,
+      "artist": "Blassics",
+      "track": "Slight Whining (Slow)"
+    },
+    {
+      "position": 8,
+      "artist": "Alemayehu Eshete",
+      "track": "Alteleyeshegnem"
+    },
+    {
+      "position": 9,
+      "artist": "Mongo Santamaria",
+      "track": "Afro Lypso"
+    },
+    {
+      "position": 10,
+      "artist": "The Souvenirs",
+      "track": "Bush Lark Ritual"
+    },
+    {
+      "position": 11,
+      "artist": "Guy One",
+      "track": "Suro Yuama"
+    },
+    {
+      "position": 12,
+      "artist": "Eye Q",
+      "track": "Im Not Selfish"
+    },
+    {
+      "position": 13,
+      "artist": "Dexter Story",
+      "track": "Wejene Aola feat. Kamasi Washington"
+    },
+    {
+      "position": 14,
+      "artist": "Jun gle Fire",
+      "track": "Pico Union"
+    },
+    {
+      "position": 15,
+      "artist": "Heroes Of Limbo",
+      "track": "Try Again"
+    },
+    {
+      "position": 16,
+      "artist": "Florence Adooni",
+      "track": "Fo Yelle"
+    },
+    {
+      "position": 17,
+      "artist": "Siti Muharam",
+      "track": "Siti Muharam"
+    },
+    {
+      "position": 18,
+      "artist": "Nikki Dave",
+      "track": "Shoreza Inyange"
+    },
+    {
+      "position": 19,
+      "artist": "The Boogie Man",
+      "track": "Jika Jika"
+    },
+    {
+      "position": 20,
+      "artist": "The Stance Brothers",
+      "track": "Resolution Blue"
+    },
+    {
+      "position": 21,
+      "artist": "Stars Of Liberty",
+      "track": "Power To The People"
+    },
+    {
+      "position": 22,
+      "artist": "The Cutlass Band",
+      "track": "Obiara Wondo"
+    },
+    {
+      "position": 23,
+      "artist": "The Mombasa Vikings",
+      "track": "Kibe Kibe"
+    },
+    {
+      "position": 24,
+      "artist": "Back To The Zoo",
+      "track": "Bamma Gama"
+    },
+    {
+      "position": 25,
+      "artist": "Kokolo feat. Jojo Kuo",
+      "track": "Afrika Man"
+    },
+    {
+      "position": 26,
+      "artist": "Super Yamba Band",
+      "track": "Yen Ni Agoro (feat. Osei Korankye)"
+    },
+    {
+      "position": 27,
+      "artist": "Jimi Tenor",
+      "track": "Quantum Connection"
+    },
+    {
+      "position": 28,
+      "artist": "Jungg ule Fir e",
+      "track": "Slipshot"
+    },
+    {
+      "position": 29,
+      "artist": "Kaleta",
+      "track": "Jibiti (BOSQ remix)"
+    },
+    {
+      "position": 30,
+      "artist": "Black Market Brass",
+      "track": "Into The Thick"
+    },
+    {
+      "position": 31,
+      "artist": "Ethiopian Brothers, The",
+      "track": "Selassie (pt.1)"
+    },
+    {
+      "position": 32,
+      "artist": "Orchstre Poly-Rhythmo",
+      "track": "Ma We Mon Nou Mi O"
+    },
+    {
+      "position": 33,
+      "artist": "Osibisa",
+      "track": "Sunshine Day"
+    },
+    {
+      "position": 34,
+      "artist": "Ofege",
+      "track": "Burning Jungle"
+    },
+    {
+      "position": 35,
+      "artist": "The Band Of Enlightenment Reason And Love",
+      "track": "Zota Yinne (Dub Version)"
+    },
+    {
+      "position": 36,
+      "artist": "Mahmood Ahmed",
+      "track": "Bemin Sebeb Litlash"
+    },
+    {
+      "position": 37,
+      "artist": "West Nkosi Nabashokobezi",
+      "track": "Twelve Mabone"
+    },
+    {
+      "position": 38,
+      "artist": "Chrissy Zebby Tembo",
+      "track": "I'm Not Made of Iron"
+    },
+    {
+      "position": 39,
+      "artist": "Chante Par Adikpon Fek Pon Et Son Groupe",
+      "track": "Mademoiselle O Nagbe"
+    },
+    {
+      "position": 40,
+      "artist": "Potch Birds",
+      "track": "Kiss Me Baby"
+    },
+    {
+      "position": 41,
+      "artist": "Bhundu Boys",
+      "track": "Jit Jive"
+    },
+    {
+      "position": 42,
+      "artist": "Afrikanders",
+      "track": "Tamba"
+    },
+    {
+      "position": 43,
+      "artist": "Falou Seck & The Melting Beats",
+      "track": "Ndongo Dara"
+    },
+    {
+      "position": 44,
+      "artist": "Jungule Fire",
+      "track": "Firewalker"
+    },
+    {
+      "position": 45,
+      "artist": "Jungle By Night",
+      "track": "E.T."
+    },
+    {
+      "position": 46,
+      "artist": "T.P. Orchestre Poly‐Rythmo",
+      "track": "Gbeti Ma Djro"
+    },
+    {
+      "position": 47,
+      "artist": "The Poly-Tones",
+      "track": "Burning Spear"
+    },
+    {
+      "position": 48,
+      "artist": "Koudede",
+      "track": "Tassakkne Tara"
+    },
+    {
+      "position": 49,
+      "artist": "Mac and Party",
+      "track": "Zandale"
+    },
+    {
+      "position": 50,
+      "artist": "Onom Agemo and the Disco Jumpers",
+      "track": "2 Feet"
+    },
+    {
+      "position": 51,
+      "artist": "Misha Panfilov Sound Combo",
+      "track": "Whos In Love"
+    },
+    {
+      "position": 52,
+      "artist": "Tanya Ria",
+      "track": "Do The Smasher"
+    },
+    {
+      "position": 53,
+      "artist": "Nilotika Cultural Ensemble",
+      "track": "Kekusimbe"
+    },
+    {
+      "position": 54,
+      "artist": "Debbo Band",
+      "track": "Adderech Arada (Kiddid Remix)"
+    },
+    {
+      "position": 55,
+      "artist": "Kaleta & Super Yamba Band",
+      "track": "Mr. Diva"
+    },
+    {
+      "position": 56,
+      "artist": "Agbeko",
+      "track": "Leaders Of The Free World"
+    },
+    {
+      "position": 57,
+      "artist": "Hoodna Orchestra",
+      "track": "Alem (Dub)"
+    },
+    {
+      "position": 58,
+      "artist": "Makgona Tsohle Band",
+      "track": "Take Your Time"
+    },
+    {
+      "position": 59,
+      "artist": "Jimi Tenor",
+      "track": "Ki'igba"
+    },
+    {
+      "position": 60,
+      "artist": "Mahotella Queens",
+      "track": "Abaculi Bethu"
+    },
+    {
+      "position": 61,
+      "artist": "Wagande Kenya",
+      "track": "El Abanico"
+    },
+    {
+      "position": 62,
+      "artist": "Grandmaster Masese",
+      "track": "Obokano on the street"
+    },
+    {
+      "position": 63,
+      "artist": "Ikwezi",
+      "track": "Get Down (Instramental)"
+    },
+    {
+      "position": 64,
+      "artist": "Jun gle F ire",
+      "track": "Comencemos"
+    },
+    {
+      "position": 65,
+      "artist": "Afro 70",
+      "track": "Week End"
+    },
+    {
+      "position": 66,
+      "artist": "Ju ng le Fire",
+      "track": "La Kossa"
+    },
+    {
+      "position": 67,
+      "artist": "Hard Proof",
+      "track": "Dragon"
+    },
+    {
+      "position": 68,
+      "artist": "Mafumu",
+      "track": "Vina"
+    },
+    {
+      "position": 69,
+      "artist": "Eshete",
+      "track": "Bemin Adari Negn"
+    },
+    {
+      "position": 70,
+      "artist": "Ndalani 77 Brothers",
+      "track": "Nzaumi"
+    },
+    {
+      "position": 71,
+      "artist": "Them Mushrooms",
+      "track": "Mush Dance"
+    },
+    {
+      "position": 72,
+      "artist": "Shakare",
+      "track": "Shakare"
+    },
+    {
+      "position": 73,
+      "artist": "Chrissy Zebby Tembo & Ngozi Family",
+      "track": "Fisherman"
+    },
+    {
+      "position": 74,
+      "artist": "The Apostles",
+      "track": "Banko Woman"
+    },
+    {
+      "position": 75,
+      "artist": "Derobe Dance Band",
+      "track": "Gogoplata"
+    },
+    {
+      "position": 76,
+      "artist": "Whoareyoupeople",
+      "track": "Mescal Flower Road"
+    },
+    {
+      "position": 77,
+      "artist": "The Ethiopian Brothers",
+      "track": "Ashadwa (part 1)"
+    },
+    {
+      "position": 78,
+      "artist": "The Qualitions",
+      "track": "Mellbimbo"
+    },
+    {
+      "position": 79,
+      "artist": "Apotheke",
+      "track": "Hi Baby Out"
+    },
+    {
+      "position": 80,
+      "artist": "David Waciuma Rapture Voices",
+      "track": "Jesu Kristo"
+    },
+    {
+      "position": 81,
+      "artist": "Renegades of Jazz",
+      "track": "Moto Moto"
+    },
+    {
+      "position": 82,
+      "artist": "The VIPs",
+      "track": "Mambo Mambo"
+    },
+    {
+      "position": 83,
+      "artist": "The Wings",
+      "track": "Gone With The Sun"
+    },
+    {
+      "position": 84,
+      "artist": "Afro Breed",
+      "track": "Tootee (Pt 2)"
+    },
+    {
+      "position": 85,
+      "artist": "Roger Damawuzan",
+      "track": "Red Light"
+    },
+    {
+      "position": 86,
+      "artist": "Ikebe Shakedown",
+      "track": "Waiting For The Storm"
+    },
+    {
+      "position": 87,
+      "artist": "In Motion Collective",
+      "track": "MTA"
+    },
+    {
+      "position": 88,
+      "artist": "Black Market Brass",
+      "track": "Maraka"
+    },
+    {
+      "position": 89,
+      "artist": "Massak",
+      "track": "Bla Pt 1"
+    },
+    {
+      "position": 90,
+      "artist": "Mestizo Beat",
+      "track": "Handcuffed To The Shovel"
+    },
+    {
+      "position": 91,
+      "artist": "Jungle Fire",
+      "track": "N.U.S.A.U."
+    },
+    {
+      "position": 92,
+      "artist": "Piero Montanari",
+      "track": "Properly"
+    },
+    {
+      "position": 93,
+      "artist": "Vaudou Game",
+      "track": "Be My Wife"
+    },
+    {
+      "position": 94,
+      "artist": "The Cranes",
+      "track": "Joy"
+    },
+    {
+      "position": 95,
+      "artist": "Tutu Gugu",
+      "track": "Dipapadi (Rappers Delight)"
+    },
+    {
+      "position": 96,
+      "artist": "The Checkmates",
+      "track": "Spouge Beat"
+    }
   ]
 }

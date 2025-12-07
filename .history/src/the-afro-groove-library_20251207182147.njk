@@ -1,0 +1,33 @@
+---
+layout: base.njk
+title: "The Afro Groove Library | The Groove Library"
+description: >
+  Rooted in music from and inspired by Africa, this series explores rhythm as both heritage and evolution — moving between traditional forms, vintage recordings, modern productions, edits, fusions and underground mutations.
+playlist: "the-afro-groove-library"
+---
+
+<div class="hero">
+  <div class="container">
+    <h1 class="hero__title">The Afro Groove Library</h1>
+  </div>
+</div>
+
+<main class="container flow">
+  {# Description #}
+  {% if description %}
+    <div class="wrapper wrapper--narrow flow">
+      {{ description | safe }}
+    </div>
+  {% endif %}
+
+  {# Mix Grid #}
+  {% if theAfroGrooveLibrary.cloudcasts.length > 0 %}
+    <div class="mix-grid">
+      {% for mix in theAfroGrooveLibrary.cloudcasts %}
+        {% include "mix-player.njk" %}
+      {% endfor %}
+    </div>
+  {% else %}
+    <p class="text-center">No mixes found in this playlist.</p>
+  {% endif %}
+</main>

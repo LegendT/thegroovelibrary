@@ -10,6 +10,7 @@ A vibrant, accessible music showcase featuring global mixes from Mixcloud. Built
 - **Modern Development Stack**: Built with Eleventy, TypeScript, and Web Awesome components
 - **Design System**: CUBE CSS architecture with vintage warm aesthetic and documented design tokens
 - **Responsive Grid Layout**: 2-column mix player cards with generous spacing (48px gaps)
+- **Scrollable Tracklists**: Smooth-scrolling tracklists with max-height constraint, custom scrollbar styling, and visual scroll indicators
 - **Performance Optimized**: Static site generation with build-time API calls
 - **Auto-updating**: Scheduled Netlify builds to keep content fresh
 
@@ -164,6 +165,9 @@ Reusable layout components:
   - Metadata display with icons
   - Tag badges with vintage styling
   - Embedded player with proper spacing
+  - Scrollable tracklists (400px max-height) with custom scrollbar styling
+  - Visual scroll indicators (gradient fade effect)
+  - Flexbox structure with `.mix-player__content` (top) and `.mix-player__bottom` (player + tracklist)
 - `.hero-logo` - White inverted logo for gradient backgrounds
 - `.badge` - Metadata badges (primary and neutral variants)
 - `.site-header` / `.site-footer` - Layout blocks with vintage styling

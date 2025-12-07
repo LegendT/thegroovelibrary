@@ -2,13 +2,30 @@
  * Mixcloud Playlist Data: easton-chop-up
  *
  * Fetches cloudcasts from the "easton-chop-up" playlist
- * at build time via Mixcloud API
+ * at build time via Mixcloud API and merges with manual tracklist data
  */
+
+import { readFileSync } from 'fs';
+import { resolve, dirname } from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
 
 export default async function() {
   const MIXCLOUD_USERNAME = "legendarymusic";
   const PLAYLIST_SLUG = "easton-chop-up";
   const API_BASE_URL = "https://api.mixcloud.com";
+
+  // Load manual tracklists
+  let manualTracklists = {};
+  try {
+    const tracklistsPath = resolve(__dirname, 'tracklists.json');
+    const tracklistsData = readFileSync(tracklistsPath, 'utf-8');
+    manualTracklists = JSON.parse(tracklistsData);
+  } catch (error) {
+    console.warn('No manual tracklists file found or error reading it:', error.message);
+  }
 
   /**
    * Fetch with retry logic
@@ -69,8 +86,44 @@ export default async function() {
     return cloudcasts;
   }
 
+  /**
+   * Merge manual tracklist data with cloudcasts
+   */
+  function mergeTracklists(cloudcasts) {
+    return cloudcasts.map(cloudcast => {
+      // Extract the slug from the cloudcast key (e.g., "/username/slug/" -> "username/slug")
+      const slug = cloudcast.key.replace(/^\//, '').replace(/\/$/, '');
+
+      // Check if we have manual tracklist data for this cloudcast
+      if (manualTracklists[slug]) {
+        console.log(`  ✓ Adding manual tracklist for: ${cloudcast.name} (${manualTracklists[slug].length} tracks)`);
+
+        // Convert manual format to API format
+        const sections = manualTracklists[slug].map(track => ({
+          section_type: 'track',
+          position: track.position,
+          track: {
+            artist: track.artist,
+            name: track.track
+          },
+          start_time: track.start_time || null
+        }));
+
+        return {
+          ...cloudcast,
+          sections
+        };
+      }
+
+      return cloudcast;
+    });
+  }
+
   try {
-    const cloudcasts = await fetchPlaylistCloudcasts(MIXCLOUD_USERNAME, PLAYLIST_SLUG);
+    let cloudcasts = await fetchPlaylistCloudcasts(MIXCLOUD_USERNAME, PLAYLIST_SLUG);
+
+    // Merge manual tracklists
+    cloudcasts = mergeTracklists(cloudcasts);
 
     console.log(`✓ Successfully fetched ${cloudcasts.length} cloudcasts from ${PLAYLIST_SLUG}`);
 

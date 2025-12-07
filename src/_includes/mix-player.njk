@@ -30,100 +30,106 @@
   </div>
 
   <div class="mix-player__body">
-    {# Mix Title #}
-    <h3 id="mix-{{ mix.slug }}" class="mix-player__title">
-      <a href="{{ mix.url }}"
-         target="_blank"
-         rel="noopener noreferrer"
-         aria-label="{{ mix.name }} - Open on Mixcloud in new window">
-        {{ mix.name }}
-        <wa-icon name="external-link" size="sm" aria-hidden="true"></wa-icon>
-      </a>
-    </h3>
+    {# Top content container #}
+    <div class="mix-player__content">
+      {# Mix Title #}
+      <h3 id="mix-{{ mix.slug }}" class="mix-player__title">
+        <a href="{{ mix.url }}"
+           target="_blank"
+           rel="noopener noreferrer"
+           aria-label="{{ mix.name }} - Open on Mixcloud in new window">
+          {{ mix.name }}
+          <wa-icon name="external-link" size="sm" aria-hidden="true"></wa-icon>
+        </a>
+      </h3>
 
-    {# Mix Metadata #}
-    <div class="mix-player__meta">
-      {% if mix.created_time %}
-        <div class="mix-player__meta-item">
-          <wa-icon name="calendar" size="sm" aria-hidden="true"></wa-icon>
-          <time datetime="{{ mix.created_time }}" aria-label="Published date">
-            {{ helpers.formatDate(mix.created_time) }}
-          </time>
-        </div>
-      {% endif %}
+      {# Mix Metadata #}
+      <div class="mix-player__meta">
+        {% if mix.created_time %}
+          <div class="mix-player__meta-item">
+            <wa-icon name="calendar" size="sm" aria-hidden="true"></wa-icon>
+            <time datetime="{{ mix.created_time }}" aria-label="Published date">
+              {{ helpers.formatDate(mix.created_time) }}
+            </time>
+          </div>
+        {% endif %}
 
-      {% if mix.audio_length %}
-        <div class="mix-player__meta-item">
-          <wa-icon name="clock" size="sm" aria-hidden="true"></wa-icon>
-          <span aria-label="Duration">
-            {{ helpers.formatDuration(mix.audio_length) }}
-          </span>
-        </div>
-      {% endif %}
+        {% if mix.audio_length %}
+          <div class="mix-player__meta-item">
+            <wa-icon name="clock" size="sm" aria-hidden="true"></wa-icon>
+            <span aria-label="Duration">
+              {{ helpers.formatDuration(mix.audio_length) }}
+            </span>
+          </div>
+        {% endif %}
 
-      {% if mix.play_count %}
-        <div class="mix-player__meta-item">
-          <wa-icon name="headphones" size="sm" aria-hidden="true"></wa-icon>
-          <span aria-label="Play count">
-            {{ mix.play_count | toLocaleString }} plays
-          </span>
-        </div>
-      {% endif %}
-    </div>
-
-    {# Tags #}
-    {% if mix.tags and mix.tags.length > 0 %}
-      <div class="mix-player__tags" role="list" aria-label="Tags">
-        {% for tag in mix.tags | slice(0, 5) %}
-          <span class="mix-player__tag" role="listitem">
-            {{ tag.name }}
-          </span>
-        {% endfor %}
+        {% if mix.play_count %}
+          <div class="mix-player__meta-item">
+            <wa-icon name="headphones" size="sm" aria-hidden="true"></wa-icon>
+            <span aria-label="Play count">
+              {{ mix.play_count | toLocaleString }} plays
+            </span>
+          </div>
+        {% endif %}
       </div>
-    {% endif %}
 
-    {# Mixcloud Embedded Player #}
-    <div class="mix-player__iframe-wrapper">
-      <iframe
-        class="mix-player__iframe"
-        width="100%"
-        height="120"
-        src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
-        frameborder="0"
-        loading="lazy"
-        allow="autoplay; encrypted-media"
-        title="Mixcloud player for {{ mix.name }}"
-        aria-label="Audio player for {{ mix.name }}">
-      </iframe>
+      {# Tags #}
+      {% if mix.tags and mix.tags.length > 0 %}
+        <div class="mix-player__tags" role="list" aria-label="Tags">
+          {% for tag in mix.tags | slice(0, 5) %}
+            <span class="mix-player__tag" role="listitem">
+              {{ tag.name }}
+            </span>
+          {% endfor %}
+        </div>
+      {% endif %}
     </div>
 
-    {# Tracklist #}
-    {% if mix.sections and mix.sections.length > 0 %}
-      <details class="mix-player__tracklist">
-        <summary class="mix-player__tracklist-summary">
-          <wa-icon name="list-music" size="sm" aria-hidden="true"></wa-icon>
-          <span>Tracklist ({{ mix.sections.length }} tracks)</span>
-        </summary>
-        <ol class="mix-player__tracklist-items" aria-label="Track listing">
-          {% for section in mix.sections %}
-            {% if section.section_type == 'track' and section.track %}
-              <li class="mix-player__tracklist-item">
-                <span class="mix-player__tracklist-position">{{ section.position }}</span>
-                <div class="mix-player__tracklist-info">
-                  <span class="mix-player__tracklist-artist">{{ section.track.artist or 'Unknown Artist' }}</span>
-                  <span class="mix-player__tracklist-separator">—</span>
-                  <span class="mix-player__tracklist-track">{{ section.track.name or 'Unknown Track' }}</span>
-                </div>
-                {% if section.start_time %}
-                  <time class="mix-player__tracklist-time" datetime="PT{{ section.start_time }}S">
-                    {{ helpers.formatDuration(section.start_time) }}
-                  </time>
-                {% endif %}
-              </li>
-            {% endif %}
-          {% endfor %}
-        </ol>
-      </details>
-    {% endif %}
+    {# Player and Tracklist Container - pushed to bottom #}
+    <div class="mix-player__bottom">
+      {# Mixcloud Embedded Player #}
+      <div class="mix-player__iframe-wrapper">
+        <iframe
+          class="mix-player__iframe"
+          width="100%"
+          height="120"
+          src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
+          frameborder="0"
+          loading="lazy"
+          allow="autoplay; encrypted-media"
+          title="Mixcloud player for {{ mix.name }}"
+          aria-label="Audio player for {{ mix.name }}">
+        </iframe>
+      </div>
+
+      {# Tracklist #}
+      {% if mix.sections and mix.sections.length > 0 %}
+        <details class="mix-player__tracklist">
+          <summary class="mix-player__tracklist-summary">
+            <wa-icon name="list-music" size="sm" aria-hidden="true"></wa-icon>
+            <span>Tracklist ({{ mix.sections.length }} tracks)</span>
+          </summary>
+          <ol class="mix-player__tracklist-items" aria-label="Track listing">
+            {% for section in mix.sections %}
+              {% if section.section_type == 'track' and section.track %}
+                <li class="mix-player__tracklist-item">
+                  <span class="mix-player__tracklist-position">{{ section.position }}</span>
+                  <div class="mix-player__tracklist-info">
+                    <span class="mix-player__tracklist-artist">{{ section.track.artist or 'Unknown Artist' }}</span>
+                    <span class="mix-player__tracklist-separator">—</span>
+                    <span class="mix-player__tracklist-track">{{ section.track.name or 'Unknown Track' }}</span>
+                  </div>
+                  {% if section.start_time %}
+                    <time class="mix-player__tracklist-time" datetime="PT{{ section.start_time }}S">
+                      {{ helpers.formatDuration(section.start_time) }}
+                    </time>
+                  {% endif %}
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ol>
+        </details>
+      {% endif %}
+    </div>
   </div>
 </article>
