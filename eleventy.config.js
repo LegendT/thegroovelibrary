@@ -13,6 +13,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addWatchTarget("src/css/");
   eleventyConfig.addWatchTarget("src/js/");
 
+  // Add filter to format numbers with locale string
+  eleventyConfig.addFilter("toLocaleString", function(value) {
+    if (typeof value === 'number') {
+      return value.toLocaleString('en-US');
+    }
+    return value;
+  });
+
   // Set custom directories
   return {
     dir: {

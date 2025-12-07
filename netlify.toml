@@ -43,7 +43,7 @@
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://webawesome.com https://kit.webawesome.com https://ka-p.webawesome.com https://cdn.jsdelivr.net;
       style-src 'self' 'unsafe-inline' https://webawesome.com https://kit.webawesome.com https://ka-p.webawesome.com;
-      img-src 'self' data: https: blob:;
+      img-src 'self' data: https: blob: https://thumbnailer.mixcloud.com;
       font-src 'self' data: https://webawesome.com https://kit.webawesome.com https://ka-p.webawesome.com;
       connect-src 'self' https://api.mixcloud.com;
       frame-src https://www.mixcloud.com https://widget.mixcloud.com https://player.mixcloud.com;
