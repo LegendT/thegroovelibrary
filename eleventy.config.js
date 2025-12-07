@@ -1,6 +1,9 @@
-import { UserConfig } from "@11ty/eleventy";
+/**
+ * Eleventy Configuration
+ * @see https://www.11ty.dev/docs/config/
+ */
 
-export default function (eleventyConfig: UserConfig) {
+export default function (eleventyConfig) {
   // Copy static assets
   eleventyConfig.addPassthroughCopy("src/assets");
   eleventyConfig.addPassthroughCopy("src/css");

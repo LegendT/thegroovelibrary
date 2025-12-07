@@ -69,7 +69,7 @@ description: Discover legendary music from around the globe. The Groove Library 
         <div class="grid grid--2" role="list" aria-label="Music mixes">
           {% for mix in mixcloud.cloudcasts %}
             <div role="listitem">
-              {% include "mix-player.njk", mix: mix %}
+              {% include "mix-player.njk" %}
             </div>
           {% endfor %}
         </div>

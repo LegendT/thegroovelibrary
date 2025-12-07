@@ -10,7 +10,11 @@
 
   # Node version for builds
   [build.environment]
-    NODE_VERSION = "18"
+    NODE_VERSION = "20"
+
+# Use Ubuntu 22.04 (Jammy) build image
+[build.processing]
+  skip_processing = false
 
 # Build hooks for scheduled updates
 # After deployment, you can trigger builds with:

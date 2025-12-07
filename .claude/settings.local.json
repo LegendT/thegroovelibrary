@@ -6,7 +6,11 @@
       "Bash(npm install:*)",
       "Bash(npm search:*)",
       "Bash(git add:*)",
-      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: The Groove Library\n\nSet up foundational infrastructure for The Groove Library - a WCAG 2.2 AA\ncompliant music showcase featuring Mixcloud content.\n\nFeatures:\n- Eleventy v3.0 static site generator with TypeScript support\n- Web Awesome component library for accessible UI components\n- CUBE CSS architecture with comprehensive design system\n- Mixcloud API integration with build-time data fetching\n- Netlify deployment configuration with scheduled builds\n- Comprehensive documentation (README, ARCHITECTURE)\n\nTech Stack:\n- Static Site Generator: Eleventy v3.0+\n- Component Library: Web Awesome (web components)\n- CSS Methodology: CUBE CSS with custom properties\n- TypeScript: Full type safety\n- Hosting: Netlify with scheduled updates\n\nAccessibility:\n- WCAG 2.2 AA compliant\n- Semantic HTML5 structure\n- ARIA labels and landmarks\n- Keyboard navigation\n- Focus management\n- Reduced motion support\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")"
+      "Bash(git commit -m \"$(cat <<''EOF''\nInitial commit: The Groove Library\n\nSet up foundational infrastructure for The Groove Library - a WCAG 2.2 AA\ncompliant music showcase featuring Mixcloud content.\n\nFeatures:\n- Eleventy v3.0 static site generator with TypeScript support\n- Web Awesome component library for accessible UI components\n- CUBE CSS architecture with comprehensive design system\n- Mixcloud API integration with build-time data fetching\n- Netlify deployment configuration with scheduled builds\n- Comprehensive documentation (README, ARCHITECTURE)\n\nTech Stack:\n- Static Site Generator: Eleventy v3.0+\n- Component Library: Web Awesome (web components)\n- CSS Methodology: CUBE CSS with custom properties\n- TypeScript: Full type safety\n- Hosting: Netlify with scheduled updates\n\nAccessibility:\n- WCAG 2.2 AA compliant\n- Semantic HTML5 structure\n- ARIA labels and landmarks\n- Keyboard navigation\n- Focus management\n- Reduced motion support\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git commit:*)",
+      "Bash(gh repo create:*)",
+      "Bash(git push)",
+      "Bash(npm run build:*)"
     ],
     "deny": [],
     "ask": []
