@@ -83,11 +83,17 @@ function slugToCamelCase(slug) {
  * Create page file
  */
 function createPageFile(pageSlug, playlistName, dataVarName, pageDescription) {
+  // Indent description content properly for YAML block scalar
+  const indentedDescription = pageDescription
+    .split('\n')
+    .map(line => line.trim() ? `  ${line}` : '')
+    .join('\n');
+
   const pageContent = `---
 layout: base.njk
 title: "${playlistName} | The Groove Library"
 description: >
-  ${pageDescription}
+${indentedDescription}
 playlist: "${pageSlug}"
 ---
 
