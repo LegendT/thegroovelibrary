@@ -37,7 +37,7 @@
          rel="noopener noreferrer"
          aria-label="{{ mix.name }} - Open on Mixcloud in new window">
         {{ mix.name }}
-        <fa-icon icon="external-link" size="sm" aria-hidden="true"></fa-icon>
+        <wa-icon name="external-link" size="sm" aria-hidden="true"></wa-icon>
       </a>
     </h3>
 
@@ -45,7 +45,7 @@
     <div class="mix-player__meta">
       {% if mix.created_time %}
         <div class="mix-player__meta-item">
-          <fa-icon icon="calendar" size="sm" aria-hidden="true"></fa-icon>
+          <wa-icon name="calendar" size="sm" aria-hidden="true"></wa-icon>
           <time datetime="{{ mix.created_time }}" aria-label="Published date">
             {{ helpers.formatDate(mix.created_time) }}
           </time>
@@ -54,7 +54,7 @@
 
       {% if mix.audio_length %}
         <div class="mix-player__meta-item">
-          <fa-icon icon="clock" size="sm" aria-hidden="true"></fa-icon>
+          <wa-icon name="clock" size="sm" aria-hidden="true"></wa-icon>
           <span aria-label="Duration">
             {{ helpers.formatDuration(mix.audio_length) }}
           </span>
@@ -63,7 +63,7 @@
 
       {% if mix.play_count %}
         <div class="mix-player__meta-item">
-          <fa-icon icon="headphones" size="sm" aria-hidden="true"></fa-icon>
+          <wa-icon name="headphones" size="sm" aria-hidden="true"></wa-icon>
           <span aria-label="Play count">
             {{ mix.play_count | toLocaleString }} plays
           </span>

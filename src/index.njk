@@ -35,9 +35,9 @@ description: >
       </div>
 
       <div class="cluster cluster--md justify-center">
-        <fa-icon icon="globe" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
-        <fa-icon icon="music" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
-        <fa-icon icon="headphones" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
+        <wa-icon name="globe" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+        <wa-icon name="music" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+        <wa-icon name="headphones" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
       </div>
     </div>
   </div>
@@ -67,7 +67,7 @@ description: >
         {% if theGrooveLibrary.count > 0 %}
           <div class="cluster cluster--sm justify-center">
             <span class="badge">
-              <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
+              <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
               {{ theGrooveLibrary.count }} mixes in this playlist
             </span>
           </div>
@@ -87,7 +87,7 @@ description: >
         {# Error State #}
         <div class="error" role="alert">
           <h3 class="error__title">
-            <fa-icon icon="triangle-exclamation" aria-hidden="true"></fa-icon>
+            <wa-icon name="triangle-exclamation" aria-hidden="true"></wa-icon>
             Unable to load mixes
           </h3>
           <p>We encountered an error while fetching the music collection. Please try again later.</p>
@@ -99,7 +99,7 @@ description: >
       {% else %}
         {# Empty State #}
         <div class="center center--intrinsic flow flow--lg text-center py-3xl">
-          <fa-icon icon="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></fa-icon>
+          <wa-icon name="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></wa-icon>
           <div class="flow flow--sm">
             <h3 class="text-xl">No mixes available</h3>
             <p class="text-secondary">Check back soon for new content!</p>
@@ -124,15 +124,15 @@ description: >
         </p>
         <div class="cluster cluster--lg justify-center">
           <div class="flow flow--sm text-center">
-            <fa-icon icon="earth-americas" size="3x" class="text-brand" aria-hidden="true"></fa-icon>
+            <wa-icon name="earth-americas" size="3x" class="text-brand" aria-hidden="true"></wa-icon>
             <p class="text-semibold">Global Sounds</p>
           </div>
           <div class="flow flow--sm text-center">
-            <fa-icon icon="heart" size="3x" class="text-brand" aria-hidden="true"></fa-icon>
+            <wa-icon name="heart" size="3x" class="text-brand" aria-hidden="true"></wa-icon>
             <p class="text-semibold">Curated with Care</p>
           </div>
           <div class="flow flow--sm text-center">
-            <fa-icon icon="users" size="3x" class="text-brand" aria-hidden="true"></fa-icon>
+            <wa-icon name="users" size="3x" class="text-brand" aria-hidden="true"></wa-icon>
             <p class="text-semibold">For Everyone</p>
           </div>
         </div>

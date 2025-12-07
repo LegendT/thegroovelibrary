@@ -114,9 +114,9 @@ playlist: "${pageSlug}"
       </div>
 
       <div class="cluster cluster--md justify-center">
-        <fa-icon icon="record-vinyl" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
-        <fa-icon icon="music" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
-        <fa-icon icon="headphones" size="2x" class="text-inverse" aria-hidden="true"></fa-icon>
+        <wa-icon name="record-vinyl" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+        <wa-icon name="music" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+        <wa-icon name="headphones" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
       </div>
     </div>
   </div>
@@ -146,7 +146,7 @@ playlist: "${pageSlug}"
         {% if ${dataVarName}.count > 0 %}
           <div class="cluster cluster--sm justify-center">
             <span class="badge">
-              <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
+              <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
               {{ ${dataVarName}.count }} mixes in this collection
             </span>
           </div>
@@ -166,7 +166,7 @@ playlist: "${pageSlug}"
         {# Error State #}
         <div class="error" role="alert">
           <h3 class="error__title">
-            <fa-icon icon="triangle-exclamation" aria-hidden="true"></fa-icon>
+            <wa-icon name="triangle-exclamation" aria-hidden="true"></wa-icon>
             Unable to load mixes
           </h3>
           <p>We encountered an error while fetching the music collection. Please try again later.</p>
@@ -178,7 +178,7 @@ playlist: "${pageSlug}"
       {% else %}
         {# Empty State #}
         <div class="center center--intrinsic flow flow--lg text-center py-3xl">
-          <fa-icon icon="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></fa-icon>
+          <wa-icon name="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></wa-icon>
           <div class="flow flow--sm">
             <h3 class="text-xl">No mixes available</h3>
             <p class="text-secondary">Check back soon for new content!</p>
