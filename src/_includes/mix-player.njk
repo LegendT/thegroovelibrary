@@ -13,17 +13,21 @@
 
 <article class="mix-player" aria-labelledby="mix-{{ mix.slug }}">
   {# Cover Image #}
-  {% if mix.pictures and mix.pictures.large %}
-    <div class="mix-player__cover">
+  <div class="mix-player__cover">
+    {% if mix.pictures and mix.pictures.large %}
       <img
         src="{{ mix.pictures.large }}"
         alt="Cover art for {{ mix.name }}"
         class="mix-player__image"
         loading="lazy"
         width="640"
-        height="640">
-    </div>
-  {% endif %}
+        height="640"
+        onerror="this.style.display='none'; this.parentElement.classList.add('mix-player__cover--fallback');">
+    {% else %}
+      {# No image available - show fallback #}
+      <div class="mix-player__cover--fallback" aria-hidden="true"></div>
+    {% endif %}
+  </div>
 
   <div class="mix-player__info">
     {# Mix Title #}
