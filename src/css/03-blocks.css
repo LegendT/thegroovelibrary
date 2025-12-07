@@ -352,7 +352,10 @@ a:focus-visible {
   width: 100%;
   aspect-ratio: 1 / 1;
   overflow: hidden;
-  background-color: var(--color-neutral-200);
+  background: linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-secondary-100) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .mix-player__image {
@@ -360,6 +363,23 @@ a:focus-visible {
   height: 100%;
   object-fit: cover;
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Fallback when image fails to load */
+.mix-player__cover--fallback::before {
+  content: '';
+  display: block;
+  width: 50%;
+  height: 50%;
+  background-image: url('/assets/logo.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 0.3;
+  filter: grayscale(100%);
 }
 
 .mix-player__info {
