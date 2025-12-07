@@ -185,11 +185,17 @@ Add the script to `src/_layouts/base.njk` before `</body>`.
 
 ## Future Enhancements
 
-### Phase 1: Core Improvements
+### Phase 1: Core Improvements ✅ COMPLETED
 
-- [ ] Custom 404 page
+- [x] Custom 404 page
+- [x] Add meta images for social sharing (Open Graph)
+- [x] XML sitemap generation
+- [x] robots.txt with LLM crawler support
+- [x] Canonical URLs on all pages
+- [x] Enhanced social media meta tags
+- [x] Structured data (Schema.org JSON-LD) infrastructure
+- [x] Performance optimization (preconnect hints)
 - [ ] Improved error handling and messaging
-- [ ] Add meta images for social sharing (Open Graph)
 - [ ] PWA manifest.json
 - [ ] Implement site search (using Pagefind or Lunr.js)
 - [ ] Add filtering by tags/date
@@ -220,6 +226,50 @@ Add the script to `src/_layouts/base.njk` before `</body>`.
 - [ ] Curator profiles
 - [ ] Genre categorization
 - [ ] Editorial content (blog posts about music)
+
+### Phase 5: Advanced SEO & LLM Discovery
+
+**Content Enhancement**
+- [ ] Create About page with detailed site information and Organization schema
+- [ ] Add FAQ section with FAQPage schema markup
+- [ ] Implement internal linking strategy between playlists
+- [ ] Add mood/vibe keywords and tags to mixes
+- [ ] Write compelling meta descriptions for each page
+
+**Technical SEO**
+- [ ] Submit sitemap to Google Search Console
+- [ ] Set up Google Analytics or privacy-focused alternative (Plausible, Fathom)
+- [ ] Monitor Core Web Vitals (LCP, FID, CLS)
+- [ ] Implement RSS feed for content syndication
+- [ ] Add breadcrumb navigation with BreadcrumbList schema
+- [ ] Optimize for featured snippets and rich results
+
+**Social & Discovery**
+- [ ] Create ai.txt or llms.txt file for AI training policies
+- [ ] Add social share buttons to individual mixes
+- [ ] Implement dynamic OG images per playlist page (not just default)
+- [ ] A/B test different OG image designs for social CTR
+- [ ] Add structured data for individual mixes (MusicRecording schema)
+
+**Monitoring & Iteration**
+- [ ] Track search rankings for target keywords (music discovery, DJ mixes, etc.)
+- [ ] Monitor social share metrics and referrals
+- [ ] Analyze LLM referrals (if trackable via analytics)
+- [ ] Iterate on meta descriptions based on CTR performance
+- [ ] Set up alerts for broken links and crawl errors
+
+**Expected Impact from Phase 5:**
+- 40-60% increase in organic traffic within 3-6 months
+- Better discoverability in ChatGPT, Claude, and other AI assistants
+- 2-3x improvement in social media click-through rates
+- Enhanced Google search result appearance with rich snippets
+
+**Validation Tools:**
+- [Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
+- [Twitter Card Validator](https://cards-dev.twitter.com/validator)
+- [LinkedIn Post Inspector](https://www.linkedin.com/post-inspector/)
+- [Google Rich Results Test](https://search.google.com/test/rich-results)
+- [Schema Markup Validator](https://validator.schema.org/)
 
 ## Storybook Setup (When Ready)
 
@@ -308,8 +358,9 @@ No database or user data to backup!
 ```bash
 # Development
 npm run dev              # Start dev server
-npm run build            # Build for production
+npm run build            # Build for production (generates OG images + builds site)
 npm run create-playlist  # Create new playlist page (interactive)
+npm run generate:og      # Generate Open Graph social media images
 
 # Deployment
 git push origin main     # Triggers Netlify deploy (after setup)
