@@ -40,28 +40,16 @@ description: Discover legendary music from around the globe. The Groove Library 
           Featured Mixes
         </h2>
 
-        {% if mixcloud.profile %}
-          <p class="text-lg text-secondary">
-            Curated by
-            <a href="{{ mixcloud.profile.url }}"
-               target="_blank"
-               rel="noopener noreferrer"
-               class="text-semibold">
-              {{ mixcloud.profile.name }}
-            </a>
-          </p>
-        {% endif %}
-
-        {% if mixcloud.count > 0 %}
+        {% if theGrooveLibrary.count > 0 %}
           <div class="cluster cluster--sm justify-center">
             <span class="badge">
               <fa-icon icon="record-vinyl" size="sm" aria-hidden="true"></fa-icon>
-              {{ mixcloud.count }} mixes available
+              {{ theGrooveLibrary.count }} mixes in this playlist
             </span>
-            {% if mixcloud.fetchedAt %}
+            {% if theGrooveLibrary.fetchedAt %}
               <span class="badge badge--neutral">
                 <fa-icon icon="clock" size="sm" aria-hidden="true"></fa-icon>
-                Updated {{ helpers.formatDate(mixcloud.fetchedAt) }}
+                Updated {{ helpers.formatDate(theGrooveLibrary.fetchedAt) }}
               </span>
             {% endif %}
           </div>
@@ -69,15 +57,15 @@ description: Discover legendary music from around the globe. The Groove Library 
       </div>
 
       {# Mix Grid #}
-      {% if helpers.hasItems(mixcloud.cloudcasts) %}
+      {% if helpers.hasItems(theGrooveLibrary.cloudcasts) %}
         <div class="grid grid--2" role="list" aria-label="Music mixes">
-          {% for mix in mixcloud.cloudcasts %}
+          {% for mix in theGrooveLibrary.cloudcasts %}
             <div role="listitem">
               {% include "mix-player.njk" %}
             </div>
           {% endfor %}
         </div>
-      {% elif mixcloud.error %}
+      {% elif theGrooveLibrary.error %}
         {# Error State #}
         <div class="error" role="alert">
           <h3 class="error__title">
@@ -87,7 +75,7 @@ description: Discover legendary music from around the globe. The Groove Library 
           <p>We encountered an error while fetching the music collection. Please try again later.</p>
           <details class="my-md">
             <summary class="cursor-pointer text-semibold">Technical details</summary>
-            <p class="text-sm my-sm"><code>{{ mixcloud.error }}</code></p>
+            <p class="text-sm my-sm"><code>{{ theGrooveLibrary.error }}</code></p>
           </details>
         </div>
       {% else %}

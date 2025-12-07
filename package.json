@@ -7,6 +7,7 @@
     "dev": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy",
     "start": "npm run dev",
+    "create-playlist": "node scripts/create-playlist-page.js",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

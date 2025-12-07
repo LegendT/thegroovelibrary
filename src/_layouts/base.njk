@@ -50,16 +50,15 @@
 
         <nav class="nav" role="navigation" aria-label="Main navigation">
           <ul class="nav__list">
-            <li>
-              <a href="/" class="nav__link {{ 'nav__link--active' if page.url == '/' }}" {{ 'aria-current="page"' if page.url == '/' }}>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="/about/" class="nav__link {{ 'nav__link--active' if page.url == '/about/' }}">
-                About
-              </a>
-            </li>
+            {% for item in navigation.pages %}
+              <li>
+                <a href="{{ item.url }}"
+                   class="nav__link {{ 'nav__link--active' if page.url == item.url }}"
+                   {{ 'aria-current="page"' if page.url == item.url }}>
+                  {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
           </ul>
         </nav>
       </div>
