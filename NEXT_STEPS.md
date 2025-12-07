@@ -181,6 +181,7 @@ Add the script to `src/_layouts/base.njk` before `</body>`.
 - [x] Consistent hero sections with gradient backgrounds
 - [x] Mix player component with proper BEM naming
 - [x] Responsive 2-column grid layout for mix cards
+- [x] Responsive hamburger menu navigation (mobile < 960px, horizontal desktop)
 
 ## Future Enhancements
 

@@ -178,6 +178,7 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 
 **base.njk**: Base HTML template
 - Semantic HTML5 structure
+- Responsive navigation with hamburger menu (mobile < 960px, horizontal desktop)
 - Accessible navigation with ARIA labels
 - Skip to main content link
 - SEO meta tags (Open Graph, Twitter Cards)
