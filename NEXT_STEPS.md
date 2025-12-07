@@ -95,16 +95,26 @@ To keep Mixcloud content updated:
 
 ## Immediate Improvements (Optional but Recommended)
 
-### 1. Add a Favicon
+### 1. ~~Add a Favicon~~ ✅ COMPLETED
 
-Create a favicon and place it in `src/assets/`:
+PNG logo versions have been created and are available:
+- `src/assets/logo-180.png` - Apple touch icon
+- `src/assets/logo-192.png` - PWA icon (standard)
+- `src/assets/logo-512.png` - PWA icon (high-res)
+- `src/assets/logo.svg` - Vector logo (used in header)
 
-```bash
-# Create a simple SVG favicon or use a tool like RealFaviconGenerator
-# Update base.njk line that references /assets/favicon.svg
-```
+To add PWA support, create a `manifest.json` file.
 
 ### 2. Add an About Page
+
+Use the playlist generator script or create manually:
+
+**Option A: Using the Script (Recommended)**
+```bash
+npm run create-playlist
+```
+
+**Option B: Manual Creation**
 
 Create `src/about.njk`:
 
@@ -112,19 +122,31 @@ Create `src/about.njk`:
 ---
 layout: base.njk
 title: About
-description: Learn more about The Groove Library and our mission to celebrate global music.
+description: >
+  <p>Learn more about The Groove Library and our mission to celebrate global music.</p>
 ---
 
-<section class="region region--lg">
+<div class="hero">
   <div class="container">
-    <div class="wrapper wrapper--narrow">
-      <div class="flow flow--lg">
-        <h1>About The Groove Library</h1>
-        <p>Your content here...</p>
-      </div>
-    </div>
+    <h1 class="hero__title">About</h1>
   </div>
-</section>
+</div>
+
+<main class="container flow">
+  {% if description %}
+    <div class="wrapper wrapper--narrow flow">
+      {{ description | safe }}
+    </div>
+  {% endif %}
+</main>
+```
+
+Then manually add to `src/_data/navigation.json`:
+```json
+{
+  "title": "About",
+  "url": "/about/"
+}
 ```
 
 ### 3. Test Accessibility
@@ -143,6 +165,17 @@ Consider:
 
 Add the script to `src/_layouts/base.njk` before `</body>`.
 
+## Features Completed
+
+- [x] Playlist page generator script (`npm run create-playlist`)
+- [x] Dynamic navigation system
+- [x] HTML description support in front matter (YAML block scalar)
+- [x] PNG logo versions for PWA/favicons
+- [x] Content Security Policy configured for Web Awesome and Mixcloud
+- [x] CamelCase data file naming convention
+- [x] Separate playlist data files for better organization
+- [x] Image fallback handler for broken images
+
 ## Future Enhancements
 
 ### Phase 1: Core Improvements
@@ -150,6 +183,7 @@ Add the script to `src/_layouts/base.njk` before `</body>`.
 - [ ] Custom 404 page
 - [ ] Improved error handling and messaging
 - [ ] Add meta images for social sharing (Open Graph)
+- [ ] PWA manifest.json
 - [ ] Implement site search (using Pagefind or Lunr.js)
 - [ ] Add filtering by tags/date
 - [ ] Pagination for large mix collections
@@ -268,6 +302,7 @@ No database or user data to backup!
 # Development
 npm run dev              # Start dev server
 npm run build            # Build for production
+npm run create-playlist  # Create new playlist page (interactive)
 
 # Deployment
 git push origin main     # Triggers Netlify deploy (after setup)
@@ -283,6 +318,36 @@ git status               # Check current state
 git add .                # Stage all changes
 git commit -m "message"  # Commit changes
 git push                 # Push to remote
+```
+
+## Creating New Playlist Pages
+
+The interactive script makes it easy to add new playlists:
+
+```bash
+npm run create-playlist
+```
+
+**What it does**:
+1. Prompts for Mixcloud playlist URL (e.g., `https://www.mixcloud.com/legendarymusic/playlists/playlist-name/`)
+2. Asks for custom page slug (or uses playlist name from URL)
+3. Asks for page description (supports HTML via YAML block scalar)
+4. Fetches playlist metadata from Mixcloud API
+5. Generates:
+   - Page template: `src/[slug].njk`
+   - Data file: `src/_data/[camelCaseSlug].js`
+   - Updates navigation: `src/_data/navigation.json`
+
+**Important Notes**:
+- Page descriptions support multi-paragraph HTML
+- Data files use camelCase naming (e.g., `eastonChopUp.js`)
+- Page slugs can use dashes (e.g., `easton-chop-up`)
+- Navigation is automatically updated
+
+**After Creating**:
+```bash
+npm run build  # Test the build
+npm run dev    # Preview locally
 ```
 
 ---

@@ -109,11 +109,11 @@ The site works with HTML/CSS first, enhanced with JavaScript for improved user e
 
 **Location**: `src/_data/`
 
-#### mixcloud.js
-Fetches cloudcast data from Mixcloud API at **build time**.
+#### Playlist Data Files (e.g., theGrooveLibrary.js, eastonChopUp.js)
+Each playlist has its own data file that fetches cloudcasts from a specific Mixcloud playlist at **build time**.
 
 **Key Features**:
-- Pagination support (fetches all cloudcasts)
+- Pagination support (fetches all cloudcasts from a playlist)
 - Rate limiting with exponential backoff
 - Retry logic (max 3 attempts)
 - Error handling with graceful degradation
@@ -122,14 +122,18 @@ Fetches cloudcast data from Mixcloud API at **build time**.
 **Data Structure**:
 ```javascript
 {
-  username: "legendarymusic",
-  profile: { /* Mixcloud user profile */ },
+  playlistSlug: "the-groove-library",
   cloudcasts: [ /* Array of mix objects */ ],
-  fetchedAt: "2024-12-07T...",
   count: 42,
+  fetchedAt: "2024-12-07T...",
   error: null // or error message if failed
 }
 ```
+
+**Naming Convention**:
+- File names use camelCase (e.g., `eastonChopUp.js`)
+- This allows them to be used as Nunjucks variables (e.g., `{{ eastonChopUp.cloudcasts }}`)
+- Page slugs can use dashes (e.g., `easton-chop-up`) and are converted to camelCase for data files
 
 **Why Build-time Fetching?**
 - No API rate limits for users
@@ -138,6 +142,25 @@ Fetches cloudcast data from Mixcloud API at **build time**.
 - Cacheable by CDN
 - Scheduled rebuilds keep content fresh
 
+#### navigation.json
+Dynamic navigation configuration that's automatically updated by the playlist generator script.
+
+**Structure**:
+```json
+{
+  "pages": [
+    {
+      "title": "The Groove Library",
+      "url": "/"
+    },
+    {
+      "title": "Easton Chop Up!",
+      "url": "/easton-chop-up/"
+    }
+  ]
+}
+```
+
 #### helpers.js
 Template utility functions available as `{{ helpers.functionName() }}`.
 
@@ -145,8 +168,9 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 - `currentYear()` - For copyright notices
 - `formatDate()` - Human-readable dates
 - `formatDuration()` - Seconds to "Xh Ym"
-- `getMixcloudEmbedUrl()` - Generate embed URLs
+- `getMixcloudEmbedUrl()` - Generate embed URLs (uses `https://player-widget.mixcloud.com`)
 - `truncate()` - Safe text truncation
+- `hasItems()` - Check if array has items
 
 ## Template Architecture
 
@@ -173,11 +197,33 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 
 ### Pages
 
+Pages support HTML in front matter descriptions using YAML block scalar syntax:
+
+```yaml
+---
+description: >
+  <p>HTML content here.</p>
+
+  <ul>
+    <li>List items</li>
+  </ul>
+---
+```
+
 **index.njk**: Homepage
 - Hero section with branding
+- Description section (HTML from front matter)
 - Mix grid (responsive auto-fit)
 - Error/empty states
 - About section
+- Uses `theGrooveLibrary` data
+
+**Playlist Pages** (e.g., easton-chop-up.njk):
+- Generated via `npm run create-playlist` script
+- Hero with playlist title
+- HTML description section
+- Mix grid using playlist-specific data
+- Follows consistent template pattern
 
 ## Accessibility Architecture
 
@@ -243,6 +289,9 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 - `X-Frame-Options: SAMEORIGIN` - Prevents clickjacking
 - `X-Content-Type-Options: nosniff` - Prevents MIME sniffing
 - `Content-Security-Policy` - Restricts resource loading
+  - Configured for Web Awesome CDN domains: `kit.webawesome.com`, `ka-p.webawesome.com`
+  - Configured for Mixcloud: `player-widget.mixcloud.com`, `thumbnailer.mixcloud.com`
+  - Allows Mixcloud API calls for build-time data fetching
 - `Referrer-Policy` - Controls referrer information
 
 ## Performance Considerations
@@ -328,6 +377,18 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 3. Browser auto-refreshes on changes
 4. Web components require full reload (no HMR)
 
+### Creating New Playlist Pages
+1. `npm run create-playlist` - Launch interactive script
+2. Enter Mixcloud playlist URL
+3. Specify custom page slug (or accept default)
+4. Provide page description (HTML supported)
+5. Script generates:
+   - Page file: `src/[slug].njk`
+   - Data file: `src/_data/[camelCaseSlug].js`
+   - Updates: `src/_data/navigation.json`
+6. Run `npm run build` to test
+7. Run `npm run dev` to preview
+
 ### Testing
 - Visual testing: Manual in dev server
 - Accessibility: axe DevTools, Lighthouse
@@ -340,6 +401,26 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 - Feature branch workflow (when team grows)
 
 ## Decision Log
+
+### Why CamelCase for Data Files?
+- Nunjucks template variables cannot contain dashes
+- Page slugs can use dashes (SEO-friendly URLs)
+- Conversion function (`slugToCamelCase`) handles transformation
+- Example: `easton-chop-up` (URL) → `eastonChopUp.js` (data file)
+
+### Why Playlist-Specific Data Files?
+- Each playlist can have independent build/fetch logic
+- Homepage can show only specific playlists
+- Better separation of concerns
+- Easier to debug and maintain
+- Scales better than single data file
+
+### Why YAML Block Scalar for Descriptions?
+- Supports multi-paragraph HTML content
+- Clean front matter syntax
+- Proper indentation maintained
+- No need for escaping or string concatenation
+- Rendered safely with `{{ description | safe }}`
 
 ### Why Not React/Vue/Svelte?
 - No need for client-side interactivity

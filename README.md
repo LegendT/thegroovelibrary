@@ -26,7 +26,9 @@ thegroovelibrary/
 ├── src/
 │   ├── _data/              # Global data files
 │   │   ├── helpers.js      # Template helper functions
-│   │   └── mixcloud.js     # Mixcloud API integration
+│   │   ├── navigation.json # Dynamic navigation config
+│   │   ├── theGrooveLibrary.js  # Main playlist data
+│   │   └── eastonChopUp.js # Easton Chop Up playlist data
 │   ├── _includes/          # Reusable components
 │   │   └── mix-player.njk  # Accessible Mixcloud player
 │   ├── _layouts/           # Page layouts
@@ -38,11 +40,19 @@ thegroovelibrary/
 │   │   ├── 03-blocks.css   # Component styles
 │   │   └── main.css        # CSS entry point
 │   ├── js/                 # JavaScript modules
-│   │   └── web-awesome.js  # Web components init
+│   │   ├── web-awesome.js  # Web components init
+│   │   └── image-fallback.js # Image error handling
 │   ├── assets/             # Static assets
-│   └── index.njk           # Homepage template
+│   │   ├── logo.svg        # Site logo
+│   │   ├── logo-180.png    # Apple touch icon
+│   │   ├── logo-192.png    # PWA icon (standard)
+│   │   └── logo-512.png    # PWA icon (high-res)
+│   ├── index.njk           # Homepage template
+│   └── easton-chop-up.njk  # Example playlist page
+├── scripts/
+│   └── create-playlist-page.js  # Interactive playlist generator
 ├── _site/                  # Build output (git-ignored)
-├── eleventy.config.ts      # Eleventy configuration
+├── eleventy.config.js      # Eleventy configuration
 ├── netlify.toml            # Netlify configuration
 ├── package.json            # Dependencies and scripts
 ├── tsconfig.json           # TypeScript configuration
@@ -81,6 +91,7 @@ thegroovelibrary/
 - `npm run dev` - Start development server with live reload
 - `npm run build` - Build the site for production
 - `npm start` - Alias for `npm run dev`
+- `npm run create-playlist` - Interactive script to create new playlist pages
 - `npm run storybook` - Start Storybook design system documentation (in progress)
 - `npm run build-storybook` - Build Storybook for deployment
 
@@ -161,16 +172,51 @@ The site fetches Mixcloud data at **build time** (not runtime) for optimal perfo
 
 **Data Source**: [https://www.mixcloud.com/legendarymusic/](https://www.mixcloud.com/legendarymusic/)
 
-**Implementation**: [src/_data/mixcloud.js](src/_data/mixcloud.js)
+**Implementation**: Each playlist has its own data file in `src/_data/` (e.g., `theGrooveLibrary.js`, `eastonChopUp.js`)
 
 **Features**:
-- Automatic pagination to fetch all cloudcasts
+- Automatic pagination to fetch all cloudcasts from a playlist
 - Rate limiting with exponential backoff retry
 - Error handling with graceful degradation
 - Build-time caching (rebuilt on deploy)
 
 **Scheduled Updates**:
 Configure Netlify build hooks to rebuild daily and fetch the latest mixes.
+
+### Creating New Playlist Pages
+
+Use the interactive playlist generator script:
+
+```bash
+npm run create-playlist
+```
+
+This script will:
+1. Prompt for a Mixcloud playlist URL
+2. Ask for a custom page slug/name
+3. Ask for a page description (HTML supported)
+4. Fetch playlist data from Mixcloud API
+5. Generate a new page file (`src/[slug].njk`)
+6. Create a data file (`src/_data/[camelCaseSlug].js`)
+7. Update navigation config (`src/_data/navigation.json`)
+
+**Important**: Page descriptions support HTML via YAML block scalar syntax:
+
+```yaml
+---
+description: >
+  <p>First paragraph of content.</p>
+
+  <ul>
+    <li>List item one</li>
+    <li>List item two</li>
+  </ul>
+
+  <p>Final paragraph.</p>
+---
+```
+
+**Note**: Data file names use camelCase (e.g., `eastonChopUp.js` for page slug `easton-chop-up`) to work with Nunjucks template variables.
 
 ## Browser Support
 
@@ -205,11 +251,15 @@ This is currently a personal project, but suggestions and feedback are welcome v
 
 ## Roadmap
 
+- [x] Playlist page generator script
+- [x] Dynamic navigation system
+- [x] HTML description support in front matter
+- [x] PNG logo versions for PWA/favicons
+- [x] Content Security Policy configured for Web Awesome and Mixcloud
 - [ ] Set up Storybook for design system documentation
 - [ ] Add more page templates (About, individual mix pages)
 - [ ] Implement search and filtering
 - [ ] Add animations and micro-interactions
-- [ ] Implement playlist creation
 - [ ] Add social sharing features
 - [ ] Create custom 404 page
 - [ ] Add site analytics (privacy-focused)
