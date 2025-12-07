@@ -212,10 +212,63 @@ a:focus-visible {
   display: flex;
   align-items: center;
   gap: var(--space-sm);
+  transition: all var(--duration-fast) var(--ease-out);
 }
 
 .site-logo:hover {
   color: var(--color-primary-600);
+  transform: translateY(-1px);
+}
+
+.site-logo__image {
+  height: 2.5rem;
+  width: auto;
+  display: block;
+}
+
+.site-logo__text {
+  display: inline-block;
+}
+
+/* Hide logo text on small screens */
+@media (max-width: 640px) {
+  .site-logo__text {
+    display: none;
+  }
+}
+
+/* ==========================================
+ * HERO LOGO
+ * ========================================== */
+
+.hero-logo {
+  display: flex;
+  justify-content: center;
+  margin-block-end: var(--space-lg);
+}
+
+.hero-logo__image {
+  height: 8rem;
+  width: auto;
+  filter: brightness(0) invert(1); /* Make logo white on brand background */
+  opacity: 0.95;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo__image {
+    animation: none;
+  }
 }
 
 /* ==========================================
