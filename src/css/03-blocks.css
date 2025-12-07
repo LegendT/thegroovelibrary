@@ -339,10 +339,10 @@ li + li {
 @media (min-width: 960px) {
   .nav__link {
     display: inline-block;
-    padding: 0.25rem 0.75rem;
+    padding: 0.5rem 0.75rem;
     font-size: var(--font-size-base);
+    line-height: 1;
     border-radius: var(--radius-md);
-    vertical-align: middle;
   }
 }
 
