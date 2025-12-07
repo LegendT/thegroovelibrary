@@ -48,10 +48,16 @@
           <span class="site-logo__text">The Groove Library</span>
         </a>
 
+        {# Mobile menu toggle #}
+        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+        <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+          <span class="nav-toggle-icon"></span>
+        </label>
+
         <nav class="nav" role="navigation" aria-label="Main navigation">
           <ul class="nav__list">
             {% for item in navigation.pages %}
-              <li>
+              <li class="nav__item">
                 <a href="{{ item.url }}"
                    class="nav__link {{ 'nav__link--active' if page.url == item.url }}"
                    {{ 'aria-current="page"' if page.url == item.url }}>
