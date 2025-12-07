@@ -4,62 +4,84 @@
  * Defines design tokens and CSS custom properties that form the foundation
  * of The Groove Library design system.
  *
+ * Vintage, warm aesthetic inspired by album artwork with WCAG 2.2 AA compliance
+ *
  * @see https://cube.fyi/
  */
+
+/* ==========================================
+ * WEB FONTS
+ * ========================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
   /* ==========================================
    * COLOR TOKENS
-   * Following WCAG 2.2 AA contrast requirements
+   * Vintage warm palette inspired by album artwork
+   * Following WCAG 2.2 AA contrast requirements (4.5:1 for normal text, 3:1 for large)
    * ========================================== */
 
-  /* Primary Palette - Vibrant and Musical */
-  --color-primary-50: #fef3e7;
-  --color-primary-100: #fde4c3;
-  --color-primary-200: #fcd39b;
-  --color-primary-300: #fbc173;
-  --color-primary-400: #fab455;
-  --color-primary-500: #f9a837; /* Main brand color */
-  --color-primary-600: #f89a31;
-  --color-primary-700: #f7892a;
-  --color-primary-800: #f67923;
-  --color-primary-900: #f45b16;
+  /* Primary Palette - Warm Orange/Gold (from logo) */
+  --color-primary-50: #fef7ed;
+  --color-primary-100: #fde8cd;
+  --color-primary-200: #fbd19b;
+  --color-primary-300: #f8b25f;
+  --color-primary-400: #f59231;
+  --color-primary-500: #f27916; /* Main brand - vibrant orange */
+  --color-primary-600: #e35d0c;
+  --color-primary-700: #bc440c;
+  --color-primary-800: #963712;
+  --color-primary-900: #7a2e12;
 
-  /* Secondary Palette - Global and Rhythmic */
-  --color-secondary-50: #e8f5f9;
-  --color-secondary-100: #c5e6ef;
-  --color-secondary-200: #9fd6e5;
-  --color-secondary-300: #79c5da;
-  --color-secondary-400: #5cb9d2;
-  --color-secondary-500: #3facca; /* Complementary accent */
-  --color-secondary-600: #399fc5;
-  --color-secondary-700: #318fbd;
-  --color-secondary-800: #2980b5;
-  --color-secondary-900: #1b64a7;
+  /* Secondary Palette - Deep Brown/Rust (vintage texture) */
+  --color-secondary-50: #faf5f0;
+  --color-secondary-100: #f0e5d8;
+  --color-secondary-200: #e0cab1;
+  --color-secondary-300: #cba884;
+  --color-secondary-400: #b8875d;
+  --color-secondary-500: #a8723f;
+  --color-secondary-600: #8f5930;
+  --color-secondary-700: #76432a;
+  --color-secondary-800: #5e3426;
+  --color-secondary-900: #4a2820;
 
-  /* Neutral Palette */
-  --color-neutral-50: #fafafa;
-  --color-neutral-100: #f5f5f5;
-  --color-neutral-200: #eeeeee;
-  --color-neutral-300: #e0e0e0;
-  --color-neutral-400: #bdbdbd;
-  --color-neutral-500: #9e9e9e;
-  --color-neutral-600: #757575;
-  --color-neutral-700: #616161;
-  --color-neutral-800: #424242;
-  --color-neutral-900: #212121;
+  /* Neutral Palette - Warm grays with vintage feel */
+  --color-neutral-50: #faf9f7;
+  --color-neutral-100: #f4f2ed;
+  --color-neutral-200: #e8e4dc;
+  --color-neutral-300: #d5cec0;
+  --color-neutral-400: #b3a896;
+  --color-neutral-500: #928775;
+  --color-neutral-600: #756a5a;
+  --color-neutral-700: #5c5245;
+  --color-neutral-800: #423a31;
+  --color-neutral-900: #2b241e;
 
-  /* Semantic Colors */
-  --color-success: #4caf50;
-  --color-warning: #ff9800;
-  --color-error: #f44336;
-  --color-info: #2196f3;
+  /* Accent Palette - Teal/Turquoise (vintage poster feel) */
+  --color-accent-50: #e8f4f3;
+  --color-accent-100: #c5e4e1;
+  --color-accent-200: #9ed2cd;
+  --color-accent-300: #76c0b9;
+  --color-accent-400: #58b2aa;
+  --color-accent-500: #3aa49b;
+  --color-accent-600: #349689;
+  --color-accent-700: #2c8474;
+  --color-accent-800: #24735f;
+  --color-accent-900: #175a41;
+
+  /* Semantic Colors - Adjusted for vintage palette */
+  --color-success: #52a554;
+  --color-warning: #f59231;
+  --color-error: #c84242;
+  --color-info: #3aa49b;
 
   /* Surface Colors */
   --color-surface-primary: var(--color-neutral-50);
   --color-surface-secondary: var(--color-neutral-100);
   --color-surface-tertiary: var(--color-neutral-200);
   --color-surface-inverse: var(--color-neutral-900);
+  --color-surface-card: #ffffff;
 
   /* Text Colors - WCAG AA Compliant */
   --color-text-primary: var(--color-neutral-900);
@@ -75,20 +97,21 @@
    * ========================================== */
 
   /* Font Families */
-  --font-family-base: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  --font-family-display: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
   --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', Consolas, 'Courier New', monospace;
 
-  /* Font Sizes - Modular Scale (1.25 - Major Third) */
-  --font-size-xs: 0.64rem;    /* 10.24px */
-  --font-size-sm: 0.8rem;     /* 12.8px */
+  /* Font Sizes - Modular Scale (1.2 - Minor Third for better readability) */
+  --font-size-xs: 0.694rem;   /* 11.11px */
+  --font-size-sm: 0.833rem;   /* 13.33px */
   --font-size-base: 1rem;     /* 16px */
-  --font-size-md: 1.25rem;    /* 20px */
-  --font-size-lg: 1.563rem;   /* 25px */
-  --font-size-xl: 1.953rem;   /* 31.25px */
-  --font-size-2xl: 2.441rem;  /* 39.06px */
-  --font-size-3xl: 3.052rem;  /* 48.83px */
-  --font-size-4xl: 3.815rem;  /* 61.04px */
+  --font-size-md: 1.2rem;     /* 19.2px */
+  --font-size-lg: 1.44rem;    /* 23.04px */
+  --font-size-xl: 1.728rem;   /* 27.65px */
+  --font-size-2xl: 2.074rem;  /* 33.18px */
+  --font-size-3xl: 2.488rem;  /* 39.81px */
+  --font-size-4xl: 2.986rem;  /* 47.78px */
+  --font-size-5xl: 3.583rem;  /* 57.33px */
 
   /* Font Weights */
   --font-weight-light: 300;
@@ -96,19 +119,21 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
+  --font-weight-black: 900;
 
   /* Line Heights */
-  --line-height-tight: 1.25;
+  --line-height-tight: 1.2;
   --line-height-snug: 1.375;
   --line-height-normal: 1.5;
   --line-height-relaxed: 1.625;
-  --line-height-loose: 2;
+  --line-height-loose: 1.75;
 
   /* Letter Spacing */
-  --letter-spacing-tight: -0.05em;
+  --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.05em;
-  --letter-spacing-wider: 0.1em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
 
   /* ==========================================
    * SPACING TOKENS
@@ -126,6 +151,7 @@
   --space-3xl: 4rem;      /* 64px */
   --space-4xl: 6rem;      /* 96px */
   --space-5xl: 8rem;      /* 128px */
+  --space-6xl: 12rem;     /* 192px */
 
   /* ==========================================
    * LAYOUT TOKENS
@@ -141,43 +167,49 @@
   --max-width-full: 100%;
 
   /* Container */
-  --container-max-width: var(--max-width-xl);
+  --container-max-width: var(--max-width-2xl);
   --container-padding: var(--space-lg);
+
+  /* Grid */
+  --grid-gap: var(--space-xl);
+  --grid-gap-sm: var(--space-lg);
 
   /* ==========================================
    * BORDER TOKENS
    * ========================================== */
 
-  /* Border Radius */
+  /* Border Radius - Slightly reduced for vintage feel */
   --radius-none: 0;
-  --radius-sm: 0.25rem;   /* 4px */
-  --radius-md: 0.5rem;    /* 8px */
-  --radius-lg: 0.75rem;   /* 12px */
-  --radius-xl: 1rem;      /* 16px */
-  --radius-2xl: 1.5rem;   /* 24px */
+  --radius-sm: 0.125rem;  /* 2px */
+  --radius-md: 0.25rem;   /* 4px */
+  --radius-lg: 0.5rem;    /* 8px */
+  --radius-xl: 0.75rem;   /* 12px */
+  --radius-2xl: 1rem;     /* 16px */
   --radius-full: 9999px;
 
   /* Border Width */
   --border-width-thin: 1px;
   --border-width-medium: 2px;
-  --border-width-thick: 4px;
+  --border-width-thick: 3px;
+  --border-width-heavy: 4px;
 
   /* Border Colors */
   --border-color-default: var(--color-neutral-300);
   --border-color-light: var(--color-neutral-200);
   --border-color-dark: var(--color-neutral-400);
+  --border-color-accent: var(--color-primary-300);
 
   /* ==========================================
    * SHADOW TOKENS
-   * Elevation system for depth
+   * Elevation system for depth - warmer shadows
    * ========================================== */
 
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --shadow-xs: 0 1px 2px 0 rgb(66 58 49 / 0.08);
+  --shadow-sm: 0 1px 3px 0 rgb(66 58 49 / 0.12), 0 1px 2px -1px rgb(66 58 49 / 0.12);
+  --shadow-md: 0 4px 6px -1px rgb(66 58 49 / 0.12), 0 2px 4px -2px rgb(66 58 49 / 0.12);
+  --shadow-lg: 0 10px 15px -3px rgb(66 58 49 / 0.12), 0 4px 6px -4px rgb(66 58 49 / 0.12);
+  --shadow-xl: 0 20px 25px -5px rgb(66 58 49 / 0.12), 0 8px 10px -6px rgb(66 58 49 / 0.12);
+  --shadow-2xl: 0 25px 50px -12px rgb(66 58 49 / 0.28);
 
   /* ==========================================
    * TRANSITION TOKENS
@@ -186,15 +218,16 @@
   /* Durations */
   --duration-instant: 0ms;
   --duration-fast: 150ms;
-  --duration-normal: 300ms;
-  --duration-slow: 500ms;
-  --duration-slower: 1000ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 600ms;
 
   /* Easing Functions */
   --ease-linear: linear;
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
   /* ==========================================
    * Z-INDEX TOKENS
@@ -216,14 +249,30 @@
    * ========================================== */
 
   --focus-ring-width: 3px;
-  --focus-ring-color: var(--color-secondary-500);
+  --focus-ring-color: var(--color-primary-500);
   --focus-ring-offset: 2px;
   --focus-ring: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+
+  /* ==========================================
+   * TEXTURE & VINTAGE EFFECTS
+   * ========================================== */
+
+  /* Subtle texture overlay for vintage feel */
+  --texture-overlay: linear-gradient(
+    0deg,
+    rgba(242, 121, 22, 0.02) 0%,
+    rgba(168, 114, 63, 0.02) 100%
+  );
+
+  /* Vintage gradient backgrounds */
+  --gradient-warm: linear-gradient(135deg, var(--color-primary-100) 0%, var(--color-secondary-100) 100%);
+  --gradient-hero: linear-gradient(180deg, var(--color-primary-500) 0%, var(--color-secondary-600) 100%);
+  --gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(242, 121, 22, 0.03) 100%);
 }
 
 /* ==========================================
  * DARK MODE SUPPORT
- * Automatic color scheme switching
+ * Automatic color scheme switching with vintage warmth
  * ========================================== */
 
 @media (prefers-color-scheme: dark) {
@@ -232,6 +281,7 @@
     --color-surface-secondary: var(--color-neutral-800);
     --color-surface-tertiary: var(--color-neutral-700);
     --color-surface-inverse: var(--color-neutral-50);
+    --color-surface-card: var(--color-neutral-800);
 
     --color-text-primary: var(--color-neutral-50);
     --color-text-secondary: var(--color-neutral-300);
@@ -241,5 +291,13 @@
     --border-color-default: var(--color-neutral-600);
     --border-color-light: var(--color-neutral-700);
     --border-color-dark: var(--color-neutral-500);
+
+    /* Lighter shadows for dark mode */
+    --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.4), 0 1px 2px -1px rgb(0 0 0 / 0.4);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.4), 0 4px 6px -4px rgb(0 0 0 / 0.4);
+    --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.4), 0 8px 10px -6px rgb(0 0 0 / 0.4);
+    --shadow-2xl: 0 25px 50px -12px rgb(0 0 0 / 0.5);
   }
 }
