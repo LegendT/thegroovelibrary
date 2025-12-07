@@ -98,11 +98,12 @@ p {
 
 .wrapper ul,
 .wrapper ol {
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
 }
 
 .wrapper li {
-  line-height: var(--line-height-normal);
+  line-height: var(--line-height-relaxed);
+  margin-block-start: var(--space-sm);
 }
 
 /* First paragraph gets larger, bolder treatment */
