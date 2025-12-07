@@ -60,7 +60,7 @@ thegroovelibrary/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/thegroovelibrary.git
+   git clone https://github.com/LegendT/thegroovelibrary.git
    cd thegroovelibrary
    ```
 
