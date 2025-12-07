@@ -1,7 +1,20 @@
 ---
 layout: base.njk
 title: Home
-description: Discover legendary music from around the globe. The Groove Library features curated mixes from Mixcloud, celebrating diverse musical traditions and rhythms.
+description: >
+  <p>The Groove Library exists to explore rhythm as a global language.</p>
+
+  <p>Born from a decade of Afro-centric digging under the name Easton Chop Up, The Groove Library expands the lens — reaching across borders, eras and genres to document music built for movement, meaning and connection.</p>
+
+  <p>Through DJ mixes, live streams, guest selectors, album deep-dives and communal listening parties, The Groove Library curates sound as both archive and experience. It is a space for dancers, listeners, collectors and the curious — equally at home in ritual, roots, club systems and future experiments.</p>
+
+  <ul>
+    <li>There is no algorithm here.</li>
+    <li>No fixed genre.</li>
+    <li>No single destination.</li>
+  </ul>
+
+  <p>Only the groove — shared, studied, celebrated and passed forward.</p>
 ---
 
 {# Hero Section #}
@@ -29,6 +42,17 @@ description: Discover legendary music from around the globe. The Groove Library 
     </div>
   </div>
 </section>
+
+{# Description Section #}
+{% if description %}
+<section class="region region--lg" aria-labelledby="about-heading">
+  <div class="container">
+    <div class="wrapper wrapper--narrow flow">
+      {{ description | safe }}
+    </div>
+  </div>
+</section>
+{% endif %}
 
 {# Mix Collection Section #}
 <section class="region region--xl" aria-labelledby="mixes-heading">
