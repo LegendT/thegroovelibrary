@@ -46,8 +46,8 @@
       img-src 'self' data: https: blob: https://thumbnailer.mixcloud.com;
       font-src 'self' data: https://webawesome.com https://kit.webawesome.com https://ka-p.webawesome.com;
       connect-src 'self' https://api.mixcloud.com;
-      frame-src https://www.mixcloud.com;
-      media-src https://www.mixcloud.com;
+      frame-src https://www.mixcloud.com https://player-widget.mixcloud.com;
+      media-src https://www.mixcloud.com https://player-widget.mixcloud.com;
     """
 
 # Cache headers for static assets

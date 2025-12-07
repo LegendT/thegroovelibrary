@@ -62,7 +62,8 @@ export default {
   getMixcloudEmbedUrl(key) {
     // Remove leading slash if present
     const cleanKey = key.startsWith('/') ? key.substring(1) : key;
-    return `https://www.mixcloud.com/widget/iframe/?hide_cover=1&feed=${encodeURIComponent('/' + cleanKey)}`;
+    // Use player-widget.mixcloud.com (the actual widget domain after redirect)
+    return `https://player-widget.mixcloud.com/?hide_cover=1&feed=${encodeURIComponent('/' + cleanKey)}`;
   },
 
   /**
