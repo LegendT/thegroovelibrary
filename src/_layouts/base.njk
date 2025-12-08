@@ -44,8 +44,9 @@
   <link rel="preconnect" href="https://www.mixcloud.com">
   <link rel="preconnect" href="https://player-widget.mixcloud.com">
 
-  {# Google Fonts - loaded in HTML to avoid CSS @import chain #}
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap">
+  {# Google Fonts - non-render-blocking with preload + media swap #}
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
 
   {# Preload LCP image (hero logo) for faster paint #}
   <link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml">
@@ -148,14 +149,30 @@
   {# Accessibility: Announce page changes to screen readers #}
   <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-  {# Google Analytics - Loaded at end of body for performance #}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9"></script>
+  {# Google Analytics - Deferred until after page load for performance #}
   <script>
+    // Initialize dataLayer immediately for any early events
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-HMK4ZC16H9');
+
+    // Defer GA script loading until after page is interactive
+    function loadGA() {
+      var script = document.createElement('script');
+      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9';
+      script.async = true;
+      document.head.appendChild(script);
+      gtag('js', new Date());
+      gtag('config', 'G-HMK4ZC16H9');
+    }
+
+    // Load GA after page is fully loaded (non-blocking)
+    if (document.readyState === 'complete') {
+      setTimeout(loadGA, 0);
+    } else {
+      window.addEventListener('load', function() {
+        setTimeout(loadGA, 100);
+      });
+    }
   </script>
 </body>
 </html>
