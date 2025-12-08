@@ -570,6 +570,35 @@ li + li {
   border-radius: var(--radius-md);
 }
 
+/* Player Placeholder - Click to load */
+.mix-player__placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 120px;
+  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--color-neutral-100);
+  cursor: pointer;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.mix-player__placeholder:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+.mix-player__placeholder:active {
+  transform: scale(0.98);
+}
+
+.mix-player__placeholder:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: 2px;
+}
+
 /* Tracklist Styles */
 .mix-player__tracklist {
   margin-block-start: var(--space-md);

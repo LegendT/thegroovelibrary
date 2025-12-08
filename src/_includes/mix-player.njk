@@ -87,19 +87,15 @@
 
     {# Player and Tracklist Container - pushed to bottom #}
     <div class="mix-player__bottom">
-      {# Mixcloud Embedded Player #}
-      <div class="mix-player__iframe-wrapper">
-        <iframe
-          class="mix-player__iframe"
-          width="100%"
-          height="120"
-          src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
-          frameborder="0"
-          loading="lazy"
-          allow="autoplay; encrypted-media"
-          title="Mixcloud player for {{ mix.name }}"
-          aria-label="Audio player for {{ mix.name }}">
-        </iframe>
+      {# Mixcloud Embedded Player - Click to load for performance #}
+      <div class="mix-player__iframe-wrapper"
+           data-src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
+           data-title="Mixcloud player for {{ mix.name }}"
+           data-aria-label="Audio player for {{ mix.name }}">
+        <button class="mix-player__placeholder" aria-label="Load player for {{ mix.name }}">
+          <i class="fa-solid fa-circle-play fa-3x" aria-hidden="true"></i>
+          <span class="sr-only">Click to load audio player</span>
+        </button>
       </div>
 
       {# Tracklist #}

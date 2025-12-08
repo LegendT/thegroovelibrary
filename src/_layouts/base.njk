@@ -39,9 +39,8 @@
   <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
   <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
   <link rel="preconnect" href="https://thumbnailer.mixcloud.com">
-  <link rel="preconnect" href="https://api.mixcloud.com">
-  <link rel="dns-prefetch" href="https://www.mixcloud.com">
-  <link rel="dns-prefetch" href="https://player-widget.mixcloud.com">
+  <link rel="preconnect" href="https://www.mixcloud.com">
+  <link rel="preconnect" href="https://player-widget.mixcloud.com">
 
   {# Main Stylesheet - CUBE CSS Architecture #}
   <link rel="stylesheet" href="/css/main.css">
@@ -51,6 +50,9 @@
 
   {# Image Fallback Handler #}
   <script src="/js/image-fallback.js" defer></script>
+
+  {# Lazy Player - Click-to-load iframes for performance #}
+  <script src="/js/lazy-player.js" defer></script>
 
   {# Structured Data (Schema.org JSON-LD) #}
   {% if structuredData %}
