@@ -140,20 +140,11 @@ li + li {
  * ========================================== */
 
 .site-header {
-  background-color: var(--color-surface-card);
-  border-block-end: var(--border-width-medium) solid var(--border-color-accent);
-  padding-block: var(--space-md);
-  position: sticky;
-  top: 0;
-  z-index: var(--z-index-sticky);
-  box-shadow: var(--shadow-sm);
+  border-block-end: var(--border-width-thin) solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  background-color: color-mix(in srgb, var(--color-surface-primary) 92%, var(--color-primary-50) 8%);
 }
 
-@media (min-width: 901px) {
-  .site-header {
-    padding-block: var(--space-lg);
-  }
-}
 
 .site-header__inner {
   display: flex;
@@ -390,40 +381,148 @@ li + li {
 .hero {
   background: var(--gradient-hero);
   color: var(--color-text-inverse);
-  padding-block: var(--space-4xl);
+  padding-block: var(--space-5xl);
   position: relative;
   overflow: hidden;
 }
 
+/* Shared subtle texture + spotlight */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.10) 0%, transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
   pointer-events: none;
 }
 
+/* Home – warm primary/secondary gradient */
+.hero--home {
+  background:
+    linear-gradient(135deg, var(--color-primary-700), var(--color-secondary-700)),
+    var(--gradient-hero);
+}
+
+/* Easton – deeper, slightly smokier club mood */
+.hero--easton {
+  background:
+    linear-gradient(135deg, var(--color-secondary-800), var(--color-accent-700)),
+    var(--gradient-hero);
+}
+
+/* Afro Groove – more accent-forward / teal */
+.hero--afro {
+  background:
+    linear-gradient(135deg, var(--color-accent-700), var(--color-primary-800)),
+    var(--gradient-hero);
+}
+
+/* About and any other plain .hero will just use var(--gradient-hero) */
+
+/* Typography within hero */
+
 .hero__title {
-  font-size: var(--font-size-5xl);
+  font-family: var(--font-family-display);
+  font-size: clamp(var(--font-size-3xl), 4vw, var(--font-size-5xl));
   font-weight: var(--font-weight-black);
   letter-spacing: var(--letter-spacing-tight);
   text-align: center;
   margin: 0;
   color: var(--color-text-inverse);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
 }
 
+.hero__eyebrow {
+  letter-spacing: 0.12em;
+  font-weight: var(--font-weight-semibold);
+  opacity: 0.9;
+}
+
+.hero__eyebrow--pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-full);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+.hero__tagline {
+  max-inline-size: 34rem;
+}
+
+/* Chips */
+
+.hero__chips {
+  margin-block: var(--space-lg);
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-900);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-chip i,
+.hero-chip wa-icon {
+  font-size: 0.9em;
+}
+
+/* Darker variant for Easton/Afro */
+
+.hero-chip--accent {
+  color: var(--color-neutral-50);
+  background-color: rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hero logo tweaks */
+
 .hero-logo {
-  margin-block-end: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  margin-block-end: var(--space-lg);
 }
 
 .hero-logo__image {
-  width: 10rem;
-  height: 10rem;
-  filter: brightness(0) invert(1) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.3));
+  width: 8rem;
+  height: 8rem;
+  filter: brightness(0) invert(1) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
 }
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo__image {
+    animation: none;
+  }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 599px) {
+  .hero {
+    padding-block: var(--space-4xl);
+  }
+
+  .hero__chips {
+    gap: var(--space-xs);
+  }
+}
+
+
 
 /* ==========================================
  * MIX PLAYER CARD - Grid Optimized

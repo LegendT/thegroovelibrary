@@ -13,26 +13,40 @@ playlist: "the-afro-groove-library"
 ---
 
 {# Hero Section #}
-<section class="region region--lg bg-brand" aria-labelledby="hero-heading">
+<section class="hero hero--afro region region--lg" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="center center--intrinsic flow flow--lg text-center">
+    <div class="center center--intrinsic flow flow--xl text-center">
+      <div class="hero__eyebrow hero__eyebrow--pill text-sm text-uppercase">
+        Africa-rooted · Globally connected
+      </div>
+
       <div class="flow flow--md">
-        <h1 id="hero-heading" class="text-4xl text-inverse">
+        <h1 id="hero-heading" class="hero__title">
           The Afro Groove Library
         </h1>
-        <p class="text-xl text-inverse mx-auto">
-          Rhythm as heritage and evolution — Africa-rooted, globally connected.
+        <p class="hero__tagline text-xl mx-auto">
+          Rhythm as heritage and evolution — a living archive of Africa-influenced sound.
         </p>
       </div>
 
-      <div class="cluster cluster--md justify-center">
-        <wa-icon name="globe-africa" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
-        <wa-icon name="drum" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
-        <wa-icon name="compact-disc" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+      <div class="hero__chips cluster cluster--sm justify-center">
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="globe-africa" size="sm" aria-hidden="true"></wa-icon>
+          Across the diaspora
+        </span>
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="drum" size="sm" aria-hidden="true"></wa-icon>
+          Ritual &amp; rhythm
+        </span>
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="compact-disc" size="sm" aria-hidden="true"></wa-icon>
+          Deep listening
+        </span>
       </div>
     </div>
   </div>
 </section>
+
 
 {# Description Section #}
 {% if description %}

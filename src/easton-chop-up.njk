@@ -13,26 +13,40 @@ playlist: "easton-chop-up"
 ---
 
 {# Hero Section #}
-<section class="region region--lg bg-brand" aria-labelledby="hero-heading">
+<section class="hero hero--easton region region--lg" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="center center--intrinsic flow flow--lg text-center">
+    <div class="center center--intrinsic flow flow--xl text-center">
+      <div class="hero__eyebrow hero__eyebrow--pill text-sm text-uppercase">
+        Bristol · Afro-centric archive · 10+ years
+      </div>
+
       <div class="flow flow--md">
-        <h1 id="hero-heading" class="text-4xl text-inverse">
+        <h1 id="hero-heading" class="hero__title">
           Easton Chop Up!
         </h1>
-        <p class="text-xl text-inverse mx-auto">
+        <p class="hero__tagline text-xl mx-auto">
           A decade of Afro-centric digging from Bristol to the world.
         </p>
       </div>
 
-      <div class="cluster cluster--md justify-center">
-        <wa-icon name="record-vinyl" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
-        <wa-icon name="globe-africa" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
-        <wa-icon name="fire" size="2x" class="text-inverse" aria-hidden="true"></wa-icon>
+      <div class="hero__chips cluster cluster--sm justify-center">
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
+          Deep crates
+        </span>
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="globe-africa" size="sm" aria-hidden="true"></wa-icon>
+          Africa &amp; beyond
+        </span>
+        <span class="hero-chip hero-chip--accent">
+          <wa-icon name="fire" size="sm" aria-hidden="true"></wa-icon>
+          Dancefloor &amp; deep-listen
+        </span>
       </div>
     </div>
   </div>
 </section>
+
 
 {# Description Section #}
 {% if description %}
