@@ -11,7 +11,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/css");
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/google6eb2953d13e5b8b.html");
 
   // Watch for changes in CSS and JS
   eleventyConfig.addWatchTarget("src/css/");

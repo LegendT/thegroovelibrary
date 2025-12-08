@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(python3:*)",
-      "Bash(node scripts/list-easton-mixes.js:*)"
+      "Bash(node scripts/list-easton-mixes.js:*)",
+      "Bash(node scripts/generate-og-images.js:*)"
     ],
     "deny": [],
     "ask": []
