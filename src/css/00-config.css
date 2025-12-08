@@ -78,12 +78,22 @@
   --color-error: #c84242;
   --color-info: #3aa49b;
 
+  /* Hero Gradient Colors - Page-specific themes */
+  --color-hero-easton-start: #245b46;
+  --color-hero-easton-end: #f28b3c;
+  --color-hero-afro-accent: #ffe38a;
+  --color-hero-afro-start: #0f5f63;
+  --color-hero-afro-end: #492a78;
+  --color-stamp-border: #9b2c22;
+  --color-stamp-text: #2c2c2c;
+
   /* Surface Colors */
   --color-surface-primary: var(--color-neutral-50);
   --color-surface-secondary: var(--color-neutral-100);
   --color-surface-tertiary: var(--color-neutral-200);
   --color-surface-inverse: var(--color-neutral-900);
   --color-surface-card: #ffffff;
+  --color-surface: var(--color-surface-card); /* Alias for components */
 
   /* Text Colors - WCAG AA Compliant */
   --color-text-primary: var(--color-neutral-900);
@@ -92,6 +102,7 @@
   --color-text-inverse: var(--color-neutral-50);
   --color-text-link: var(--color-secondary-700);
   --color-text-link-hover: var(--color-secondary-900);
+  --color-text: var(--color-text-primary); /* Alias for components */
 
   /* ==========================================
    * TYPOGRAPHY TOKENS
@@ -200,6 +211,8 @@
   --border-color-light: var(--color-neutral-200);
   --border-color-dark: var(--color-neutral-400);
   --border-color-accent: var(--color-primary-300);
+  --border-color-subtle: var(--color-neutral-200);
+  --color-border: var(--border-color-default); /* Alias for components */
 
   /* ==========================================
    * SHADOW TOKENS
@@ -231,6 +244,18 @@
   --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
   --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
+  /* Transition Shorthand */
+  --transition-base: var(--duration-normal) var(--ease-out);
+
+  /* ==========================================
+   * BREAKPOINT TOKENS
+   * Responsive design breakpoints
+   * ========================================== */
+
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 960px;
+  --breakpoint-lg: 1200px;
+
   /* ==========================================
    * Z-INDEX TOKENS
    * Stacking order system
@@ -254,6 +279,7 @@
   --focus-ring-color: var(--color-primary-500);
   --focus-ring-offset: 2px;
   --focus-ring: 0 0 0 var(--focus-ring-width) var(--focus-ring-color);
+  --color-focus: var(--focus-ring-color); /* Alias for components */
 
   /* ==========================================
    * TEXTURE & VINTAGE EFFECTS
