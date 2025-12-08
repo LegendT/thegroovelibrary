@@ -372,7 +372,7 @@ li + li {
 }
 
 .nav__link--active {
-  color: var(--color-primary-700);
+  color: var(--color-primary-800);
   background-color: var(--color-primary-100);
 }
 

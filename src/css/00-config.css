@@ -13,7 +13,8 @@
  * WEB FONTS
  * ========================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap');
+/* Google Fonts loaded in base.njk HTML <head> to avoid CSS @import chain */
+/* Fonts: Playfair Display (display), Inter (body) */
 
 :root {
   /* ==========================================

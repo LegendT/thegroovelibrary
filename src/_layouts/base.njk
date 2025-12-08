@@ -36,11 +36,19 @@
   <link rel="icon" type="image/svg+xml" href="/assets/logo.svg">
 
   {# Preconnect to external resources for performance #}
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://kit.fontawesome.com" crossorigin>
   <link rel="preconnect" href="https://ka-f.fontawesome.com" crossorigin>
   <link rel="preconnect" href="https://thumbnailer.mixcloud.com">
   <link rel="preconnect" href="https://www.mixcloud.com">
   <link rel="preconnect" href="https://player-widget.mixcloud.com">
+
+  {# Google Fonts - loaded in HTML to avoid CSS @import chain #}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap">
+
+  {# Preload LCP image (hero logo) for faster paint #}
+  <link rel="preload" href="/assets/logo.svg" as="image" type="image/svg+xml">
 
   {# Main Stylesheet - CUBE CSS Architecture #}
   <link rel="stylesheet" href="/css/main.css">
