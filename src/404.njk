@@ -11,7 +11,7 @@ permalink: /404.html
     <div class="center center--intrinsic flow flow--xl text-center">
       {# Animated vinyl record icon #}
       <div class="error-vinyl" aria-hidden="true">
-        <wa-icon name="record-vinyl" size="6x" class="text-inverse"></wa-icon>
+        <i class="fa-solid fa-record-vinyl fa-6x text-inverse"></i>
       </div>
 
       <div class="flow flow--lg">
@@ -34,15 +34,15 @@ permalink: /404.html
           <p class="text-semibold text-inverse">While you're here, why not:</p>
           <ul class="error-list text-inverse">
             <li>
-              <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
+              <i class="fa-solid fa-record-vinyl fa-sm" aria-hidden="true"></i>
               Check if you spelled the URL correctly (no auto-tune for typos)
             </li>
             <li>
-              <wa-icon name="compact-disc" size="sm" aria-hidden="true"></wa-icon>
+              <i class="fa-solid fa-compact-disc fa-sm" aria-hidden="true"></i>
               Head back to the homepage and start fresh
             </li>
             <li>
-              <wa-icon name="tape" size="sm" aria-hidden="true"></wa-icon>
+              <i class="fa-solid fa-tape fa-sm" aria-hidden="true"></i>
               Browse our collection instead of searching for lost grooves
             </li>
           </ul>
@@ -51,11 +51,11 @@ permalink: /404.html
         {# Navigation buttons #}
         <div class="cluster cluster--lg justify-center">
           <a href="/" class="button button--primary text-inverse">
-            <wa-icon name="house" size="sm" aria-hidden="true"></wa-icon>
+            <i class="fa-solid fa-house fa-sm" aria-hidden="true"></i>
             Back to Homepage
           </a>
           <a href="/easton-chop-up/" class="button button--secondary text-inverse">
-            <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
+            <i class="fa-solid fa-record-vinyl fa-sm" aria-hidden="true"></i>
             Browse Easton Chop Up
           </a>
         </div>
@@ -63,7 +63,7 @@ permalink: /404.html
         {# Fun fact #}
         <div class="error-funfact">
           <p class="text-sm text-inverse opacity-75">
-            <wa-icon name="lightbulb" size="sm" aria-hidden="true"></wa-icon>
+            <i class="fa-solid fa-lightbulb fa-sm" aria-hidden="true"></i>
             <em>Fun fact: 404 errors are named after room 404 at CERN, where the web was born. <br>
             No one knows what happened to room 404. It's probably on a 404 page too.</em>
           </p>
@@ -85,11 +85,11 @@ permalink: /404.html
         {% for page in navigation.pages %}
           <a href="{{ page.url }}" class="error-nav-card">
             <div class="error-nav-card__icon">
-              <wa-icon name="record-vinyl" size="2x" aria-hidden="true"></wa-icon>
+              <i class="fa-solid fa-record-vinyl fa-2x" aria-hidden="true"></i>
             </div>
             <h3 class="error-nav-card__title">{{ page.title }}</h3>
             <p class="error-nav-card__arrow">
-              <wa-icon name="arrow-right" size="sm" aria-hidden="true"></wa-icon>
+              <i class="fa-solid fa-arrow-right fa-sm" aria-hidden="true"></i>
             </p>
           </a>
         {% endfor %}
