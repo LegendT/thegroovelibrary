@@ -10,18 +10,6 @@
   <meta name="description" content="{{ description or 'A vibrant showcase of global music from Mixcloud - featuring legendary mixes from around the world.' }}">
   <link rel="canonical" href="https://thegroovelibrary.net{{ page.url }}">
 
-  {# Google Analytics #}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-HMK4ZC16H9');
-  </script>
-
-
   {# Open Graph / Social Media #}
   <meta property="og:type" content="website">
   <meta property="og:title" content="{{ title }} | The Groove Library">
@@ -58,8 +46,8 @@
   {# Main Stylesheet - CUBE CSS Architecture #}
   <link rel="stylesheet" href="/css/main.css">
 
-  {# Font Awesome Icons #}
-  <script src="https://kit.fontawesome.com/40211c150e.js" crossorigin="anonymous"></script>
+  {# Font Awesome Icons - Deferred for performance #}
+  <script src="https://kit.fontawesome.com/40211c150e.js" crossorigin="anonymous" defer></script>
 
   {# Image Fallback Handler #}
   <script src="/js/image-fallback.js" defer></script>
@@ -130,7 +118,7 @@
                  rel="noopener noreferrer"
                  aria-label="Legendary Music on Mixcloud (opens in new window)">
                 Legendary Music on Mixcloud
-                <wa-icon name="arrow-up-right-from-square" size="xs" aria-hidden="true"></wa-icon>
+                <i class="fa-solid fa-arrow-up-right-from-square fa-xs" aria-hidden="true"></i>
               </a>
             </small>
           </p>
@@ -149,5 +137,15 @@
 
   {# Accessibility: Announce page changes to screen readers #}
   <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
+
+  {# Google Analytics - Loaded at end of body for performance #}
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HMK4ZC16H9');
+  </script>
 </body>
 </html>
