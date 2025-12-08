@@ -154,7 +154,14 @@
   );
 }
 
-/* Responsive column grids - optimized for mix cards */
+/* Responsive column grids - optimized for mix cards
+ *
+ * Grid Layout Strategy:
+ * - align-items: stretch ensures all cards in a row have equal height
+ * - Cards use height: 100% to fill their grid cell
+ * - Cards use :has(.player-loaded) to shrink when player loads
+ * - Opening tracklist only expands that specific card (independent heights)
+ */
 .grid--2 {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));

@@ -427,7 +427,20 @@ li + li {
 
 /* ==========================================
  * MIX PLAYER CARD - Grid Optimized
- * ========================================== */
+ * ==========================================
+ *
+ * Card Layout Strategy:
+ * - height: 100% fills grid cell (works with grid align-items: stretch)
+ * - flex column layout allows body to grow and push tracklist to bottom
+ * - :has(.player-loaded) allows card to shrink when iframe loads
+ *
+ * Structure:
+ * .mix-player (card container, flex column, height: 100%)
+ *   .mix-player__media-wrapper (cover image or iframe, aspect-ratio: 1/1)
+ *   .mix-player__body (flex-grow: 1, flex column)
+ *     .mix-player__content (title, metadata, tags)
+ *     .mix-player__bottom (tracklist, margin-block-start: auto)
+ */
 
 .mix-player {
   background-color: var(--color-surface-card);
@@ -438,7 +451,7 @@ li + li {
   border: var(--border-width-thin) solid var(--border-color-light);
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100%; /* Fill grid cell - works with align-items: stretch */
 }
 
 .mix-player:hover {
@@ -544,14 +557,17 @@ li + li {
   font-weight: var(--font-weight-medium);
 }
 
-/* Collapse space when player is loaded */
+/* Player Loaded State
+ * When iframe loads, collapse the square aspect-ratio to fit widget height.
+ * The :has() selector on .mix-player allows the card to shrink independently
+ * while other cards in the grid row maintain their equal height.
+ */
 .mix-player__media-wrapper.player-loaded {
-  aspect-ratio: auto;
+  aspect-ratio: auto; /* Collapse from 1/1 to fit iframe height */
 }
 
-/* Allow card to shrink when player is loaded */
 .mix-player:has(.player-loaded) {
-  height: auto;
+  height: auto; /* Override height: 100% to allow card to shrink */
 }
 
 .widget-container {

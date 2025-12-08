@@ -86,6 +86,10 @@ The site works with HTML/CSS first, enhanced with JavaScript for improved user e
    - Container, flow, stack, cluster, grid
    - Reusable skeleton layouts
    - No cosmetic styling, only structure
+   - **Grid system with equal-height cards**:
+     - `.grid--2` uses `align-items: stretch` for equal height cards per row
+     - Responsive columns via `repeat(auto-fill, minmax(min(420px, 100%), 1fr))`
+     - Cards fill grid cells with `height: 100%`
 
 3. **Utilities (02-utilities.css)**: Single-purpose helpers
    - Spacing, text, display utilities
@@ -96,6 +100,10 @@ The site works with HTML/CSS first, enhanced with JavaScript for improved user e
    - `.mix-player`, `.button`, `.card`
    - Semantic, BEM-like naming
    - Encapsulated component logic
+   - **Modern CSS features**:
+     - `:has()` selector for parent-based styling (e.g., card collapse on player load)
+     - `aspect-ratio` for responsive media containers
+     - Flexbox with `margin-block-start: auto` for bottom-aligned content
 
 **Benefits**:
 - Easy to onboard new developers
@@ -203,8 +211,11 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 - Tag badges with vintage styling
 - External link indicators
 - Grid-optimized card layout with flexbox structure
+  - `.mix-player` - Card with `height: 100%` fills grid cell, `display: flex; flex-direction: column`
+  - `.mix-player__body` - Body with `flex-grow: 1` fills remaining space
   - `.mix-player__content` - Top section (title, metadata, tags)
-  - `.mix-player__bottom` - Bottom section pushed via `margin-block-start: auto` (player + tracklist)
+  - `.mix-player__bottom` - Bottom section pushed via `margin-block-start: auto` (tracklist)
+  - `:has(.player-loaded)` - Allows card to shrink (`height: auto`) when player loads
 - Responsive image handling with fallback states
 - Scrollable tracklists with UX optimizations:
   - Max-height: 400px with smooth scrolling
