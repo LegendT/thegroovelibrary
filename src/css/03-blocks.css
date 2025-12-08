@@ -549,6 +549,11 @@ li + li {
   aspect-ratio: auto;
 }
 
+/* Allow card to shrink when player is loaded */
+.mix-player:has(.player-loaded) {
+  height: auto;
+}
+
 .widget-container {
   width: 100%;
 }
