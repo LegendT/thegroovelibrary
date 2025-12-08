@@ -93,8 +93,10 @@
            data-title="Mixcloud player for {{ mix.name }}"
            data-aria-label="Audio player for {{ mix.name }}">
         <button class="mix-player__placeholder" aria-label="Load player for {{ mix.name }}">
-          <i class="fa-solid fa-circle-play fa-3x" aria-hidden="true"></i>
-          <span class="sr-only">Click to load audio player</span>
+          <div class="mix-player__placeholder-content">
+            <i class="fa-solid fa-circle-play fa-4x" aria-hidden="true"></i>
+            <span class="mix-player__placeholder-text">Click to load player</span>
+          </div>
         </button>
       </div>
 

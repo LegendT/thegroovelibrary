@@ -578,25 +578,57 @@ li + li {
   width: 100%;
   height: 120px;
   background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
-  border: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-md);
   color: var(--color-neutral-100);
   cursor: pointer;
-  transition: transform 0.2s ease, opacity 0.2s ease;
+  transition: all 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.mix-player__placeholder::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.mix-player__placeholder:hover::before {
+  opacity: 1;
 }
 
 .mix-player__placeholder:hover {
-  transform: scale(1.02);
-  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 .mix-player__placeholder:active {
-  transform: scale(0.98);
+  transform: translateY(0);
 }
 
 .mix-player__placeholder:focus-visible {
   outline: 3px solid var(--color-brand-accent);
   outline-offset: 2px;
+}
+
+.mix-player__placeholder-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
+  position: relative;
+  z-index: 1;
+}
+
+.mix-player__placeholder-text {
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.95;
 }
 
 /* Tracklist Styles */
