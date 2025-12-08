@@ -438,7 +438,6 @@ li + li {
   border: var(--border-width-thin) solid var(--border-color-light);
   display: flex;
   flex-direction: column;
-  height: 100%;
 }
 
 .mix-player:hover {
