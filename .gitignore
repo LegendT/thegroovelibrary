@@ -34,6 +34,7 @@ dist/
 Thumbs.db
 .Spotlight-V100
 .Trashes
+.history/*
 
 # Logs
 logs/
