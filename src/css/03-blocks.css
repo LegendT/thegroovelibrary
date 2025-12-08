@@ -140,6 +140,8 @@ li + li {
  * ========================================== */
 
 .site-header {
+  position: relative;
+  z-index: 100;
   border-block-end: var(--border-width-thin) solid rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(8px);
   background-color: color-mix(in srgb, var(--color-surface-primary) 92%, var(--color-primary-50) 8%);
@@ -164,7 +166,11 @@ li + li {
   transition: transform var(--duration-fast) var(--ease-out);
   z-index: 2;
 }
-
+@media(max-width: 959px) {
+  .site-logo {
+   padding-bottom: var(--space-2xs);
+  }
+}
 .site-logo:hover {
   transform: scale(1.05);
 }
@@ -253,7 +259,8 @@ li + li {
   top: 100%;
   left: 0;
   right: 0;
-  background-color: var(--color-surface-card);
+  background-color: color-mix(in srgb, var(--color-surface-primary) 92%, var(--color-primary-50) 8%);
+  backdrop-filter: blur(8px);
   border-block-end: var(--border-width-medium) solid var(--border-color-accent);
   box-shadow: var(--shadow-lg);
   max-height: 0;
