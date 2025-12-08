@@ -100,10 +100,18 @@ The site works with HTML/CSS first, enhanced with JavaScript for improved user e
    - `.mix-player`, `.button`, `.card`
    - Semantic, BEM-like naming
    - Encapsulated component logic
+   - **Hero Section Variants**:
+     - `.hero--home` - Bright gradient from logo orange to warm brown with diagonal stripe pattern
+     - `.hero--easton` - Chelsea Inn poster vibe (teal to amber) with tight gritty stripes
+     - `.hero--afro` - Cosmic teal/purple with amber radial accent
+     - Shared spotlight texture via `::before` pseudo-element
+     - Pattern bands via `::after` with top-edge fade masks
+     - `.hero__stamp` - Decorative rotated badge (desktop only)
    - **Modern CSS features**:
      - `:has()` selector for parent-based styling (e.g., card collapse on player load)
      - `aspect-ratio` for responsive media containers
      - Flexbox with `margin-block-start: auto` for bottom-aligned content
+     - CSS masks for gradient fades on decorative elements
 
 **Benefits**:
 - Easy to onboard new developers
@@ -239,7 +247,10 @@ description: >
 ```
 
 **index.njk**: Homepage
-- Hero section with gradient background, white logo, and icon decorations
+- Hero section (`.hero--home`) with bright orange-to-brown gradient, diagonal stripe pattern
+- White logo with hero chips (Global sounds, Curated with care, For everyone)
+- Eyebrow text with uppercase styling
+- Hero title and tagline with inherited inverse color
 - Description section (HTML from front matter)
 - Mix collection section with count badge
 - Mix grid using `grid--2` class (responsive 2-column layout with 48px gaps)
@@ -249,7 +260,11 @@ description: >
 
 **Playlist Pages** (e.g., easton-chop-up.njk):
 - Generated via `npm run create-playlist` script
-- Hero section with gradient background and icon decorations
+- Hero section with page-specific gradient variant (e.g., `.hero--easton`)
+- Decorative hero stamp badge with location (desktop only, rotated -12deg)
+- Eyebrow pill badge with page context
+- Hero title and tagline with inherited inverse color
+- Pattern bands with top-edge gradient fade
 - HTML description section in dedicated region
 - Mix collection section with heading and metadata badge
 - Mix grid using `grid--2` class (consistent with homepage)
@@ -373,8 +388,12 @@ description: >
 - Inspired by vintage album artwork and music posters
 - Warm, inviting palette that evokes analog music culture
 - Grid-focused layout with generous spacing
-- Hero sections use gradient backgrounds (orange to brown)
+- Page-specific hero gradients:
+  - Home: Logo orange (#f59231) to warm brown (#76432a) at 145deg
+  - Easton: Teal (#245b46) to amber (#f28b3c) - Chelsea Inn poster vibe
+  - Afro: Cosmic teal (#0f5f63) to purple (#492a78) with amber accent
 - White logo on gradient backgrounds for strong contrast
+- Decorative stripe patterns with CSS masks for soft fades
 
 **Accessibility**:
 - All combinations tested for WCAG AA compliance (4.5:1 for normal text, 3:1 for large)

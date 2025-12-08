@@ -140,20 +140,12 @@ li + li {
  * ========================================== */
 
 .site-header {
-  background-color: var(--color-surface-card);
-  border-block-end: var(--border-width-medium) solid var(--border-color-accent);
-  padding-block: var(--space-md);
-  position: sticky;
-  top: 0;
-  z-index: var(--z-index-sticky);
-  box-shadow: var(--shadow-sm);
+  border-block-end: var(--border-width-thin) solid rgba(0, 0, 0, 0.05);
+  backdrop-filter: blur(8px);
+  background-color: color-mix(in srgb, var(--color-surface-primary) 92%, var(--color-primary-50) 8%);
+  padding: var(--space-md) 0;
 }
 
-@media (min-width: 901px) {
-  .site-header {
-    padding-block: var(--space-lg);
-  }
-}
 
 .site-header__inner {
   display: flex;
@@ -384,45 +376,318 @@ li + li {
 }
 
 /* ==========================================
- * HERO SECTION
+ * HERO SECTION (CLEAN + FADE FIXED)
  * ========================================== */
 
 .hero {
   background: var(--gradient-hero);
   color: var(--color-text-inverse);
-  padding-block: var(--space-4xl);
+  padding-block: var(--space-5xl);
   position: relative;
   overflow: hidden;
 }
 
+/* Make sure content sits above decorative layers */
+.hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Shared subtle texture + spotlight */
 .hero::before {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: 
-    radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 80% 80%, rgba(255, 255, 255, 0.10) 0%, transparent 55%);
+  mix-blend-mode: screen;
+  opacity: 0.9;
   pointer-events: none;
 }
 
-.hero__title {
-  font-size: var(--font-size-5xl);
-  font-weight: var(--font-weight-black);
-  letter-spacing: var(--letter-spacing-tight);
-  text-align: center;
-  margin: 0;
-  color: var(--color-text-inverse);
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+/* --------------------------------------------------
+ * BACKGROUND GRADIENT THEMES
+ * -------------------------------------------------- */
+
+/* Home – bright, sunny, global */
+.hero--home {
+  background:
+    linear-gradient(
+      145deg,
+      var(--color-primary-400) 0%,
+      var(--color-primary) 75%,
+      var(--color-secondary-700) 100%
+    );
 }
 
+/* Easton – Chelsea Inn poster vibe */
+.hero--easton {
+  background:
+    linear-gradient(145deg, #245b46, #f28b3c);
+}
+
+/* Afro Groove – teal + amber, cosmic */
+.hero--afro {
+  background:
+    radial-gradient(circle at 15% 0%, #ffe38a 0, transparent 55%),
+    linear-gradient(135deg, #0f5f63, #492a78);
+}
+
+/* --------------------------------------------------
+ * PATTERN BANDS WITH TOP-EDGE FADE
+ * -------------------------------------------------- */
+
+/* HOME — wide bold stripes */
+.hero--home::after {
+  content: '';
+  position: absolute;
+  inset-inline: -8%;
+  inset-block-end: -20%;
+  height: 60%;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.12) 0,
+      rgba(255, 255, 255, 0.12) 10px,
+      transparent 10px,
+      transparent 26px
+    );
+  opacity: 0.7;
+  transform: skewY(-5deg);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+
+  /* ✅ Fade at TOP (no hard line) */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 45%, black 100%);
+}
+
+/* EASTON — tight gritty stripes */
+.hero--easton::after {
+  content: '';
+  position: absolute;
+  inset-inline: -10%;
+  inset-block-end: -18%;
+  height: 55%;
+  background-image:
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.18) 0,
+      rgba(255, 255, 255, 0.18) 4px,
+      transparent 4px,
+      transparent 12px
+    );
+  opacity: 0.7;
+  transform: skewY(-4deg);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+
+  /* ✅ Stronger top fade */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 25%, black 100%);
+}
+
+/* AFRO — dotted / wave mix */
+.hero--afro::after {
+  content: '';
+  position: absolute;
+  inset-inline: -10%;
+  inset-block-end: -22%;
+  height: 62%;
+  background-image:
+    radial-gradient(circle at 10% 30%, rgba(255, 255, 255, 0.22) 0, transparent 40%),
+    radial-gradient(circle at 60% 10%, rgba(0, 0, 0, 0.35) 0, transparent 45%),
+    repeating-linear-gradient(
+      135deg,
+      rgba(255, 255, 255, 0.16) 0,
+      rgba(255, 255, 255, 0.16) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  opacity: 0.65;
+  transform: skewY(-3deg);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+
+  /* ✅ Softest fade */
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+}
+
+/* --------------------------------------------------
+ * MOBILE TUNING
+ * -------------------------------------------------- */
+
+@media (max-width: 599px) {
+  .hero--home::after {
+    inset-inline: -4%;
+    inset-block-end: -14%;
+    height: 48%;
+    opacity: 0.45;
+  }
+
+  .hero--easton::after {
+    inset-inline: -5%;
+    inset-block-end: -12%;
+    height: 45%;
+    opacity: 0.4;
+  }
+
+  .hero--afro::after {
+    inset-inline: -5%;
+    inset-block-end: -16%;
+    height: 50%;
+    opacity: 0.45;
+  }
+}
+
+
+
+
+/* Hero Typography */
+
+.hero__title {
+  font-family: var(--font-family-display);
+  font-size: clamp(2.4rem, 4vw, 3.4rem);
+  font-weight: var(--font-weight-black);
+  letter-spacing: -0.02em;
+  color: inherit; /* Override h1 default to use hero's --color-text-inverse */
+}
+
+.hero__tagline {
+  max-inline-size: 34rem;
+  font-size: clamp(1.1rem, 1.6vw, 1.3rem);
+}
+
+.hero__eyebrow {
+  letter-spacing: 0.12em;
+  font-weight: var(--font-weight-semibold);
+  opacity: 0.9;
+}
+
+.hero__eyebrow--pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-2xs) var(--space-md);
+  border-radius: var(--radius-full);
+  border: var(--border-width-thin) solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+}
+
+/* Chips */
+
+.hero__chips {
+  margin-block: var(--space-lg);
+}
+
+.hero-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+  color: var(--color-primary-900);
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-sm);
+}
+
+.hero-chip i,
+.hero-chip wa-icon {
+  font-size: 0.9em;
+}
+
+/* Darker variant for Easton/Afro */
+
+.hero-chip--accent {
+  color: var(--color-neutral-50);
+  background-color: rgba(0, 0, 0, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hero logo tweaks */
+
 .hero-logo {
-  margin-block-end: var(--space-xl);
+  display: flex;
+  justify-content: center;
+  margin-block-end: var(--space-lg);
 }
 
 .hero-logo__image {
-  width: 10rem;
-  height: 10rem;
-  filter: brightness(0) invert(1) drop-shadow(0 6px 20px rgba(0, 0, 0, 0.3));
+  width: 8rem;
+  height: 8rem;
+  filter: brightness(0) invert(1) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.45));
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .hero-logo__image {
+    animation: none;
+  }
+}
+
+/* Mobile adjustments */
+
+@media (max-width: 599px) {
+  .hero {
+    padding-block: var(--space-4xl);
+  }
+
+  .hero__chips {
+    gap: var(--space-xs);
+  }
+}
+
+/* Punky / anarchic Easton stamp
+   ---------------------------------------- */
+
+/* Controlled punk stamp – rough, not broken */
+
+/* ==========================================
+ * Easton – anarchic red stamp
+ * ========================================== */
+
+/* Easton – dirty red stamp (CSS-only) */
+
+/* ==========================================
+ * Easton – grungy rubber stamp
+ * (using CodePen -webkit-mask trick)
+ * ========================================== */
+
+.hero__stamp {
+  display: none;
+}
+
+/* Only on larger screens */
+@media (min-width: 900px) {
+  .hero__stamp {
+  transform: rotate(12deg);
+	color: #555;
+	font-size: 3rem;
+	font-weight: 700;
+	border: 0.25rem solid #555;
+	display: inline-block;
+	padding: 0.25rem 1rem;
+	text-transform: uppercase;
+	border-radius: 1rem;
+	font-family: 'Courier';
+	-webkit-mask-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/8399/grunge.png');
+  -webkit-mask-size: 944px 604px;
+  mix-blend-mode: multiply;
+}
+}
+
+.hero--easton .hero__stamp {
+	color: #2c2c2c;
+	border: 0.5rem solid #9b2c22;
+	-webkit-mask-position: 13rem 6rem;
+	transform: rotate(-14deg);
+  border-radius: 0; 
 }
 
 /* ==========================================

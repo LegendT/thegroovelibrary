@@ -63,30 +63,56 @@ structuredData:
 ---
 
 {# Hero Section #}
-<section class="region region--lg bg-brand" aria-labelledby="hero-heading">
+<section class="hero hero--home region region--lg" aria-labelledby="hero-heading">
   <div class="container">
-    <div class="center center--intrinsic flow flow--lg text-center">
+    <div class="center center--intrinsic flow flow--xl text-center">
       <div class="hero-logo">
         <img src="/assets/logo.svg" alt="" class="hero-logo__image" aria-hidden="true">
       </div>
 
       <div class="flow flow--md">
-        <h1 id="hero-heading" class="text-4xl text-inverse">
-          Welcome to The Groove Library
+        <p class="hero__eyebrow text-sm text-inverse text-uppercase">
+          Global mix series · Live streams · Deep dives
+        </p>
+
+        <h1 id="hero-heading" class="hero__title">
+          The Groove Library
         </h1>
-        <p class="text-xl text-inverse mx-auto">
-          A vibrant celebration of global music, featuring legendary mixes from around the world.
+
+        <p class="hero__tagline text-xl text-inverse mx-auto">
+          A place to listen, move and discover – one mix at a time.
         </p>
       </div>
 
+      <div class="hero__chips cluster cluster--md justify-center">
+        <span class="hero-chip">
+          <i class="fas fa-globe" aria-hidden="true"></i>
+          Global sounds
+        </span>
+        <span class="hero-chip">
+          <i class="fas fa-heart" aria-hidden="true"></i>
+          Curated with care
+        </span>
+        <span class="hero-chip">
+          <i class="fas fa-users" aria-hidden="true"></i>
+          For everyone
+        </span>
+      </div>
+
       <div class="cluster cluster--md justify-center">
-        <i class="fas fa-globe fa-2x text-inverse" aria-hidden="true"></i>
-        <i class="fas fa-music fa-2x text-inverse" aria-hidden="true"></i>
-        <i class="fas fa-headphones fa-2x text-inverse" aria-hidden="true"></i>
+        <a href="#mixes-heading" class="button button--primary text-inverse">
+          <i class="fas fa-play" aria-hidden="true"></i>
+          Jump into the mixes
+        </a>
+        <a href="/easton-chop-up/" class="button button--secondary text-inverse">
+          <i class="fas fa-record-vinyl" aria-hidden="true"></i>
+          Visit Easton Chop Up
+        </a>
       </div>
     </div>
   </div>
 </section>
+
 
 {# Description Section #}
 {% if description %}

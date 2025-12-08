@@ -177,6 +177,13 @@ Reusable layout components:
   - `.button--secondary` - Semi-transparent background with white text
   - Supports `.text-inverse` modifier for gradient backgrounds
   - Includes hover states, focus indicators, and transitions
+- `.hero` - Hero section variants with page-specific gradients and decorative patterns:
+  - `.hero--home` - Bright orange to brown gradient with diagonal stripes
+  - `.hero--easton` - Teal to amber (Chelsea Inn poster vibe)
+  - `.hero--afro` - Cosmic teal/purple with amber accent
+  - `.hero__title`, `.hero__tagline`, `.hero__eyebrow` - Typography components
+  - `.hero__stamp` - Decorative rotated badge (desktop only)
+  - `.hero-chip` - Pill badges for feature highlights
 - `.hero-logo` - White inverted logo for gradient backgrounds
 - `.badge` - Metadata badges (primary and neutral variants)
 - `.site-header` / `.site-footer` - Layout blocks with vintage styling
@@ -396,6 +403,10 @@ This is currently a personal project, but suggestions and feedback are welcome v
 - [x] Responsive 2-column mix player grid
 - [x] Logo contrast optimization (white on gradient backgrounds)
 - [x] Consistent hero sections across all pages
+- [x] Page-specific hero gradients and decorative stripe patterns
+- [x] Hero typography (title, tagline, eyebrow) with proper color inheritance
+- [x] Decorative hero stamp badge for playlist pages
+- [x] Hero chips for feature highlights on homepage
 - [x] Responsive hamburger menu navigation
 - [x] Create custom 404 page
 - [x] **SEO Foundation**: XML sitemap, robots.txt with LLM crawler support
