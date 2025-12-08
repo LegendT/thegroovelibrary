@@ -55,7 +55,7 @@
            rel="noopener noreferrer"
            aria-label="{{ mix.name }} - Open on Mixcloud in new window">
           {{ mix.name }}
-          <i class="fa-solid fa-arrow-up-right-from-square fa-sm" aria-hidden="true"></i>
+          <i class="fas fa-arrow-up-right-from-square fa-sm" aria-hidden="true"></i>
         </a>
       </h3>
 
@@ -63,7 +63,7 @@
       <div class="mix-player__meta">
         {% if mix.created_time %}
           <div class="mix-player__meta-item">
-            <i class="fa-solid fa-calendar fa-sm" aria-hidden="true"></i>
+            <i class="fas fa-calendar fa-sm" aria-hidden="true"></i>
             <time datetime="{{ mix.created_time }}" aria-label="Published date">
               {{ helpers.formatDate(mix.created_time) }}
             </time>
@@ -72,7 +72,7 @@
 
         {% if mix.audio_length %}
           <div class="mix-player__meta-item">
-            <i class="fa-solid fa-clock fa-sm" aria-hidden="true"></i>
+            <i class="fas fa-clock fa-sm" aria-hidden="true"></i>
             <span aria-label="Duration">
               {{ helpers.formatDuration(mix.audio_length) }}
             </span>
@@ -81,7 +81,7 @@
 
         {% if mix.play_count %}
           <div class="mix-player__meta-item">
-            <i class="fa-solid fa-headphones fa-sm" aria-hidden="true"></i>
+            <i class="fas fa-headphones fa-sm" aria-hidden="true"></i>
             <span aria-label="Play count">
               {{ mix.play_count | toLocaleString }} plays
             </span>
@@ -107,7 +107,7 @@
       {% if mix.sections and mix.sections.length > 0 %}
         <details class="mix-player__tracklist">
           <summary class="mix-player__tracklist-summary">
-            <i class="fa-solid fa-list-music fa-sm" aria-hidden="true"></i>
+            <i class="fas fa-list-music fa-sm" aria-hidden="true"></i>
             <span>Tracklist ({{ mix.sections.length }} tracks)</span>
           </summary>
           <ol class="mix-player__tracklist-items" aria-label="Track listing">

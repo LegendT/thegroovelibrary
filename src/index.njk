@@ -80,9 +80,9 @@ structuredData:
       </div>
 
       <div class="cluster cluster--md justify-center">
-        <i class="fa-solid fa-globe fa-2x text-inverse" aria-hidden="true"></i>
-        <i class="fa-solid fa-music fa-2x text-inverse" aria-hidden="true"></i>
-        <i class="fa-solid fa-headphones fa-2x text-inverse" aria-hidden="true"></i>
+        <i class="fas fa-globe fa-2x text-inverse" aria-hidden="true"></i>
+        <i class="fas fa-music fa-2x text-inverse" aria-hidden="true"></i>
+        <i class="fas fa-headphones fa-2x text-inverse" aria-hidden="true"></i>
       </div>
     </div>
   </div>
@@ -112,7 +112,7 @@ structuredData:
         {% if theGrooveLibrary.count > 0 %}
           <div class="cluster cluster--sm justify-center">
             <span class="badge">
-              <i class="fa-solid fa-record-vinyl fa-sm" aria-hidden="true"></i>
+              <i class="fas fa-record-vinyl fa-sm" aria-hidden="true"></i>
               {{ theGrooveLibrary.count }} mixes in this playlist
             </span>
           </div>
@@ -132,7 +132,7 @@ structuredData:
         {# Error State #}
         <div class="error" role="alert">
           <h3 class="error__title">
-            <i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i>
+            <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
             Unable to load mixes
           </h3>
           <p>We encountered an error while fetching the music collection. Please try again later.</p>
@@ -144,7 +144,7 @@ structuredData:
       {% else %}
         {# Empty State #}
         <div class="center center--intrinsic flow flow--lg text-center py-3xl">
-          <i class="fa-solid fa-music-slash fa-4x text-tertiary" aria-hidden="true"></i>
+          <i class="fas fa-music-slash fa-4x text-tertiary" aria-hidden="true"></i>
           <div class="flow flow--sm">
             <h3 class="text-xl">No mixes available</h3>
             <p class="text-secondary">Check back soon for new content!</p>
@@ -169,15 +169,15 @@ structuredData:
         </p>
         <div class="cluster cluster--lg justify-center">
           <div class="flow flow--sm text-center">
-            <i class="fa-solid fa-earth-americas fa-3x text-brand" aria-hidden="true"></i>
+            <i class="fas fa-globe fa-3x text-brand" aria-hidden="true"></i>
             <p class="text-semibold">Global Sounds</p>
           </div>
           <div class="flow flow--sm text-center">
-            <i class="fa-solid fa-heart fa-3x text-brand" aria-hidden="true"></i>
+            <i class="fas fa-heart fa-3x text-brand" aria-hidden="true"></i>
             <p class="text-semibold">Curated with Care</p>
           </div>
           <div class="flow flow--sm text-center">
-            <i class="fa-solid fa-users fa-3x text-brand" aria-hidden="true"></i>
+            <i class="fas fa-users fa-3x text-brand" aria-hidden="true"></i>
             <p class="text-semibold">For Everyone</p>
           </div>
         </div>
