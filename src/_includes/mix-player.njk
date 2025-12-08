@@ -12,20 +12,36 @@
 #}
 
 <article class="mix-player" aria-labelledby="mix-{{ mix.slug }}">
-  {# Cover Image #}
-  <div class="mix-player__cover">
+  {# Cover Image with Player - Click to load for performance #}
+  <div class="mix-player__media-wrapper"
+       data-src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
+       data-title="Mixcloud player for {{ mix.name }}"
+       data-aria-label="Audio player for {{ mix.name }}">
     {% if mix.pictures and mix.pictures.large %}
-      <img
-        src="{{ mix.pictures.large }}"
-        alt="Cover art for {{ mix.name }}"
-        class="mix-player__cover-image"
-        loading="lazy"
-        width="640"
-        height="640"
-        onerror="this.style.display='none'; this.parentElement.classList.add('mix-player__cover--fallback');">
+      <div class="mix-player__cover">
+        <img
+          src="{{ mix.pictures.large }}"
+          alt="Cover art for {{ mix.name }}"
+          class="mix-player__cover-image"
+          loading="lazy"
+          width="640"
+          height="640"
+          onerror="this.style.display='none'; this.parentElement.classList.add('mix-player__cover--fallback');">
+        <button class="mix-player__play-overlay"
+                aria-label="Click to load and play {{ mix.name }}">
+          <span class="play-icon" aria-hidden="true">▶</span>
+          <span class="play-text">Click to Play</span>
+        </button>
+      </div>
     {% else %}
       {# No image available - show fallback #}
-      <div class="mix-player__cover--fallback" aria-hidden="true"></div>
+      <div class="mix-player__cover mix-player__cover--fallback">
+        <button class="mix-player__play-overlay"
+                aria-label="Click to load and play {{ mix.name }}">
+          <span class="play-icon" aria-hidden="true">▶</span>
+          <span class="play-text">Click to Play</span>
+        </button>
+      </div>
     {% endif %}
   </div>
 
@@ -85,22 +101,8 @@
       {% endif %}
     </div>
 
-    {# Player and Tracklist Container - pushed to bottom #}
+    {# Tracklist Container - pushed to bottom #}
     <div class="mix-player__bottom">
-      {# Mixcloud Embedded Player - Click to load for performance #}
-      <div class="mix-player__iframe-wrapper"
-           data-src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
-           data-title="Mixcloud player for {{ mix.name }}"
-           data-aria-label="Audio player for {{ mix.name }}">
-        <button class="mix-player__placeholder"
-                aria-label="Click to load player for {{ mix.name }}"
-                style="background-image: url('{{ mix.pictures.large }}');">
-          <div class="mix-player__placeholder-overlay">
-            <i class="fa-solid fa-circle-play fa-5x" aria-hidden="true"></i>
-          </div>
-        </button>
-      </div>
-
       {# Tracklist #}
       {% if mix.sections and mix.sections.length > 0 %}
         <details class="mix-player__tracklist">

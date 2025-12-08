@@ -3,7 +3,9 @@
     "allow": [
       "Bash(python3:*)",
       "Bash(node scripts/list-easton-mixes.js:*)",
-      "Bash(node scripts/generate-og-images.js:*)"
+      "Bash(node scripts/generate-og-images.js:*)",
+      "Bash(ls:*)",
+      "Bash(git add:*)"
     ],
     "deny": [],
     "ask": []

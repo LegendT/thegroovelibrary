@@ -305,6 +305,7 @@ npx storybook@latest init
 
 ## Performance Optimization Checklist
 
+- [x] **Click-to-load Mixcloud players** (facade pattern) - Defers ~566KB of JS until user interaction
 - [ ] Add image optimization (when adding images)
 - [ ] Implement critical CSS inlining
 - [ ] Add service worker caching

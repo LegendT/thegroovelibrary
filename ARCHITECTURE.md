@@ -191,7 +191,13 @@ Template utility functions available as `{{ helpers.functionName() }}`.
 **mix-player.njk**: Reusable Mixcloud player component
 - Accessible article structure with proper BEM naming
 - ARIA labels for screen readers
-- Lazy-loaded iframe (performance)
+- **Click-to-load player facade** (performance optimization):
+  - Cover image with play overlay button (Unicode ▶ triangle for reliability)
+  - "Click to Play" text label for clarity
+  - Clicking loads Mixcloud iframe with autoplay enabled
+  - Player container collapses from square to fit widget height when loaded
+  - Only one player can play at a time (clicking another stops the previous)
+  - Stopped players restore their cover image and play overlay
 - Cover image with hover effects
 - Metadata display (date, duration, plays)
 - Tag badges with vintage styling
@@ -328,15 +334,18 @@ description: >
 
 ### Runtime Performance
 - Static HTML (no hydration overhead)
-- Minimal JavaScript (only Web Awesome components)
+- Minimal JavaScript (only Web Awesome components + lazy-player.js)
 - CSS custom properties (no runtime CSS-in-JS)
-- Lazy-loaded iframes
+- **Click-to-load Mixcloud players** (facade pattern):
+  - Defers ~566KB of Mixcloud JavaScript until user interaction
+  - Significantly improves Lighthouse performance score
+  - Uses native browser lazy loading for images
 - Optimized images (when added)
 
 ### Bundle Size
 - Web Awesome: ~150KB (cherry-picked components)
 - Custom CSS: ~20KB (uncompressed)
-- Custom JS: ~2KB
+- Custom JS: ~3KB (includes lazy-player.js for click-to-load players)
 - **Total**: < 200KB (excellent for modern web)
 
 ## Design System

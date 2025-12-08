@@ -447,41 +447,110 @@ li + li {
   border-color: var(--border-color-accent);
 }
 
-.mix-player__cover {
+/* Media wrapper - contains cover or iframe */
+.mix-player__media-wrapper {
   position: relative;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   background-color: var(--color-neutral-200);
 }
 
+.mix-player__cover {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .mix-player__cover-image {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform var(--duration-slow) var(--ease-out);
+  display: block;
 }
 
-.mix-player:hover .mix-player__cover-image {
-  transform: scale(1.05);
-}
-
-.mix-player__overlay {
+/* Play overlay button - sits on top of cover */
+.mix-player__play-overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    180deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.7) 100%
-  );
   display: flex;
-  align-items: flex-end;
-  padding: var(--space-lg);
-  opacity: 0;
-  transition: opacity var(--duration-normal) var(--ease-out);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-sm);
+  background: rgba(0, 0, 0, 0.35);
+  border: none;
+  color: var(--color-neutral-100);
+  cursor: pointer;
+  transition: all var(--duration-normal) var(--ease-out);
+  opacity: 1 !important;
 }
 
-.mix-player:hover .mix-player__overlay {
-  opacity: 1;
+.mix-player__play-overlay:hover {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mix-player__play-overlay:active {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+/* Play icon - Unicode triangle */
+.mix-player__play-overlay .play-icon {
+  font-size: 5rem;
+  line-height: 1;
+  color: var(--color-neutral-100);
+  transform: scale(1);
+  transition: transform var(--duration-fast) var(--ease-out);
+  filter: drop-shadow(0 4px 16px rgba(0, 0, 0, 0.8));
+  display: block;
+}
+
+.mix-player__play-overlay:hover .play-icon {
+  transform: scale(1.15);
+}
+
+.mix-player__play-overlay:active .play-icon {
+  transform: scale(0.95);
+}
+
+.mix-player__play-overlay .play-text {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.95;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.mix-player__play-overlay:focus-visible {
+  outline: 3px solid var(--color-brand-accent);
+  outline-offset: -3px;
+}
+
+/* Loading state */
+.mix-player__media-wrapper.loading {
+  position: relative;
+}
+
+.mix-player__media-wrapper.loading::after {
+  content: 'Loading player...';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-neutral-100);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Collapse space when player is loaded */
+.mix-player__media-wrapper.player-loaded {
+  aspect-ratio: auto;
+}
+
+.widget-container {
+  width: 100%;
 }
 
 .mix-player__body {
@@ -553,76 +622,19 @@ li + li {
   color: var(--color-secondary-900);
 }
 
+/* Loaded iframe - replaces cover */
+.mix-player__iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+  background-color: var(--color-neutral-100);
+  border-radius: var(--radius-sm);
+}
+
 /* Bottom section container - pushed to bottom of card */
 .mix-player__bottom {
   margin-block-start: auto;
-}
-
-.mix-player__iframe-wrapper {
-  border-block-start: var(--border-width-thin) solid var(--border-color-light);
-  padding-block-start: var(--space-md);
-}
-
-.mix-player__iframe {
-  width: 100%;
-  height: 120px;
-  border: none;
-  border-radius: var(--radius-md);
-}
-
-/* Player Placeholder - Click to load */
-.mix-player__placeholder {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 120px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: none;
-  border-radius: var(--radius-md);
-  color: var(--color-neutral-100);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  position: relative;
-  overflow: hidden;
-}
-
-/* Dark overlay to ensure play button visibility */
-.mix-player__placeholder-overlay {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-  backdrop-filter: blur(0px);
-}
-
-.mix-player__placeholder:hover .mix-player__placeholder-overlay {
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(2px);
-}
-
-.mix-player__placeholder-overlay i {
-  transform: scale(1);
-  transition: transform 0.3s ease;
-  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
-}
-
-.mix-player__placeholder:hover .mix-player__placeholder-overlay i {
-  transform: scale(1.1);
-}
-
-.mix-player__placeholder:active .mix-player__placeholder-overlay i {
-  transform: scale(0.95);
-}
-
-.mix-player__placeholder:focus-visible {
-  outline: 3px solid var(--color-brand-accent);
-  outline-offset: 2px;
 }
 
 /* Tracklist Styles */
