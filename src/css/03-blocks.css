@@ -577,58 +577,52 @@ li + li {
   justify-content: center;
   width: 100%;
   height: 120px;
-  background: linear-gradient(135deg, var(--color-brand-primary), var(--color-brand-secondary));
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: none;
   border-radius: var(--radius-md);
   color: var(--color-neutral-100);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.mix-player__placeholder::before {
-  content: '';
+/* Dark overlay to ensure play button visibility */
+.mix-player__placeholder-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   inset: 0;
-  background: rgba(255, 255, 255, 0.1);
-  opacity: 0;
-  transition: opacity 0.2s ease;
+  background: rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(0px);
 }
 
-.mix-player__placeholder:hover::before {
-  opacity: 1;
+.mix-player__placeholder:hover .mix-player__placeholder-overlay {
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
 }
 
-.mix-player__placeholder:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+.mix-player__placeholder-overlay i {
+  transform: scale(1);
+  transition: transform 0.3s ease;
+  filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
 }
 
-.mix-player__placeholder:active {
-  transform: translateY(0);
+.mix-player__placeholder:hover .mix-player__placeholder-overlay i {
+  transform: scale(1.1);
+}
+
+.mix-player__placeholder:active .mix-player__placeholder-overlay i {
+  transform: scale(0.95);
 }
 
 .mix-player__placeholder:focus-visible {
   outline: 3px solid var(--color-brand-accent);
   outline-offset: 2px;
-}
-
-.mix-player__placeholder-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: var(--space-sm);
-  position: relative;
-  z-index: 1;
-}
-
-.mix-player__placeholder-text {
-  font-size: var(--font-size-sm);
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  opacity: 0.95;
 }
 
 /* Tracklist Styles */

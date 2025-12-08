@@ -92,10 +92,11 @@
            data-src="{{ helpers.getMixcloudEmbedUrl(mix.key) }}"
            data-title="Mixcloud player for {{ mix.name }}"
            data-aria-label="Audio player for {{ mix.name }}">
-        <button class="mix-player__placeholder" aria-label="Load player for {{ mix.name }}">
-          <div class="mix-player__placeholder-content">
-            <i class="fa-solid fa-circle-play fa-4x" aria-hidden="true"></i>
-            <span class="mix-player__placeholder-text">Click to load player</span>
+        <button class="mix-player__placeholder"
+                aria-label="Click to load player for {{ mix.name }}"
+                style="background-image: url('{{ mix.pictures.large }}');">
+          <div class="mix-player__placeholder-overlay">
+            <i class="fa-solid fa-circle-play fa-5x" aria-hidden="true"></i>
           </div>
         </button>
       </div>
