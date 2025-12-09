@@ -94,6 +94,9 @@ structuredData:
         >
           <h2 id="form-heading" class="sr-only">Contact Form</h2>
 
+          {# Hidden form name for Netlify detection #}
+          <input type="hidden" name="form-name" value="contribute">
+
           {# Honeypot field for spam prevention #}
           <p class="sr-only">
             <label>Don't fill this out if you're human: <input name="bot-field"></label>
