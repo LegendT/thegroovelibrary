@@ -157,13 +157,13 @@
   {# Accessibility: Announce page changes to screen readers #}
   <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-  {# Google Analytics - Deferred until after page load for performance #}
+  {# Google Analytics - Deferred until browser idle for best performance #}
   <script>
     // Initialize dataLayer immediately for any early events
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 
-    // Defer GA script loading until after page is interactive
+    // Load GA script when browser is idle
     function loadGA() {
       var script = document.createElement('script');
       script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9';
@@ -173,13 +173,20 @@
       gtag('config', 'G-HMK4ZC16H9');
     }
 
-    // Load GA after page is fully loaded (non-blocking)
+    // Use requestIdleCallback for best performance, fallback to setTimeout
+    function deferGA() {
+      if ('requestIdleCallback' in window) {
+        requestIdleCallback(loadGA, { timeout: 4000 });
+      } else {
+        setTimeout(loadGA, 2000);
+      }
+    }
+
+    // Wait for page load, then defer to idle time
     if (document.readyState === 'complete') {
-      setTimeout(loadGA, 0);
+      deferGA();
     } else {
-      window.addEventListener('load', function() {
-        setTimeout(loadGA, 100);
-      });
+      window.addEventListener('load', deferGA);
     }
   </script>
 </body>
