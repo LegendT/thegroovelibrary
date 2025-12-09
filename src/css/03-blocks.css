@@ -1113,6 +1113,26 @@ li + li {
   color: var(--color-primary-200);
 }
 
+.footer-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-2xl);
+  height: var(--space-2xl);
+  font-size: var(--font-size-xl);
+  color: var(--color-neutral-300);
+  background-color: var(--color-neutral-800);
+  border-radius: var(--radius-full);
+  transition: all var(--duration-fast) var(--ease-out);
+  text-decoration: none;
+}
+
+.footer-social:hover {
+  color: var(--color-neutral-50);
+  background-color: var(--color-primary-500);
+  transform: scale(1.1);
+}
+
 /* ==========================================
  * SKIP LINK (Accessibility)
  * ========================================== */
