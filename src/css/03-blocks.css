@@ -1457,3 +1457,103 @@ li + li {
   transform: translateY(-2px);
   box-shadow: var(--shadow-xl);
 }
+
+.button--lg {
+  padding: var(--space-md) var(--space-xl);
+  font-size: var(--font-size-md);
+}
+
+/* ==========================================
+ * CONTACT FORM
+ * Accessible form styles for contribute page
+ * ========================================== */
+
+.contact-form {
+  background-color: var(--color-surface-card);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  box-shadow: var(--shadow-md);
+  border: var(--border-width-thin) solid var(--border-color-light);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+}
+
+.form-label {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.form-required {
+  color: var(--color-error);
+  margin-inline-start: var(--space-2xs);
+}
+
+.form-input {
+  width: 100%;
+  padding: var(--space-sm) var(--space-md);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  background-color: var(--color-surface-primary);
+  border: var(--border-width-thin) solid var(--border-color-default);
+  border-radius: var(--radius-md);
+  transition: all var(--duration-fast) var(--ease-out);
+}
+
+.form-input::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.form-input:hover {
+  border-color: var(--border-color-dark);
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 var(--focus-ring-width) rgba(242, 121, 22, 0.2);
+}
+
+.form-input:invalid:not(:placeholder-shown) {
+  border-color: var(--color-error);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 150px;
+}
+
+.form-actions {
+  padding-block-start: var(--space-md);
+}
+
+/* Contribute page list */
+.contribute-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+}
+
+.contribute-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--space-md);
+  font-size: var(--font-size-lg);
+  padding: var(--space-md);
+  background-color: var(--color-surface-secondary);
+  border-radius: var(--radius-md);
+  border-left: var(--border-width-thick) solid var(--color-primary-500);
+}
+
+.contribute-list li i {
+  color: var(--color-primary-600);
+  font-size: var(--font-size-xl);
+}

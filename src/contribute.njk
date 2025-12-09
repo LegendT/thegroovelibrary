@@ -1,0 +1,159 @@
+---
+layout: base.njk
+title: Contribute
+description: >
+  Share your mixes, writing, or projects with The Groove Library. We listen to and read everything that's sent.
+ogImage: https://thegroovelibrary.net/assets/og-default.jpg
+structuredData:
+  - "@context": "https://schema.org"
+    "@type": "ContactPage"
+    "@id": "https://thegroovelibrary.net/contribute/#contactpage"
+    name: "Contribute to The Groove Library"
+    description: "Share your mixes, writing, or projects with The Groove Library. We're always discovering new selectors, writers and projects."
+    url: "https://thegroovelibrary.net/contribute/"
+    mainEntity:
+      "@type": "Organization"
+      "@id": "https://thegroovelibrary.net/#organization"
+    breadcrumb:
+      "@type": "BreadcrumbList"
+      itemListElement:
+        - "@type": "ListItem"
+          position: 1
+          name: "Home"
+          item: "https://thegroovelibrary.net/"
+        - "@type": "ListItem"
+          position: 2
+          name: "Contribute"
+          item: "https://thegroovelibrary.net/contribute/"
+---
+
+{# Hero Section #}
+<section class="hero hero--home region region--lg" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="center center--intrinsic flow flow--xl text-center">
+      <div class="flow flow--md">
+        <p class="hero__eyebrow text-sm text-inverse text-uppercase">
+          Get in touch
+        </p>
+
+        <h1 id="hero-heading" class="hero__title">
+          Contribute
+        </h1>
+
+        <p class="hero__tagline text-xl text-inverse mx-auto">
+          Share something with us
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Content Section #}
+<section class="region region--xl" aria-labelledby="contribute-heading">
+  <div class="container">
+    <div class="wrapper wrapper--narrow">
+      <div class="flow flow--xl">
+        {# Introduction #}
+        <div class="flow flow--lg">
+          <p class="text-lg">
+            The Groove Library is shaped through curated invitations, but we genuinely enjoy discovering new selectors, writers and projects along the way.
+          </p>
+
+          <p class="text-lg">
+            If you'd like to share something with us, you're very welcome to send:
+          </p>
+
+          <ul class="contribute-list">
+            <li>
+              <i class="fas fa-headphones fa-fw" aria-hidden="true"></i>
+              <span>A link to a recent mix</span>
+            </li>
+            <li>
+              <i class="fas fa-pen-fancy fa-fw" aria-hidden="true"></i>
+              <span>A piece of writing about music</span>
+            </li>
+            <li>
+              <i class="fas fa-rocket fa-fw" aria-hidden="true"></i>
+              <span>Or a project you're proud of</span>
+            </li>
+          </ul>
+
+          <p class="text-secondary">
+            Everything that's sent is listened to or read. If it feels like a natural fit for one of The Groove Library collections, we'll be in touch.
+          </p>
+        </div>
+
+        {# Contact Form #}
+        <form
+          name="contribute"
+          method="POST"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          class="contact-form flow flow--lg"
+          aria-labelledby="form-heading"
+        >
+          <h2 id="form-heading" class="sr-only">Contact Form</h2>
+
+          {# Honeypot field for spam prevention #}
+          <p class="sr-only">
+            <label>Don't fill this out if you're human: <input name="bot-field"></label>
+          </p>
+
+          <div class="form-group">
+            <label for="name" class="form-label">
+              Name
+              <span class="form-required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="form-input"
+              required
+              autocomplete="name"
+              placeholder="Your name"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">
+              Email
+              <span class="form-required" aria-hidden="true">*</span>
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              required
+              autocomplete="email"
+              placeholder="your@email.com"
+            >
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">
+              Message
+              <span class="form-required" aria-hidden="true">*</span>
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input form-textarea"
+              required
+              rows="6"
+              placeholder="Share a link to your mix, writing, or project..."
+            ></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit" class="button button--primary button--lg">
+              <i class="fas fa-paper-plane fa-sm" aria-hidden="true"></i>
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
