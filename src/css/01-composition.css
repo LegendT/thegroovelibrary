@@ -169,9 +169,9 @@
   align-items: stretch;
 }
 
-/* When a tracklist is open, stop siblings from stretching to match */
-.grid--2:has(.mix-player__tracklist[open]) {
-  align-items: start;
+/* When a tracklist is open, only siblings without open tracklist stay compact */
+.grid--2:has(.mix-player__tracklist[open]) .mix-player:not(:has(.mix-player__tracklist[open])) {
+  align-self: start;
 }
 
 .grid--3 {
