@@ -169,6 +169,11 @@
   align-items: stretch;
 }
 
+/* When a tracklist is open, stop siblings from stretching to match */
+.grid--2:has(.mix-player__tracklist[open]) {
+  align-items: start;
+}
+
 .grid--3 {
   grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
   gap: var(--space-xl);
