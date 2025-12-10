@@ -172,6 +172,7 @@
 /* When a tracklist is open, only siblings without open tracklist stay compact */
 .grid--2:has(.mix-player__tracklist[open]) .mix-player:not(:has(.mix-player__tracklist[open])) {
   align-self: start;
+  height: auto; /* Override height: 100% so card shrinks to content */
 }
 
 .grid--3 {
