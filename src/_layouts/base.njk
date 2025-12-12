@@ -6,6 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="164833f4-c9d3-45d6-92ac-02eb5c88f4d3" type="text/javascript" async></script>
+<script>
+  // Debug Cookiebot loading
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      if (typeof Cookiebot === 'undefined') {
+        console.warn('Cookiebot not loaded after 3 seconds');
+      } else {
+        console.log('Cookiebot loaded successfully', {
+          consent: Cookiebot.consent,
+          consented: Cookiebot.consented,
+          hasResponse: Cookiebot.hasResponse
+        });
+      }
+    }, 3000);
+  });
+</script>
 
   {# SEO Meta Tags #}
   <title>{{ title }} | The Groove Library</title>
