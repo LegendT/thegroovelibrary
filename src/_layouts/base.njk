@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <script>
-  // Comprehensive Cookiebot debugging
+  // Comprehensive Cookiebot debugging and testing
   console.log('Cookiebot debug: Starting initialization check');
   
   // Track script loading
@@ -36,7 +36,55 @@
           console.log('Cookiebot debug: No response yet - banner should be visible');
         } else {
           console.log('Cookiebot debug: Already has response - check consent:', Cookiebot.consent);
+          console.log('Cookiebot debug: Stamp value:', Cookiebot.consent.stamp);
+          
+          // If stamp is -1, it might be a default/test consent
+          if (Cookiebot.consent.stamp === '-1') {
+            console.warn('Cookiebot debug: Stamp is -1 - this often indicates test mode or default consent');
+            console.warn('Cookiebot debug: Banner may not show with stamp -1');
+          }
         }
+        
+        // Add debug functions to window for testing
+        window.__cookiebotDebug = {
+          resetConsent: function() {
+            console.log('Cookiebot debug: Resetting consent...');
+            Cookiebot.consent.necessary = false;
+            Cookiebot.consent.preferences = false;
+            Cookiebot.consent.statistics = false;
+            Cookiebot.consent.marketing = false;
+            Cookiebot.consent.stamp = '';
+            Cookiebot.consented = false;
+            Cookiebot.hasResponse = false;
+            console.log('Cookiebot debug: Consent reset. Reload page to see banner.');
+            
+            // Also clear the cookie
+            document.cookie = 'CookieConsent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            document.cookie = 'CookieConsentBulkTicket=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+            
+            alert('Cookiebot consent reset. Reload page to test banner.');
+          },
+          showBanner: function() {
+            console.log('Cookiebot debug: Attempting to show banner...');
+            if (typeof Cookiebot.showBanner === 'function') {
+              Cookiebot.showBanner();
+              console.log('Cookiebot debug: Banner show function called');
+            } else {
+              console.error('Cookiebot debug: Cookiebot.showBanner not available');
+            }
+          },
+          getStatus: function() {
+            return {
+              consent: Cookiebot.consent,
+              consented: Cookiebot.consented,
+              hasResponse: Cookiebot.hasResponse,
+              version: Cookiebot.version
+            };
+          }
+        };
+        
+        console.log('Cookiebot debug: Debug functions available at window.__cookiebotDebug');
+        console.log('Cookiebot debug: Try window.__cookiebotDebug.resetConsent() to test banner');
       }
     }, 100);
     
