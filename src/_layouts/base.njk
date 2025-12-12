@@ -159,29 +159,45 @@
   {# Accessibility: Announce page changes to screen readers #}
   <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-  {# Google Analytics - Deferred until after page load for performance #}
+  {# Google Analytics - Deferred and Cookiebot-integrated for GDPR compliance #}
   <script>
     // Initialize dataLayer immediately for any early events
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
 
-    // Defer GA script loading until after page is interactive
+    // Defer GA script loading until Cookiebot consent is given for statistics
     function loadGA() {
       var script = document.createElement('script');
       script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9';
       script.async = true;
       document.head.appendChild(script);
       gtag('js', new Date());
-      gtag('config', 'G-HMK4ZC16H9');
+      gtag('config', 'G-HMK4ZC16H9', {
+        'anonymize_ip': true
+      });
     }
 
-    // Load GA after page is fully loaded (non-blocking)
-    if (document.readyState === 'complete') {
-      setTimeout(loadGA, 0);
-    } else {
-      window.addEventListener('load', function() {
-        setTimeout(loadGA, 100);
-      });
+    // Cookiebot callback to load GA when consent is given for statistics
+    window.CookiebotCallback = window.CookiebotCallback || {};
+    window.CookiebotCallback_OnAccept = function() {
+      if (Cookiebot.consent.statistics) {
+        loadGA();
+      }
+    };
+
+    // Also load GA if consent was already given (on subsequent page loads)
+    if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.statistics) {
+      loadGA();
+    } else if (document.readyState === 'complete') {
+      // If Cookiebot isn't loaded yet but page is complete, wait for Cookiebot
+      var checkCookiebot = setInterval(function() {
+        if (typeof Cookiebot !== 'undefined') {
+          clearInterval(checkCookiebot);
+          if (Cookiebot.consent && Cookiebot.consent.statistics) {
+            loadGA();
+          }
+        }
+      }, 100);
     }
   </script>
 </body>
