@@ -5,22 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<script id="Cookiebot" src="https://consent.cookiebot.com/uc.js" data-cbid="164833f4-c9d3-45d6-92ac-02eb5c88f4d3" type="text/javascript" async></script>
 <script>
-  // Debug Cookiebot loading
-  window.addEventListener('load', function() {
-    setTimeout(function() {
-      if (typeof Cookiebot === 'undefined') {
-        console.warn('Cookiebot not loaded after 3 seconds');
-      } else {
-        console.log('Cookiebot loaded successfully', {
+  // Comprehensive Cookiebot debugging
+  console.log('Cookiebot debug: Starting initialization check');
+  
+  // Track script loading
+  var cookiebotScript = document.createElement('script');
+  cookiebotScript.id = 'Cookiebot';
+  cookiebotScript.src = 'https://consent.cookiebot.com/uc.js';
+  cookiebotScript.setAttribute('data-cbid', '164833f4-c9d3-45d6-92ac-02eb5c88f4d3');
+  cookiebotScript.type = 'text/javascript';
+  
+  // Load synchronously for better reliability
+  cookiebotScript.onload = function() {
+    console.log('Cookiebot debug: Script loaded successfully');
+    
+    // Check if Cookiebot object is available
+    var checkInterval = setInterval(function() {
+      if (typeof Cookiebot !== 'undefined') {
+        clearInterval(checkInterval);
+        console.log('Cookiebot debug: Cookiebot object available', {
           consent: Cookiebot.consent,
           consented: Cookiebot.consented,
-          hasResponse: Cookiebot.hasResponse
+          hasResponse: Cookiebot.hasResponse,
+          version: Cookiebot.version
         });
+        
+        // Check if banner should be showing
+        if (Cookiebot.hasResponse === false) {
+          console.log('Cookiebot debug: No response yet - banner should be visible');
+        } else {
+          console.log('Cookiebot debug: Already has response - check consent:', Cookiebot.consent);
+        }
       }
-    }, 3000);
-  });
+    }, 100);
+    
+    // Timeout after 5 seconds
+    setTimeout(function() {
+      if (typeof Cookiebot === 'undefined') {
+        console.error('Cookiebot debug: Cookiebot object not available after 5 seconds');
+      }
+      clearInterval(checkInterval);
+    }, 5000);
+  };
+  
+  cookiebotScript.onerror = function() {
+    console.error('Cookiebot debug: Script failed to load');
+  };
+  
+  // Insert the script
+  document.head.appendChild(cookiebotScript);
+  console.log('Cookiebot debug: Script element added to head');
 </script>
 
   {# SEO Meta Tags #}
