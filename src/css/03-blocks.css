@@ -1484,6 +1484,38 @@ li + li {
 }
 
 /* ==========================================
+ * LIST STYLES
+ * ========================================== */
+
+.list--bulleted {
+  list-style-type: disc;
+  padding-inline-start: var(--space-xl);
+}
+
+.list--bulleted li {
+  margin-block-end: var(--space-xs);
+}
+
+.list--numbered {
+  list-style-type: decimal;
+  padding-inline-start: var(--space-xl);
+}
+
+.list--numbered li {
+  margin-block-end: var(--space-xs);
+}
+
+.list--unstyled {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list--unstyled li {
+  margin-block-end: var(--space-xs);
+}
+
+/* ==========================================
  * CONTACT FORM
  * Accessible form styles for contribute page
  * ========================================== */
