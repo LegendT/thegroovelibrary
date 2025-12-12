@@ -6,104 +6,218 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
 <script>
-  // Comprehensive Cookiebot debugging and testing
-  console.log('Cookiebot debug: Starting initialization check');
-  
-  // Track script loading
-  var cookiebotScript = document.createElement('script');
-  cookiebotScript.id = 'Cookiebot';
-  cookiebotScript.src = 'https://consent.cookiebot.com/uc.js';
-  cookiebotScript.setAttribute('data-cbid', '164833f4-c9d3-45d6-92ac-02eb5c88f4d3');
-  cookiebotScript.type = 'text/javascript';
-  
-  // Load synchronously for better reliability
-  cookiebotScript.onload = function() {
-    console.log('Cookiebot debug: Script loaded successfully');
+  // Simple GDPR-compliant cookie consent implementation
+  (function() {
+    'use strict';
     
-    // Check if Cookiebot object is available
-    var checkInterval = setInterval(function() {
-      if (typeof Cookiebot !== 'undefined') {
-        clearInterval(checkInterval);
-        console.log('Cookiebot debug: Cookiebot object available', {
-          consent: Cookiebot.consent,
-          consented: Cookiebot.consented,
-          hasResponse: Cookiebot.hasResponse,
-          version: Cookiebot.version
+    // Configuration
+    var COOKIE_NAME = 'groovelibrary_consent';
+    var CONSENT_EXPIRY_DAYS = 365;
+    var GA_TRACKING_ID = 'G-HMK4ZC16H9';
+    
+    // Consent object structure
+    var defaultConsent = {
+      necessary: true,    // Always true for essential cookies
+      preferences: false,
+      statistics: false,
+      marketing: false,
+      timestamp: null,
+      version: '1.0'
+    };
+    
+    // Get current consent
+    function getConsent() {
+      try {
+        var consentJson = localStorage.getItem(COOKIE_NAME);
+        if (consentJson) {
+          var consent = JSON.parse(consentJson);
+          // Merge with defaults for any missing fields
+          return Object.assign({}, defaultConsent, consent);
+        }
+      } catch (e) {
+        console.warn('Error reading consent from storage:', e);
+      }
+      return null;
+    }
+    
+    // Save consent
+    function saveConsent(consent) {
+      try {
+        consent.timestamp = new Date().toISOString();
+        localStorage.setItem(COOKIE_NAME, JSON.stringify(consent));
+        return true;
+      } catch (e) {
+        console.warn('Error saving consent to storage:', e);
+        return false;
+      }
+    }
+    
+    // Load Google Analytics if statistics consent is given
+    function loadGoogleAnalytics() {
+      var consent = getConsent();
+      if (consent && consent.statistics) {
+        // Initialize dataLayer
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Load GA script
+        var script = document.createElement('script');
+        script.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_TRACKING_ID;
+        script.async = true;
+        document.head.appendChild(script);
+        
+        // Configure GA
+        gtag('js', new Date());
+        gtag('config', GA_TRACKING_ID, {
+          'anonymize_ip': true
         });
         
-        // Check if banner should be showing
-        if (Cookiebot.hasResponse === false) {
-          console.log('Cookiebot debug: No response yet - banner should be visible');
-        } else {
-          console.log('Cookiebot debug: Already has response - check consent:', Cookiebot.consent);
-          console.log('Cookiebot debug: Stamp value:', Cookiebot.consent.stamp);
-          
-          // If stamp is -1, it might be a default/test consent
-          if (Cookiebot.consent.stamp === '-1') {
-            console.warn('Cookiebot debug: Stamp is -1 - this often indicates test mode or default consent');
-            console.warn('Cookiebot debug: Banner may not show with stamp -1');
+        console.log('Google Analytics loaded with consent');
+        return true;
+      }
+      return false;
+    }
+    
+    // Create and show consent banner
+    function showConsentBanner() {
+      var consent = getConsent();
+      if (consent && consent.timestamp) {
+        // Already has consent, don't show banner
+        return false;
+      }
+      
+      // Create banner HTML
+      var banner = document.createElement('div');
+      banner.id = 'cookie-consent-banner';
+      banner.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: #1a1a1a;
+        color: white;
+        padding: 1.5rem;
+        z-index: 1000;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+        font-family: 'Inter', sans-serif;
+      `;
+      
+      var innerHtml = `
+        <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 1rem; align-items: center;">
+          <div style="flex: 1; min-width: 300px;">
+            <h3 style="margin: 0 0 0.5rem 0; font-size: 1.1rem; color: #f9a837;">Cookie Consent</h3>
+            <p style="margin: 0; font-size: 0.9rem; line-height: 1.4; opacity: 0.9;">
+              We use cookies to enhance your experience and analyze site traffic. 
+              Necessary cookies are always enabled. You can choose to accept analytics cookies.
+            </p>
+            <p style="margin: 0.5rem 0 0 0; font-size: 0.8rem; opacity: 0.7;">
+              <a href="/privacy" style="color: #f9a837; text-decoration: underline;">Privacy Policy</a>
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button id="cookie-consent-accept-necessary" style="
+              padding: 0.6rem 1.2rem;
+              background: #333;
+              color: white;
+              border: 1px solid #555;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 0.9rem;
+              font-weight: 500;
+              transition: background 0.2s;
+            ">
+              Necessary Only
+            </button>
+            <button id="cookie-consent-accept-all" style="
+              padding: 0.6rem 1.2rem;
+              background: #f9a837;
+              color: #1a1a1a;
+              border: none;
+              border-radius: 4px;
+              cursor: pointer;
+              font-size: 0.9rem;
+              font-weight: 600;
+              transition: background 0.2s;
+            ">
+              Accept All
+            </button>
+          </div>
+        </div>
+      `;
+      
+      banner.innerHTML = innerHtml;
+      document.body.appendChild(banner);
+      
+      // Add event listeners
+      document.getElementById('cookie-consent-accept-necessary').addEventListener('click', function() {
+        var consent = Object.assign({}, defaultConsent);
+        saveConsent(consent);
+        banner.remove();
+        loadGoogleAnalytics(); // Will not load because statistics is false
+      });
+      
+      document.getElementById('cookie-consent-accept-all').addEventListener('click', function() {
+        var consent = Object.assign({}, defaultConsent, {
+          preferences: true,
+          statistics: true,
+          marketing: true
+        });
+        saveConsent(consent);
+        banner.remove();
+        loadGoogleAnalytics(); // Will load because statistics is true
+      });
+      
+      // Add some basic styles for hover effects
+      var style = document.createElement('style');
+      style.textContent = `
+        #cookie-consent-accept-necessary:hover {
+          background: #444 !important;
+        }
+        #cookie-consent-accept-all:hover {
+          background: #ffb84d !important;
+        }
+        @media (max-width: 768px) {
+          #cookie-consent-banner {
+            padding: 1rem !important;
+          }
+          #cookie-consent-banner > div {
+            flex-direction: column !important;
+            text-align: center !important;
           }
         }
-        
-        // Add debug functions to window for testing
-        window.__cookiebotDebug = {
-          resetConsent: function() {
-            console.log('Cookiebot debug: Resetting consent...');
-            Cookiebot.consent.necessary = false;
-            Cookiebot.consent.preferences = false;
-            Cookiebot.consent.statistics = false;
-            Cookiebot.consent.marketing = false;
-            Cookiebot.consent.stamp = '';
-            Cookiebot.consented = false;
-            Cookiebot.hasResponse = false;
-            console.log('Cookiebot debug: Consent reset. Reload page to see banner.');
-            
-            // Also clear the cookie
-            document.cookie = 'CookieConsent=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            document.cookie = 'CookieConsentBulkTicket=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
-            
-            alert('Cookiebot consent reset. Reload page to test banner.');
-          },
-          showBanner: function() {
-            console.log('Cookiebot debug: Attempting to show banner...');
-            if (typeof Cookiebot.showBanner === 'function') {
-              Cookiebot.showBanner();
-              console.log('Cookiebot debug: Banner show function called');
-            } else {
-              console.error('Cookiebot debug: Cookiebot.showBanner not available');
-            }
-          },
-          getStatus: function() {
-            return {
-              consent: Cookiebot.consent,
-              consented: Cookiebot.consented,
-              hasResponse: Cookiebot.hasResponse,
-              version: Cookiebot.version
-            };
-          }
-        };
-        
-        console.log('Cookiebot debug: Debug functions available at window.__cookiebotDebug');
-        console.log('Cookiebot debug: Try window.__cookiebotDebug.resetConsent() to test banner');
-      }
-    }, 100);
+      `;
+      document.head.appendChild(style);
+      
+      return true;
+    }
     
-    // Timeout after 5 seconds
-    setTimeout(function() {
-      if (typeof Cookiebot === 'undefined') {
-        console.error('Cookiebot debug: Cookiebot object not available after 5 seconds');
+    // Initialize
+    document.addEventListener('DOMContentLoaded', function() {
+      // Try to load GA if already consented
+      var gaLoaded = loadGoogleAnalytics();
+      
+      // Show banner if no consent yet
+      if (!gaLoaded) {
+        setTimeout(function() {
+          showConsentBanner();
+        }, 1000);
       }
-      clearInterval(checkInterval);
-    }, 5000);
-  };
-  
-  cookiebotScript.onerror = function() {
-    console.error('Cookiebot debug: Script failed to load');
-  };
-  
-  // Insert the script
-  document.head.appendChild(cookiebotScript);
-  console.log('Cookiebot debug: Script element added to head');
+      
+      // Expose functions for debugging
+      window.__cookieConsent = {
+        getConsent: getConsent,
+        resetConsent: function() {
+          localStorage.removeItem(COOKIE_NAME);
+          console.log('Consent reset. Reload page to see banner.');
+          alert('Cookie consent reset. Reload page to see banner.');
+        },
+        showBanner: showConsentBanner
+      };
+      
+      console.log('Cookie consent system initialized');
+    });
+    
+  })();
 </script>
 
   {# SEO Meta Tags #}
@@ -258,46 +372,5 @@
   {# Accessibility: Announce page changes to screen readers #}
   <div role="status" aria-live="polite" aria-atomic="true" class="sr-only"></div>
 
-  {# Google Analytics - Deferred and Cookiebot-integrated for GDPR compliance #}
-  <script>
-    // Initialize dataLayer immediately for any early events
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-
-    // Defer GA script loading until Cookiebot consent is given for statistics
-    function loadGA() {
-      var script = document.createElement('script');
-      script.src = 'https://www.googletagmanager.com/gtag/js?id=G-HMK4ZC16H9';
-      script.async = true;
-      document.head.appendChild(script);
-      gtag('js', new Date());
-      gtag('config', 'G-HMK4ZC16H9', {
-        'anonymize_ip': true
-      });
-    }
-
-    // Cookiebot callback to load GA when consent is given for statistics
-    window.CookiebotCallback = window.CookiebotCallback || {};
-    window.CookiebotCallback_OnAccept = function() {
-      if (Cookiebot.consent.statistics) {
-        loadGA();
-      }
-    };
-
-    // Also load GA if consent was already given (on subsequent page loads)
-    if (typeof Cookiebot !== 'undefined' && Cookiebot.consent && Cookiebot.consent.statistics) {
-      loadGA();
-    } else if (document.readyState === 'complete') {
-      // If Cookiebot isn't loaded yet but page is complete, wait for Cookiebot
-      var checkCookiebot = setInterval(function() {
-        if (typeof Cookiebot !== 'undefined') {
-          clearInterval(checkCookiebot);
-          if (Cookiebot.consent && Cookiebot.consent.statistics) {
-            loadGA();
-          }
-        }
-      }, 100);
-    }
-  </script>
 </body>
 </html>
