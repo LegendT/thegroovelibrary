@@ -62,50 +62,100 @@ layout: base.njk
     </div>
     
     <div class="stack stack--lg">
-      <section class="stack stack--md">
-        <h2 class="text-2xl">Frequently Asked Questions</h2>
-        
-        <div class="stack stack--sm">
-          <h3 class="text-xl">How do I submit music?</h3>
-          <p>Visit our <a href="/contribute/">Contribute page</a> for guidelines on submitting mixes and music for consideration.</p>
+      {# Contact Form #}
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        netlify-honeypot="bot-field"
+        class="contact-form flow flow--lg"
+        aria-labelledby="form-heading"
+      >
+        <h2 id="form-heading" class="text-2xl">Send us a message</h2>
+        <p class="text-md">Use this form for general inquiries. For GDPR requests, please email privacy@thegroovelibrary.net directly.</p>
+
+        {# Hidden form name for Netlify detection #}
+        <input type="hidden" name="form-name" value="contact">
+
+        {# Honeypot field for spam prevention #}
+        <p class="sr-only">
+          <label>Don't fill this out if you're human: <input name="bot-field"></label>
+        </p>
+
+        <div class="form-group">
+          <label for="name" class="form-label">
+            Name
+            <span class="form-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            class="form-input"
+            required
+            autocomplete="name"
+            placeholder="Your name"
+          >
         </div>
-        
-        <div class="stack stack--sm">
-          <h3 class="text-xl">How do I exercise my GDPR rights?</h3>
-          <p>Email <a href="mailto:privacy@thegroovelibrary.net">privacy@thegroovelibrary.net</a> with:</p>
-          <ul class="list list--bulleted">
-            <li>Your name and contact information</li>
-            <li>Specific right you wish to exercise</li>
-            <li>Any relevant details to help us locate your data</li>
-          </ul>
+
+        <div class="form-group">
+          <label for="email" class="form-label">
+            Email
+            <span class="form-required" aria-hidden="true">*</span>
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            class="form-input"
+            required
+            autocomplete="email"
+            placeholder="your@email.com"
+          >
         </div>
-        
-        <div class="stack stack--sm">
-          <h3 class="text-xl">How do I manage cookies?</h3>
-          <p>You can manage cookie preferences at any time:</p>
-          <ol class="list list--numbered">
-            <li>Clear your browser cookies (resets all preferences)</li>
-            <li>Use browser settings to block specific cookies</li>
-            <li>Contact us to manually reset your cookie consent</li>
-          </ol>
-          <p>See our <a href="/privacy/">Privacy Policy</a> for more details.</p>
+
+        <div class="form-group">
+          <label for="subject" class="form-label">
+            Subject
+            <span class="form-required" aria-hidden="true">*</span>
+          </label>
+          <select
+            id="subject"
+            name="subject"
+            class="form-input"
+            required
+          >
+            <option value="" disabled selected>Select a subject</option>
+            <option value="General Inquiry">General Inquiry</option>
+            <option value="Website Feedback">Website Feedback</option>
+            <option value="Technical Issue">Technical Issue</option>
+            <option value="Partnership Opportunity">Partnership Opportunity</option>
+            <option value="Other">Other</option>
+          </select>
         </div>
-        
-        <div class="stack stack--sm">
-          <h3 class="text-xl">Can I use your mixes in my project?</h3>
-          <p>All mixes are shared with permission from the artists. For usage requests, please contact us with details about your project.</p>
+
+        <div class="form-group">
+          <label for="message" class="form-label">
+            Message
+            <span class="form-required" aria-hidden="true">*</span>
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            class="form-input form-textarea"
+            required
+            rows="6"
+            placeholder="How can we help you?"
+          ></textarea>
         </div>
-      </section>
-      
-      <section class="stack stack--md card card--outline">
-        <h2 class="text-2xl">Quick Contact Tips</h2>
-        <ul class="list list--bulleted">
-          <li>Include relevant details in your first email</li>
-          <li>For GDPR requests, use "GDPR Request" in subject line</li>
-          <li>Check our FAQ before contacting</li>
-          <li>Be patient - we're a small team passionate about music</li>
-        </ul>
-      </section>
+
+        <div class="form-actions">
+          <button type="submit" class="button button--primary button--lg">
+            <i class="fas fa-paper-plane fa-sm" aria-hidden="true"></i>
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
   </div>
   
@@ -129,20 +179,51 @@ layout: base.njk
     padding-left: 1.5rem;
   }
   
-  .list--numbered {
-    list-style-type: decimal;
-    padding-left: 1.5rem;
-  }
-  
-  .list--bulleted li,
-  .list--numbered li {
+  .list--bulleted li {
     margin-bottom: 0.5rem;
   }
   
-  .card--outline {
-    border: 1px solid #e5e5e5;
-    border-radius: 8px;
-    padding: 1.5rem;
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .form-required {
+    color: #dc3545;
+  }
+  
+  .form-input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+  }
+  
+  .form-input:focus {
+    outline: none;
+    border-color: #f9a837;
+    box-shadow: 0 0 0 3px rgba(249, 168, 55, 0.1);
+  }
+  
+  .form-textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+  
+  select.form-input {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-chevron-down' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    padding-right: 2.5rem;
   }
   
   .button {
@@ -152,6 +233,9 @@ layout: base.njk
     text-decoration: none;
     font-weight: 600;
     transition: all 0.2s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
   }
   
   .button--primary {
@@ -171,6 +255,23 @@ layout: base.njk
   
   .button--secondary:hover {
     background: #444;
+  }
+  
+  .button--lg {
+    padding: 0.875rem 1.75rem;
+    font-size: 1.1rem;
+  }
+  
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
   }
   
   @media (max-width: 768px) {
