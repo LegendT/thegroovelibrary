@@ -42,7 +42,7 @@
     Content-Security-Policy = """
       default-src 'self';
       script-src 'self' 'unsafe-inline' https://kit.fontawesome.com https://cdn.jsdelivr.net https://www.googletagmanager.com https://consent.cookiebot.com;
-      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+      style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://www.googletagmanager.com;
       img-src 'self' data: https: blob: https://thumbnailer.mixcloud.com;
       font-src 'self' data: https://fonts.gstatic.com https://ka-f.fontawesome.com;
       connect-src 'self' https://api.mixcloud.com https://ka-f.fontawesome.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com;
