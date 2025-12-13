@@ -1,0 +1,66 @@
+---
+layout: base.njk
+title: "The Libraries | The Groove Library"
+description: "Explore our curated music collections. Deep dives into Africa-rooted sounds and tropical island grooves."
+---
+
+{# Hero Section #}
+<section class="hero region region--lg" aria-labelledby="hero-heading">
+  <div class="container">
+    <div class="center center--intrinsic flow flow--xl text-center">
+      <div class="hero__eyebrow hero__eyebrow--pill text-sm text-uppercase">
+        Curated Collections
+      </div>
+
+      <div class="flow flow--md">
+        <h1 id="hero-heading" class="hero__title">
+          The Libraries
+        </h1>
+        <p class="hero__tagline text-xl mx-auto">
+          Deep dives into sound — explore our themed music collections.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{# Libraries Grid #}
+<section class="region region--xl" aria-labelledby="libraries-heading">
+  <div class="container">
+    <h2 id="libraries-heading" class="sr-only">Available Libraries</h2>
+
+    <div class="grid grid--2">
+      {# Afro Groove Library Card #}
+      <a href="/the-libraries/afro/" class="library-card library-card--afro">
+        <div class="library-card__content flow flow--md">
+          <div class="library-card__icon">
+            <i class="fas fa-globe-africa" aria-hidden="true"></i>
+          </div>
+          <h3 class="library-card__title">The Afro Groove Library</h3>
+          <p class="library-card__description">
+            Rhythm as heritage and evolution — highlife, Afro-funk, desert blues, spiritual jazz, and underground mutations.
+          </p>
+          <span class="library-card__cta">
+            Explore collection <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </div>
+      </a>
+
+      {# Islands Groove Library Card #}
+      <a href="/the-libraries/islands/" class="library-card library-card--islands">
+        <div class="library-card__content flow flow--md">
+          <div class="library-card__icon">
+            <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+          </div>
+          <h3 class="library-card__title">The Islands Groove Library</h3>
+          <p class="library-card__description">
+            Escape to the tropics — vintage Calypso, Mento, and rare cuts from island cultures worldwide.
+          </p>
+          <span class="library-card__cta">
+            Explore collection <i class="fas fa-arrow-right" aria-hidden="true"></i>
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</section>

@@ -441,6 +441,13 @@ li + li {
     linear-gradient(135deg, var(--color-hero-afro-start), var(--color-hero-afro-end));
 }
 
+/* Islands Groove – tropical teal + warm sunset */
+.hero--islands {
+  background:
+    radial-gradient(circle at 85% 20%, var(--color-hero-islands-accent) 0, transparent 45%),
+    linear-gradient(135deg, var(--color-hero-islands-start), var(--color-hero-islands-end));
+}
+
 /* --------------------------------------------------
  * PATTERN BANDS WITH TOP-EDGE FADE
  * -------------------------------------------------- */
@@ -522,6 +529,32 @@ li + li {
   mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
 }
 
+/* ISLANDS — wave pattern for tropical feel */
+.hero--islands::after {
+  content: '';
+  position: absolute;
+  inset-inline: -10%;
+  inset-block-end: -22%;
+  height: 62%;
+  background-image:
+    radial-gradient(circle at 80% 20%, rgba(255, 228, 181, 0.25) 0, transparent 50%),
+    radial-gradient(circle at 20% 60%, rgba(0, 0, 0, 0.2) 0, transparent 40%),
+    repeating-linear-gradient(
+      -15deg,
+      rgba(255, 255, 255, 0.12) 0,
+      rgba(255, 255, 255, 0.12) 3px,
+      transparent 3px,
+      transparent 12px
+    );
+  opacity: 0.6;
+  transform: skewY(-2deg);
+  mix-blend-mode: soft-light;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+}
+
 /* --------------------------------------------------
  * MOBILE TUNING
  * -------------------------------------------------- */
@@ -542,6 +575,13 @@ li + li {
   }
 
   .hero--afro::after {
+    inset-inline: -5%;
+    inset-block-end: -16%;
+    height: 50%;
+    opacity: 0.45;
+  }
+
+  .hero--islands::after {
     inset-inline: -5%;
     inset-block-end: -16%;
     height: 50%;
@@ -1608,4 +1648,121 @@ li + li {
 .contribute-list li i {
   color: var(--color-primary-600);
   font-size: var(--font-size-xl);
+}
+
+/* ==========================================
+ * LIBRARY CARDS
+ * Landing page cards for library collections
+ * ========================================== */
+
+.library-card {
+  display: block;
+  text-decoration: none;
+  background: linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-neutral-900) 100%);
+  border-radius: var(--radius-xl);
+  padding: var(--space-2xl);
+  min-height: 320px;
+  position: relative;
+  overflow: hidden;
+  transition: all var(--duration-normal) var(--ease-out);
+  border: var(--border-width-thin) solid var(--color-neutral-700);
+}
+
+.library-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out);
+}
+
+.library-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--color-primary-500);
+}
+
+.library-card:hover::before {
+  opacity: 1;
+}
+
+.library-card__content {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.library-card__icon {
+  width: var(--space-3xl);
+  height: var(--space-3xl);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-primary-500);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xl);
+  color: var(--color-neutral-50);
+  margin-block-end: var(--space-md);
+}
+
+.library-card__title {
+  font-family: var(--font-family-display);
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-neutral-50);
+  margin: 0;
+}
+
+.library-card__description {
+  font-size: var(--font-size-base);
+  color: var(--color-neutral-300);
+  line-height: var(--line-height-relaxed);
+  flex-grow: 1;
+}
+
+.library-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-primary-400);
+  margin-block-start: auto;
+  transition: gap var(--duration-fast) var(--ease-out);
+}
+
+.library-card:hover .library-card__cta {
+  gap: var(--space-sm);
+  color: var(--color-primary-300);
+}
+
+/* Afro variant - warm earth tones */
+.library-card--afro {
+  background: linear-gradient(135deg, #8B4513 0%, #5D3A1A 50%, #3D2512 100%);
+  border-color: #A0522D;
+}
+
+.library-card--afro:hover {
+  border-color: var(--color-primary-400);
+}
+
+.library-card--afro .library-card__icon {
+  background-color: #D2691E;
+}
+
+/* Islands variant - tropical teal/ocean tones */
+.library-card--islands {
+  background: linear-gradient(135deg, #1A5F6B 0%, #0D4A55 50%, #0A363F 100%);
+  border-color: #2E8B8B;
+}
+
+.library-card--islands:hover {
+  border-color: #5DADE2;
+}
+
+.library-card--islands .library-card__icon {
+  background-color: #20B2AA;
 }

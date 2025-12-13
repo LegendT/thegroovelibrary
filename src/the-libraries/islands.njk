@@ -1,38 +1,36 @@
 ---
 layout: base.njk
-title: "The Afro Groove Library | The Groove Library"
+title: "The Islands Groove Library | The Groove Library"
 description: >
-  <p>Rooted in music from and inspired by Africa, this series explores rhythm as both heritage and evolution — moving between traditional forms, vintage recordings, modern productions, edits, fusions and underground mutations.</p>
+  <p>Escape to the tropics with The Islands Groove Library. Featuring vintage Calypso, Mento, and rare cuts from Miriam Makeba and Maya Angelou.</p>
 
-  <p>Across DJ mixes, live sessions, guest selectors and deep listening experiences, The Afro Groove Library traces connections between highlife, Afro-funk, desert blues, spiritual jazz, dub, house, broken beat, electronic experiments and everything in-between. It honours the source while embracing forward motion.</p>
+  <p>This collection celebrates the rich musical heritage of island cultures — from the Caribbean to the Pacific, capturing the warmth, rhythm, and soul of tropical sounds across decades.</p>
 
-  <p>This is not a museum of sound — it's a living archive. Built for dancers, listeners, collectors and curious minds. Equal parts ritual, system culture and future exploration.</p>
-
-  <p>Where the roots run deep… and the groove keeps moving.</p>
-playlist: "the-afro-groove-library"
+  <p>Sun-soaked rhythms, swaying palms, and timeless grooves. Pour yourself something nice and drift away.</p>
+playlist: "the-islands-groove-library"
 ---
 
 {# Hero Section #}
-<section class="hero hero--afro region region--lg" aria-labelledby="hero-heading">
+<section class="hero hero--islands region region--lg" aria-labelledby="hero-heading">
   <div class="container">
     <div class="center center--intrinsic flow flow--xl text-center">
       <div class="hero__eyebrow hero__eyebrow--pill text-sm text-uppercase">
-        Africa-rooted · Globally connected
+        Tropical vibes · Island sounds
       </div>
 
       <div class="flow flow--md">
         <h1 id="hero-heading" class="hero__title">
-          The Afro Groove Library
+          The Islands Groove Library
         </h1>
         <p class="hero__tagline text-xl mx-auto">
-          Rhythm as heritage and evolution — a living archive of Africa-influenced sound.
+          Vintage Calypso, Mento, and rare tropical cuts — escape to the islands.
         </p>
       </div>
 
       <div class="hero__chips cluster cluster--sm justify-center">
         <span class="hero-chip hero-chip--accent">
-          <wa-icon name="globe-africa" size="sm" aria-hidden="true"></wa-icon>
-          Deep Afro grooves
+          <i class="fas fa-umbrella-beach" aria-hidden="true"></i>
+          Tropical grooves
         </span>
       </div>
     </div>
@@ -61,42 +59,42 @@ playlist: "the-afro-groove-library"
           The Collection
         </h2>
 
-        {% if theAfroGrooveLibrary.count > 0 %}
+        {% if theIslandsGrooveLibrary.count > 0 %}
           <div class="cluster cluster--sm justify-center">
             <span class="badge">
-              <wa-icon name="record-vinyl" size="sm" aria-hidden="true"></wa-icon>
-              {{ theAfroGrooveLibrary.count }} mixes in this collection
+              <i class="fas fa-record-vinyl" aria-hidden="true"></i>
+              {{ theIslandsGrooveLibrary.count }} mixes in this collection
             </span>
           </div>
         {% endif %}
       </div>
 
       {# Mix Grid #}
-      {% if theAfroGrooveLibrary.cloudcasts.length > 0 %}
-        <div class="grid grid--2" role="list" aria-label="The Afro Groove Library mixes">
-          {% for mix in theAfroGrooveLibrary.cloudcasts %}
+      {% if theIslandsGrooveLibrary.cloudcasts.length > 0 %}
+        <div class="grid grid--2" role="list" aria-label="The Islands Groove Library mixes">
+          {% for mix in theIslandsGrooveLibrary.cloudcasts %}
             <div role="listitem">
               {% include "mix-player.njk" %}
             </div>
           {% endfor %}
         </div>
-      {% elif theAfroGrooveLibrary.error %}
+      {% elif theIslandsGrooveLibrary.error %}
         {# Error State #}
         <div class="error" role="alert">
           <h3 class="error__title">
-            <wa-icon name="triangle-exclamation" aria-hidden="true"></wa-icon>
+            <i class="fas fa-triangle-exclamation" aria-hidden="true"></i>
             Unable to load mixes
           </h3>
           <p>We encountered an error while fetching the music collection. Please try again later.</p>
           <details class="my-md">
             <summary class="cursor-pointer text-semibold">Technical details</summary>
-            <p class="text-sm my-sm"><code>{{ theAfroGrooveLibrary.error }}</code></p>
+            <p class="text-sm my-sm"><code>{{ theIslandsGrooveLibrary.error }}</code></p>
           </details>
         </div>
       {% else %}
         {# Empty State #}
         <div class="center center--intrinsic flow flow--lg text-center py-3xl">
-          <wa-icon name="music-slash" size="4x" class="text-tertiary" aria-hidden="true"></wa-icon>
+          <i class="fas fa-music-slash fa-4x text-tertiary" aria-hidden="true"></i>
           <div class="flow flow--sm">
             <h3 class="text-xl">No mixes available</h3>
             <p class="text-secondary">Check back soon for new content!</p>
