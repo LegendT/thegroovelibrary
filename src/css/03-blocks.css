@@ -448,6 +448,14 @@ li + li {
     linear-gradient(135deg, var(--color-hero-islands-start), var(--color-hero-islands-end));
 }
 
+/* Japan Groove – neon pink + midnight blue */
+.hero--japan {
+  background:
+    radial-gradient(circle at 20% 80%, var(--color-hero-japan-accent) 0, transparent 40%),
+    radial-gradient(circle at 90% 20%, #00D4FF 0, transparent 35%),
+    linear-gradient(135deg, var(--color-hero-japan-start), var(--color-hero-japan-end));
+}
+
 /* --------------------------------------------------
  * PATTERN BANDS WITH TOP-EDGE FADE
  * -------------------------------------------------- */
@@ -555,6 +563,37 @@ li + li {
   mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
 }
 
+/* JAPAN — neon grid pattern */
+.hero--japan::after {
+  content: '';
+  position: absolute;
+  inset-inline: -10%;
+  inset-block-end: -22%;
+  height: 62%;
+  background-image:
+    radial-gradient(circle at 50% 50%, rgba(255, 107, 157, 0.15) 0, transparent 60%),
+    repeating-linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0.08) 0,
+      rgba(0, 212, 255, 0.08) 1px,
+      transparent 1px,
+      transparent 40px
+    ),
+    repeating-linear-gradient(
+      0deg,
+      rgba(255, 107, 157, 0.06) 0,
+      rgba(255, 107, 157, 0.06) 1px,
+      transparent 1px,
+      transparent 40px
+    );
+  opacity: 0.7;
+  mix-blend-mode: screen;
+  pointer-events: none;
+
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 55%, black 100%);
+}
+
 /* --------------------------------------------------
  * MOBILE TUNING
  * -------------------------------------------------- */
@@ -586,6 +625,13 @@ li + li {
     inset-block-end: -16%;
     height: 50%;
     opacity: 0.45;
+  }
+
+  .hero--japan::after {
+    inset-inline: -5%;
+    inset-block-end: -16%;
+    height: 50%;
+    opacity: 0.5;
   }
 }
 
@@ -1765,4 +1811,18 @@ li + li {
 
 .library-card--islands .library-card__icon {
   background-color: #20B2AA;
+}
+
+/* Japan variant - neon pink/midnight blue */
+.library-card--japan {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f1a 100%);
+  border-color: #FF6B9D;
+}
+
+.library-card--japan:hover {
+  border-color: #00D4FF;
+}
+
+.library-card--japan .library-card__icon {
+  background-color: #FF6B9D;
 }
